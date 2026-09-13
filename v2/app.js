@@ -1,0 +1,1 @@
+Promise.all([fetch('profile.json'),fetch('../hotels.json')]).then(async ([p,h])=>{const profile=await p.json();const data=await h.json();document.body.dataset.travel2='ready';console.log('Travel 2.0 profile',profile.version,'hotels',data.hotels.length);}).catch(console.error);
