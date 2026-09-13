@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "destinationMode": "ukraine",
+  "rankingMode": "ukraine",
+  "date": {
+    "mode": "exact",
+    "checkIn": "2026-10-24",
+    "checkOut": "2026-10-31",
+    "flexFrom": "2026-10-20",
+    "flexTo": "2026-11-02",
+    "season": "autumn",
+    "schoolHoliday": "autumn"
+  },
+  "travellers": [
+    {"label": "Мандрівник 1", "age": 46},
+    {"label": "Мандрівник 2", "age": 50}
+  ],
+  "budgetPerNight": 7000,
+  "preferences": {
+    "quiet": 5,
+    "romance": 4,
+    "spa": 5,
+    "pools": 4,
+    "nature": 5,
+    "active": 2,
+    "kids": 0,
+    "culture": 2,
+    "entertainment": 1
+  },
+  "discountProfile": {
+    "birthday": false,
+    "benefitPrograms": []
+  }
+}
