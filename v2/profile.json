@@ -12,8 +12,8 @@
     "schoolHoliday": "autumn"
   },
   "travellers": [
-    {"label": "Мандрівник 1", "age": 46},
-    {"label": "Мандрівник 2", "age": 50}
+    {"label": "Мандрівник 1", "age": 35},
+    {"label": "Мандрівник 2", "age": 35}
   ],
   "budgetPerNight": 7000,
   "preferences": {
@@ -26,9 +26,5 @@
     "kids": 0,
     "culture": 2,
     "entertainment": 1
-  },
-  "discountProfile": {
-    "birthday": false,
-    "benefitPrograms": []
   }
 }
