@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#132a24" />
+  <meta name="description" content="Живий рейтинг SPA-готелів України на 24–31 жовтня 2026" />
+  <title>Осінній SPA 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">24–31 жовтня 2026 · 7 ночей</p>
+        <h1>Осінній SPA 2026</h1>
+        <p class="lead">Живий рейтинг готелів для спокійного відпочинку в Карпатах, Закарпатті та інших відносно спокійних регіонах України.</p>
+      </div>
+      <div class="meta-card">
+        <span class="meta-label">Остання перевірка</span>
+        <strong id="updatedAt">—</strong>
+        <span id="auditState" class="status">Попередній аудит</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar" aria-label="Фільтри">
+      <div class="segmented" role="tablist" aria-label="Склад подорожі">
+        <button class="seg active" data-scenario="couple" role="tab">Удвох</button>
+        <button class="seg" data-scenario="family" role="tab">З дитиною 10 років</button>
+      </div>
+
+      <div class="filters">
+        <label>
+          <span>Регіон</span>
+          <select id="regionFilter"><option value="all">Усі</option></select>
+        </label>
+        <label>
+          <span>Макс. ціна/ніч</span>
+          <select id="priceFilter">
+            <option value="999999">Без ліміту</option>
+            <option value="5000">до 5 000 ₴</option>
+            <option value="7000" selected>до 7 000 ₴</option>
+            <option value="9000">до 9 000 ₴</option>
+          </select>
+        </label>
+        <label class="check"><input id="spaFilter" type="checkbox" checked /> <span>Критий SPA/басейн</span></label>
+      </div>
+    </section>
+
+    <section class="summary" id="summary"></section>
+    <section class="grid" id="hotelGrid" aria-live="polite"></section>
+  </main>
+
+  <template id="hotelCardTemplate">
+    <article class="hotel-card">
+      <div class="rank-badge"></div>
+      <div class="card-body">
+        <div class="card-head">
+          <div>
+            <p class="location"></p>
+            <h2 class="hotel-name"></h2>
+          </div>
+          <div class="score-box"><strong class="score"></strong><span>/10</span></div>
+        </div>
+
+        <div class="chips"></div>
+        <p class="verdict"></p>
+
+        <div class="price-row">
+          <div><span class="caption">За ніч</span><strong class="night-price"></strong></div>
+          <div><span class="caption">7 ночей</span><strong class="week-price"></strong></div>
+          <div><span class="caption">Ціна/якість</span><strong class="value-score"></strong></div>
+        </div>
+
+        <div class="columns">
+          <div><h3>Сильні сторони</h3><ul class="pros"></ul></div>
+          <div><h3>Звернути увагу</h3><ul class="cons"></ul></div>
+        </div>
+
+        <div class="details"></div>
+        <div class="card-foot">
+          <span class="checked"></span>
+          <a class="hotel-link" target="_blank" rel="noopener noreferrer">Сайт готелю ↗</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <footer class="wrap footer">
+    <p>Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, осінньою придатністю, репутацією та співвідношенням ціна/якість. Ціни перевіряються саме на 24–31.10.2026, коли це доступно онлайн.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
