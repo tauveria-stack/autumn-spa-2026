@@ -32,19 +32,13 @@
       </div>
 
       <div class="filters">
-        <label>
-          <span>Регіон</span>
-          <select id="regionFilter"><option value="all">Усі</option></select>
-        </label>
-        <label>
-          <span>Макс. ціна/ніч</span>
-          <select id="priceFilter">
-            <option value="999999">Без ліміту</option>
-            <option value="5000">до 5 000 ₴</option>
-            <option value="7000" selected>до 7 000 ₴</option>
-            <option value="9000">до 9 000 ₴</option>
-          </select>
-        </label>
+        <label><span>Регіон</span><select id="regionFilter"><option value="all">Усі</option></select></label>
+        <label><span>Макс. ціна/ніч</span><select id="priceFilter">
+          <option value="999999">Без ліміту</option>
+          <option value="5000">до 5 000 ₴</option>
+          <option value="7000" selected>до 7 000 ₴</option>
+          <option value="9000">до 9 000 ₴</option>
+        </select></label>
         <label class="check"><input id="spaFilter" type="checkbox" checked /> <span>Критий SPA/басейн</span></label>
       </div>
     </section>
@@ -55,14 +49,20 @@
 
   <template id="hotelCardTemplate">
     <article class="hotel-card">
-      <div class="rank-badge"></div>
+      <div class="hotel-media">
+        <img class="hotel-photo" alt="" loading="lazy" />
+        <div class="photo-fallback">Фото готелю перевіряється</div>
+        <div class="rank-badge"></div>
+        <div class="score-box"><span>Наша оцінка</span><strong class="score"></strong><small>/10</small></div>
+        <span class="photo-source">Фото: офіційний сайт</span>
+      </div>
+
       <div class="card-body">
         <div class="card-head">
-          <div>
+          <div class="title-wrap">
             <p class="location"></p>
             <h2 class="hotel-name"></h2>
           </div>
-          <div class="score-box"><strong class="score"></strong><span>/10</span></div>
         </div>
 
         <div class="chips"></div>
@@ -82,7 +82,7 @@
         <div class="details"></div>
         <div class="card-foot">
           <span class="checked"></span>
-          <a class="hotel-link" target="_blank" rel="noopener noreferrer">Сайт готелю ↗</a>
+          <a class="hotel-link" target="_blank" rel="noopener noreferrer">Перейти на сайт готелю →</a>
         </div>
       </div>
     </article>
