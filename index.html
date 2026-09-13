@@ -30,7 +30,6 @@
         <button class="seg active" data-scenario="couple" role="tab">Удвох</button>
         <button class="seg" data-scenario="family" role="tab">З дитиною 10 років</button>
       </div>
-
       <div class="filters">
         <label><span>Регіон</span><select id="regionFilter"><option value="all">Усі</option></select></label>
         <label><span>Макс. ціна/ніч</span><select id="priceFilter">
@@ -67,6 +66,12 @@
 
         <div class="chips"></div>
         <p class="verdict"></p>
+
+        <div class="availability-alert" hidden>
+          <strong class="availability-title">Вільних місць онлайн не знайдено</strong>
+          <p class="availability-text">Потребує уточнення напряму в готелі.</p>
+          <div class="contact-actions"></div>
+        </div>
 
         <div class="best-offer" hidden>
           <div class="best-offer-head">
