@@ -82,12 +82,38 @@ function setupBestOffer(node,v){
   const a=node.querySelector('.best-offer-link');
   if(o.url){a.href=o.url;a.hidden=false}else{a.hidden=true}
 }
+function verifiedContactHref(value,kind){
+  const href=typeof value==='string'?value:(value?.url||value?.href||'');
+  if(!href)return null;
+  const allowed={
+    phone:/^tel:\+?[0-9]{7,15}$/,
+    telegram:/^https:\/\/t\.me\/[A-Za-z0-9_]+\/?$/,
+    whatsapp:/^https:\/\/wa\.me\/[0-9]+\/?$/,
+    viber:/^https:\/\/invite\.viber\.com\/[A-Za-z0-9_?=&%-]+$/
+  };
+  return allowed[kind]?.test(href)?href:null;
+}
+function setupAvailability(node,h,v){
+  const box=node.querySelector('.availability-alert');
+  const availability=v?.availability||h.availability;
+  if(!['needs_confirmation','not_found','online_not_found','unverified'].includes(availability?.status)){box.hidden=true;return}
+  box.hidden=false;
+  node.querySelector('.availability-title').textContent=availability?.title||'Вільних місць онлайн не знайдено';
+  node.querySelector('.availability-text').textContent=availability?.message||'Потребує уточнення напряму в готелі.';
+  const contacts=v?.contacts||h.contacts||availability?.contacts||{};
+  const actions=node.querySelector('.contact-actions');actions.innerHTML='';
+  [['Подзвонити','phone'],['Viber','viber'],['Telegram','telegram'],['WhatsApp','whatsapp']].forEach(([label,kind])=>{
+    const href=verifiedContactHref(contacts[kind],kind);if(!href)return;
+    const a=document.createElement('a');a.className='contact-btn';a.textContent=label;a.href=href;a.rel='noopener noreferrer';actions.appendChild(a);
+  });
+  if(!actions.children.length){const span=document.createElement('span');span.className='contact-pending';span.textContent='Контакти бронювання перевіряються';actions.appendChild(span)}
+}
 function renderCards(rows){
   const grid=document.getElementById('hotelGrid');grid.innerHTML='';
   if(!rows.length){grid.innerHTML='<div class="empty">За цими фільтрами кандидатів поки немає.</div>';return}
   rows.forEach((h,i)=>{
     const node=document.getElementById('hotelCardTemplate').content.cloneNode(true);const v=h.view;
-    setupPhoto(node,h);setupBestOffer(node,v);
+    setupPhoto(node,h);setupAvailability(node,h,v);setupBestOffer(node,v);
     node.querySelector('.rank-badge').textContent='#'+(i+1);
     node.querySelector('.location').textContent=`${h.location} · ${h.region}`;
     node.querySelector('.hotel-name').textContent=h.name;
