@@ -32,19 +32,27 @@ function bind(){
   document.getElementById('spaFilter').addEventListener('change',e=>{state.spaOnly=e.target.checked;render()});
 }
 function scenarioOf(h){return state.scenario==='couple'?h.couple:h.family}
+function effectiveNight(v){
+  const offer=v?.bestOffer;
+  if(offer?.verified!==false){
+    if(offer.pricePerNight)return offer.pricePerNight;
+    if(offer.total7Nights)return Math.round(offer.total7Nights/7);
+  }
+  return v?.pricePerNight||0;
+}
 function render(){
   const rows=state.data.hotels.map(h=>({...h,view:scenarioOf(h)}))
     .filter(h=>h.view?.eligible!==false)
     .filter(h=>state.region==='all'||h.region===state.region)
-    .filter(h=>!h.view.pricePerNight||h.view.pricePerNight<=state.maxPrice)
+    .filter(h=>!effectiveNight(h.view)||effectiveNight(h.view)<=state.maxPrice)
     .filter(h=>!state.spaOnly||h.indoorSpa)
     .sort((a,b)=>(b.view.score||0)-(a.view.score||0));
   renderSummary(rows);renderCards(rows);
 }
 function renderSummary(rows){
-  const known=rows.filter(h=>h.view.pricePerNight);
-  const avg=known.length?Math.round(known.reduce((a,h)=>a+h.view.pricePerNight,0)/known.length):0;
-  document.getElementById('summary').innerHTML=`<span class="summary-pill"><strong>${rows.length}</strong> кандидатів</span><span class="summary-pill">Сценарій: <strong>${state.scenario==='couple'?'2 дорослих':'2 дорослих + дитина 10 років'}</strong></span>${avg?`<span class="summary-pill">Середня ціна: <strong>${money(avg)}/ніч</strong></span>`:''}`;
+  const known=rows.filter(h=>effectiveNight(h.view));
+  const avg=known.length?Math.round(known.reduce((a,h)=>a+effectiveNight(h.view),0)/known.length):0;
+  document.getElementById('summary').innerHTML=`<span class="summary-pill"><strong>${rows.length}</strong> кандидатів</span><span class="summary-pill">Сценарій: <strong>${state.scenario==='couple'?'2 дорослих':'2 дорослих + дитина 10 років'}</strong></span>${avg?`<span class="summary-pill">Середня найкраща ціна: <strong>${money(avg)}/ніч</strong></span>`:''}`;
 }
 function setupPhoto(node,h){
   const media=node.querySelector('.hotel-media');
@@ -58,12 +66,28 @@ function setupPhoto(node,h){
   img.src=info.src;
   source.textContent='Фото: '+info.source;
 }
+function setupBestOffer(node,v){
+  const box=node.querySelector('.best-offer');
+  const o=v?.bestOffer;
+  if(!o||o.verified===false||(!o.total7Nights&&!o.pricePerNight)){box.hidden=true;return}
+  box.hidden=false;
+  node.querySelector('.best-offer-source').textContent=o.source||'Перевірене джерело';
+  const total=o.total7Nights||(o.pricePerNight?o.pricePerNight*7:0);
+  node.querySelector('.best-offer-price').textContent=total?`${money(total)} за 7 ночей`:money(o.pricePerNight);
+  const saving=[];
+  if(o.savingAmount)saving.push(`−${money(o.savingAmount)}`);
+  if(o.savingPercent)saving.push(`−${o.savingPercent}%`);
+  node.querySelector('.best-offer-saving').textContent=saving.join(' · ');
+  node.querySelector('.best-offer-note').textContent=o.note||'Умови пропозиції перевірені для цього сценарію; деталі дивись у джерелі.';
+  const a=node.querySelector('.best-offer-link');
+  if(o.url){a.href=o.url;a.hidden=false}else{a.hidden=true}
+}
 function renderCards(rows){
   const grid=document.getElementById('hotelGrid');grid.innerHTML='';
   if(!rows.length){grid.innerHTML='<div class="empty">За цими фільтрами кандидатів поки немає.</div>';return}
   rows.forEach((h,i)=>{
     const node=document.getElementById('hotelCardTemplate').content.cloneNode(true);const v=h.view;
-    setupPhoto(node,h);
+    setupPhoto(node,h);setupBestOffer(node,v);
     node.querySelector('.rank-badge').textContent='#'+(i+1);
     node.querySelector('.location').textContent=`${h.location} · ${h.region}`;
     node.querySelector('.hotel-name').textContent=h.name;
@@ -76,8 +100,9 @@ function renderCards(rows){
     if(h.indoorSpa)chips.push('<span class="chip good">Критий SPA</span>');
     if(h.thermal)chips.push('<span class="chip good">Термальні води</span>');
     if(v.meals)chips.push(`<span class="chip">${v.meals}</span>`);
-    if(v.priceStatus==='live')chips.push('<span class="chip good">Ціна перевірена</span>');
-    if(v.priceStatus==='estimate')chips.push('<span class="chip warn">Орієнтовна ціна</span>');
+    if(v.bestOffer?.source)chips.push(`<span class="chip good">Best price: ${v.bestOffer.source}</span>`);
+    if(v.priceStatus==='live')chips.push('<span class="chip good">Базова ціна перевірена</span>');
+    if(v.priceStatus==='estimate')chips.push('<span class="chip warn">Базова ціна орієнтовна</span>');
     node.querySelector('.chips').innerHTML=chips.join('');
     node.querySelector('.pros').innerHTML=(v.pros||[]).map(x=>`<li>${x}</li>`).join('');
     node.querySelector('.cons').innerHTML=(v.cons||[]).map(x=>`<li>${x}</li>`).join('');
