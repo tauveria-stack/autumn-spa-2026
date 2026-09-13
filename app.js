@@ -1,11 +1,11 @@
 const state={scenario:'couple',region:'all',maxPrice:7000,spaOnly:true,data:null};
 const money=n=>n?new Intl.NumberFormat('uk-UA').format(n)+' ₴':'уточнюється';
-const dateFmt=s=>s?new Intl.DateTimeFormat('uk-UA',{day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(s)):'—';
+const dateTimeFmt=s=>s?new Intl.DateTimeFormat('uk-UA',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Europe/Kyiv'}).format(new Date(s)):'—';
 
 async function load(){
   const res=await fetch('hotels.json',{cache:'no-store'});
   state.data=await res.json();
-  document.getElementById('updatedAt').textContent=dateFmt(state.data.meta.updatedAt);
+  document.getElementById('updatedAt').textContent=dateTimeFmt(state.data.meta.updatedAt);
   document.getElementById('auditState').textContent=state.data.meta.status;
   initRegions(); bind(); render();
 }
@@ -61,7 +61,7 @@ function renderCards(rows){
     node.querySelector('.pros').innerHTML=(v.pros||[]).map(x=>`<li>${x}</li>`).join('');
     node.querySelector('.cons').innerHTML=(v.cons||[]).map(x=>`<li>${x}</li>`).join('');
     node.querySelector('.details').textContent=v.included||'Склад тарифу уточнюється під час аудиту.';
-    node.querySelector('.checked').textContent=`Перевірено: ${dateFmt(h.checkedAt)}`;
+    node.querySelector('.checked').textContent=`Перевірено: ${dateTimeFmt(h.checkedAt)} · Київ`;
     const a=node.querySelector('.hotel-link');a.href=h.url;
     grid.appendChild(node);
   });
