@@ -14,6 +14,7 @@ const heroImages={
 
 async function load(){
   const res=await fetch('hotels.json',{cache:'no-store'});
+  if(!res.ok)throw new Error(`hotels.json: HTTP ${res.status}`);
   state.data=await res.json();
   document.getElementById('updatedAt').textContent=dateTimeFmt(state.data.meta.updatedAt);
   document.getElementById('auditState').textContent=state.data.meta.status;
@@ -32,27 +33,19 @@ function bind(){
   document.getElementById('spaFilter').addEventListener('change',e=>{state.spaOnly=e.target.checked;render()});
 }
 function scenarioOf(h){return state.scenario==='couple'?h.couple:h.family}
-function effectiveNight(v){
-  const offer=v?.bestOffer;
-  if(offer?.verified!==false){
-    if(offer.pricePerNight)return offer.pricePerNight;
-    if(offer.total7Nights)return Math.round(offer.total7Nights/7);
-  }
-  return v?.pricePerNight||0;
-}
 function render(){
   const rows=state.data.hotels.map(h=>({...h,view:scenarioOf(h)}))
     .filter(h=>h.view?.eligible!==false)
     .filter(h=>state.region==='all'||h.region===state.region)
-    .filter(h=>!effectiveNight(h.view)||effectiveNight(h.view)<=state.maxPrice)
+    .filter(h=>!h.view.pricePerNight||h.view.pricePerNight<=state.maxPrice)
     .filter(h=>!state.spaOnly||h.indoorSpa)
     .sort((a,b)=>(b.view.score||0)-(a.view.score||0));
   renderSummary(rows);renderCards(rows);
 }
 function renderSummary(rows){
-  const known=rows.filter(h=>effectiveNight(h.view));
-  const avg=known.length?Math.round(known.reduce((a,h)=>a+effectiveNight(h.view),0)/known.length):0;
-  document.getElementById('summary').innerHTML=`<span class="summary-pill"><strong>${rows.length}</strong> кандидатів</span><span class="summary-pill">Сценарій: <strong>${state.scenario==='couple'?'2 дорослих':'2 дорослих + дитина 10 років'}</strong></span>${avg?`<span class="summary-pill">Середня найкраща ціна: <strong>${money(avg)}/ніч</strong></span>`:''}`;
+  const known=rows.filter(h=>h.view.pricePerNight);
+  const avg=known.length?Math.round(known.reduce((a,h)=>a+h.view.pricePerNight,0)/known.length):0;
+  document.getElementById('summary').innerHTML=`<span class="summary-pill"><strong>${rows.length}</strong> кандидатів</span><span class="summary-pill">Сценарій: <strong>${state.scenario==='couple'?'2 дорослих':'2 дорослих + дитина 10 років'}</strong></span>${avg?`<span class="summary-pill">Середня ціна: <strong>${money(avg)}/ніч</strong></span>`:''}`;
 }
 function setupPhoto(node,h){
   const media=node.querySelector('.hotel-media');
@@ -67,64 +60,12 @@ function setupPhoto(node,h){
   img.src=info.src;
   source.textContent='Фото: '+info.source;
 }
-function setupBestOffer(node,v){
-  const box=node.querySelector('.best-offer');
-  if(!box)return;
-  const o=v?.bestOffer;
-  if(!o||o.verified===false||(!o.total7Nights&&!o.pricePerNight)){box.hidden=true;return}
-  box.hidden=false;
-  const source=node.querySelector('.best-offer-source');
-  const price=node.querySelector('.best-offer-price');
-  const savingEl=node.querySelector('.best-offer-saving');
-  const note=node.querySelector('.best-offer-note');
-  const a=node.querySelector('.best-offer-link');
-  if(source)source.textContent=o.source||'Перевірене джерело';
-  const total=o.total7Nights||(o.pricePerNight?o.pricePerNight*7:0);
-  if(price)price.textContent=total?`${money(total)} за 7 ночей`:money(o.pricePerNight);
-  const saving=[];
-  if(o.savingAmount)saving.push(`−${money(o.savingAmount)}`);
-  if(o.savingPercent)saving.push(`−${o.savingPercent}%`);
-  if(savingEl)savingEl.textContent=saving.join(' · ');
-  if(note)note.textContent=o.note||'Умови пропозиції перевірені для цього сценарію; деталі дивись у джерелі.';
-  if(a){if(o.url){a.href=o.url;a.hidden=false}else{a.hidden=true}}
-}
-function verifiedContactHref(value,kind){
-  const href=typeof value==='string'?value:(value?.url||value?.href||'');
-  if(!href)return null;
-  const allowed={
-    phone:/^tel:\+?[0-9]{7,15}$/,
-    telegram:/^https:\/\/t\.me\/[A-Za-z0-9_]+\/?$/,
-    whatsapp:/^https:\/\/wa\.me\/[0-9]+\/?$/,
-    viber:/^https:\/\/invite\.viber\.com\/[A-Za-z0-9_?=&%-]+$/
-  };
-  return allowed[kind]?.test(href)?href:null;
-}
-function setupAvailability(node,h,v){
-  const box=node.querySelector('.availability-alert');
-  if(!box)return;
-  const availability=v?.availability||h.availability;
-  if(!['needs_confirmation','not_found','online_not_found','unverified'].includes(availability?.status)){box.hidden=true;return}
-  box.hidden=false;
-  const title=node.querySelector('.availability-title');
-  const text=node.querySelector('.availability-text');
-  if(title)title.textContent=availability?.title||'Вільних місць онлайн не знайдено';
-  if(text)text.textContent=availability?.message||'Потребує уточнення напряму в готелі.';
-  const contacts=v?.contacts||h.contacts||availability?.contacts||{};
-  const actions=node.querySelector('.contact-actions');
-  if(!actions)return;
-  actions.innerHTML='';
-  [['Подзвонити','phone'],['Viber','viber'],['Telegram','telegram'],['WhatsApp','whatsapp']].forEach(([label,kind])=>{
-    const href=verifiedContactHref(contacts[kind],kind);if(!href)return;
-    const a=document.createElement('a');a.className='contact-btn';a.textContent=label;a.href=href;a.rel='noopener noreferrer';actions.appendChild(a);
-  });
-  if(!actions.children.length){const span=document.createElement('span');span.className='contact-pending';span.textContent='Контакти бронювання перевіряються';actions.appendChild(span)}
-}
 function renderCards(rows){
   const grid=document.getElementById('hotelGrid');grid.innerHTML='';
   if(!rows.length){grid.innerHTML='<div class="empty">За цими фільтрами кандидатів поки немає.</div>';return}
   rows.forEach((h,i)=>{
     const node=document.getElementById('hotelCardTemplate').content.cloneNode(true);const v=h.view;
-    setupPhoto(node,h);setupAvailability(node,h,v);setupBestOffer(node,v);
+    setupPhoto(node,h);
     node.querySelector('.rank-badge').textContent='#'+(i+1);
     node.querySelector('.location').textContent=`${h.location} · ${h.region}`;
     node.querySelector('.hotel-name').textContent=h.name;
@@ -137,9 +78,8 @@ function renderCards(rows){
     if(h.indoorSpa)chips.push('<span class="chip good">Критий SPA</span>');
     if(h.thermal)chips.push('<span class="chip good">Термальні води</span>');
     if(v.meals)chips.push(`<span class="chip">${v.meals}</span>`);
-    if(v.bestOffer?.source)chips.push(`<span class="chip good">Best price: ${v.bestOffer.source}</span>`);
-    if(v.priceStatus==='live')chips.push('<span class="chip good">Базова ціна перевірена</span>');
-    if(v.priceStatus==='estimate')chips.push('<span class="chip warn">Базова ціна орієнтовна</span>');
+    if(v.priceStatus==='live')chips.push('<span class="chip good">Ціна перевірена</span>');
+    if(v.priceStatus==='estimate')chips.push('<span class="chip warn">Орієнтовна ціна</span>');
     node.querySelector('.chips').innerHTML=chips.join('');
     node.querySelector('.pros').innerHTML=(v.pros||[]).map(x=>`<li>${x}</li>`).join('');
     node.querySelector('.cons').innerHTML=(v.cons||[]).map(x=>`<li>${x}</li>`).join('');
@@ -149,4 +89,8 @@ function renderCards(rows){
     grid.appendChild(node);
   });
 }
-load().catch(err=>{console.error(err);document.getElementById('hotelGrid').innerHTML='<div class="empty">Не вдалося завантажити базу готелів.</div>'});
+load().catch(err=>{
+  console.error(err);
+  const grid=document.getElementById('hotelGrid');
+  if(grid)grid.innerHTML=`<div class="empty">Не вдалося завантажити базу готелів.<br><small>${String(err?.message||err)}</small></div>`;
+});
