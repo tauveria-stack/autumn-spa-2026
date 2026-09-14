@@ -1,0 +1,11 @@
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const landing=fs.readFileSync(path.join(__dirname,'..','travel.html'),'utf8');
+const v2=fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
+assert(landing.includes('id="autumn2026" href="./index.html"'));
+assert(landing.includes('id="travel2" href="./v2/"'));
+assert(!landing.includes('domain.js')&&!landing.includes('ranking.js')&&!landing.includes('app.js'));
+assert(v2.includes('src="domain.js"')&&v2.includes('src="ranking.js"')&&v2.includes('src="app.js"'));
+assert(v2.includes('href="../travel.html"'));
+console.log('Travel 2.0 isolation contract: PASS');
