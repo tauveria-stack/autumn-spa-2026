@@ -64,7 +64,7 @@ function setupPhoto(node,h){
   const img=node.querySelector('.hotel-photo');
   const source=node.querySelector('.photo-source');
   if(!media||!img||!source)return;
-  const info=heroImages[h.id];
+  const info=h.hero||heroImages[h.id];
   if(!info){img.removeAttribute('src');img.alt='';source.textContent='Фото поки відсутнє';return}
   img.alt=info.alt||h.name;
   img.onload=()=>media.classList.add('has-photo');
