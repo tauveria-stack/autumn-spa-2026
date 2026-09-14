@@ -3,7 +3,8 @@ const money=n=>n?new Intl.NumberFormat('uk-UA').format(n)+' ₴':'уточнює
 const dateTimeFmt=s=>s?new Intl.DateTimeFormat('uk-UA',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Europe/Kyiv'}).format(new Date(s)):'—';
 
 // Одна візитна фотографія на картку. Беремо насамперед hero/перший промо-кадр
-// з офіційного сайту готелю; якщо він не верифікований — лишаємо fallback, а не випадкове фото.
+// з офіційного сайту готелю; якщо він не верифікований — показуємо нейтральний fallback,
+// а не статус, який створює враження фонової перевірки.
 const heroImages={
   'osonnya':{src:'https://osonnya.com/upload/medialibrary/4ce/q4p97o0hy0ts5k3uvn8ygp8oghdkbxn9.jpg',alt:'Осоння Карпати — головний корпус і басейн',source:'Офіційний сайт'},
   'kyivska-russ':{src:'https://kyivskaruss.com.ua/wp-content/uploads/2026/02/q11.jpg.webp',alt:'Карпатська природа біля Kyivska Russ Resort Medical & Spa',source:'Офіційний сайт'},
@@ -53,10 +54,10 @@ function setupPhoto(node,h){
   const source=node.querySelector('.photo-source');
   if(!media||!img||!source)return;
   const info=heroImages[h.id];
-  if(!info){img.removeAttribute('src');img.alt='';source.textContent='Фото добирається';return}
+  if(!info){img.removeAttribute('src');img.alt='';source.textContent='Фото поки відсутнє';return}
   img.alt=info.alt||h.name;
   img.onload=()=>media.classList.add('has-photo');
-  img.onerror=()=>{media.classList.remove('has-photo');source.textContent='Фото тимчасово недоступне'};
+  img.onerror=()=>{media.classList.remove('has-photo');source.textContent='Фото поки відсутнє'};
   img.src=info.src;
   source.textContent='Фото: '+info.source;
 }
