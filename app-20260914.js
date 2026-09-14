@@ -32,9 +32,16 @@ async function load(){
   document.getElementById('auditState').textContent=humanize(state.data.meta.status);
   initRegions();bind();render();
 }
+function regionGroup(h){return h.group||h.region||'Інші регіони'}
 function initRegions(){
   const select=document.getElementById('regionFilter');
-  [...new Set(state.data.hotels.map(h=>h.region))].sort().forEach(r=>{const o=document.createElement('option');o.value=r;o.textContent=r;select.appendChild(o)});
+  const order=['Карпати / Прикарпаття','Карпати / Буковина','Високі Карпати / Буковель','Закарпаття','Перлини України','Інші регіони'];
+  const groups=[...new Set(state.data.hotels.map(regionGroup))];
+  groups.sort((a,b)=>{
+    const ai=order.indexOf(a),bi=order.indexOf(b);
+    if(ai!==-1||bi!==-1)return (ai===-1?999:ai)-(bi===-1?999:bi);
+    return a.localeCompare(b,'uk');
+  }).forEach(r=>{const o=document.createElement('option');o.value=r;o.textContent=r;select.appendChild(o)});
 }
 function bind(){
   document.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
@@ -48,7 +55,7 @@ function scenarioOf(h){return state.scenario==='couple'?h.couple:h.family}
 function render(){
   const rows=state.data.hotels.map(h=>({...h,view:scenarioOf(h)}))
     .filter(h=>h.view?.eligible!==false)
-    .filter(h=>state.region==='all'||h.region===state.region)
+    .filter(h=>state.region==='all'||regionGroup(h)===state.region)
     .filter(h=>!h.view.pricePerNight||h.view.pricePerNight<=state.maxPrice)
     .filter(h=>!state.spaOnly||h.indoorSpa)
     .sort((a,b)=>(b.view.score||0)-(a.view.score||0));
@@ -57,7 +64,7 @@ function render(){
 function renderSummary(rows){
   const known=rows.filter(h=>h.view.pricePerNight);
   const avg=known.length?Math.round(known.reduce((a,h)=>a+h.view.pricePerNight,0)/known.length):0;
-  document.getElementById('summary').innerHTML=`<span class="summary-pill"><strong>${rows.length}</strong> кандидатів</span><span class="summary-pill">Сценарій: <strong>${state.scenario==='couple'?'2 дорослих':'2 дорослих + дитина 10 років'}</strong></span>${avg?`<span class="summary-pill">Середня ціна: <strong>${money(avg)}/ніч</strong></span>`:''}`;
+  document.getElementById('summary').innerHTML=`<span class="summary-pill"><strong>${rows.length}</strong> кандидатів</span><span class="summary-pill">Сценарій: <strong>${state.scenario==='couple'?'2 дорослих':'2 дорослих + дитина 10 років'}</strong></span>${state.region!=='all'?`<span class="summary-pill">Регіон: <strong>${state.region}</strong></span>`:''}${avg?`<span class="summary-pill">Середня ціна: <strong>${money(avg)}/ніч</strong></span>`:''}`;
 }
 function setupPhoto(node,h){
   const media=node.querySelector('.hotel-media');
