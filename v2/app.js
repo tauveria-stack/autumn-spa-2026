@@ -1,7 +1,7 @@
 const D=globalThis.Travel2Domain,R=globalThis.Travel2Ranking,A=globalThis.Travel2HotelBase,KEY='travel2.profile.v2';
 if(!D||!R||!A)throw Error('Travel2 runtime missing');
 let base,hotels=[],profile;
-const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const dest={ukraine:'Україна',europe:'Європа',sea:'Море',cruise:'Круїз',mountains:'Гори',anywhere:'Будь-куди',worldwide:'Worldwide'};
 const dateModes={exact:'Точні дати',flexible:'Гнучко',season:'Пора року',schoolHoliday:'Канікули'};
 const seasons={winter:'Зима',spring:'Весна',summer:'Літо',autumn:'Осінь'};
@@ -49,11 +49,26 @@ function dateSummary(){
  return `${holidays[d.schoolHoliday]||'Канікули'} канікули`;
 }
 function geographySummary(){const g=R.selectedGeography(profile);return g.length?g.map(k=>D.TAXONOMY[k].label).join(' + '):'вся Україна'}
+function pricePresentation(snapshot){
+ if(snapshot?.regular_price)return {price:`${snapshot.regular_price.toLocaleString('uk-UA')} грн / ніч`,detail:'Ціна відповідає вибраним датам'};
+ if(snapshot?.coverageStatus==='date_mismatch')return {price:'Актуальна ціна потребує перевірки',detail:'У базі є пропозиція для іншого періоду — її не використовуємо для вашого бюджету'};
+ return {price:'Ціна потребує перевірки',detail:'Для цього сценарію ще немає підтвердженої ціни'};
+}
+function availabilityPresentation(snapshot){
+ const v=snapshot?.availability;
+ if(v==='confirmed'||v===true)return 'Наявність підтверджена';
+ if(v==='unavailable'||v===false)return 'Немає місць';
+ return 'Наявність для ваших дат треба перевірити';
+}
+function resultCard(x){
+ const pp=pricePresentation(x.snapshot),budget=x.snapshot.regular_price?` · бюджет ${Math.round(x.budgetFit*100)}%`:'';
+ return `<article class="card"><div class="cardtop"><h3>${esc(x.hotel.name)}</h3><div class="score">${x.profileScore.toFixed(1)}<small>/10</small></div></div><div class="meta">${esc(x.hotel.location)} · ${(x.taxonomy||[]).map(k=>esc(D.TAXONOMY[k]?.label||k)).join(' · ')}</div><div class="price">${esc(pp.price)}</div><div class="hint">${esc(pp.detail)}</div><p>${esc(x.variant.verdict||'')}</p><div class="hint">Відповідність побажанням ${Math.round(x.preferenceFit*100)}%${budget} · ${esc(availabilityPresentation(x.snapshot))}</div></article>`;
+}
 function results(){
  const ranked=R.rankHotels(hotels,profile),n=R.nights(profile),limit=R.shortlistLimit(profile.maxShortlist),ages=profile.travellers.map(t=>Number(t.age)||0).join(', '),geo=['europe','sea','cruise'].includes(profile.destinationMode)?'':` · ${geographySummary()}`;
  $('profileSummary').textContent=`${profile.travellers.length} ос. (${ages} р.) · ${R.groupType(profile)==='family'?'сімейний':'дорослий'} профіль${geo} · ${dateSummary()}${n?` · ${n} ночей`:''} · ${Number(profile.budgetPerNight).toLocaleString('uk-UA')} грн/ніч`;
- $('status').textContent=`${ranked.length} кандидатів · shortlist до ${limit} · ranking ${D.normalizeRankingMode(profile.rankingMode)} · production hotel base`;
- $('results').innerHTML=ranked.map(x=>`<article class="card"><div class="cardtop"><h3>${esc(x.hotel.name)}</h3><div class="score">${x.profileScore.toFixed(1)}<small>/10</small></div></div><div class="meta">${esc(x.hotel.location)} · ${(x.taxonomy||[]).map(k=>esc(D.TAXONOMY[k]?.label||k)).join(' · ')}</div><div class="price">${x.snapshot.regular_price?x.snapshot.regular_price.toLocaleString('uk-UA')+' грн / ніч':'Ціна уточнюється'}</div><p>${esc(x.variant.verdict||'')}</p><div class="hint">budget ${Math.round(x.budgetFit*100)}% · preference ${Math.round(x.preferenceFit*100)}% · ${esc(x.snapshot.availability)}</div></article>`).join('')||'<p>Для цього режиму підключених кандидатів поки немає.</p>';
+ $('status').textContent=`${ranked.length} кандидатів · показуємо до ${limit} найкращих · база готелів актуальна`;
+ $('results').innerHTML=ranked.map(resultCard).join('')||'<p>Для цього режиму підключених кандидатів поки немає.</p>';
 }
 function draw(){controls();results()}
 Promise.all([fetch('profile.json',{cache:'no-store'}).then(r=>r.json()),A.loadHotelBase()]).then(([p,h])=>{base=p;base.version=2;base.geography=Array.isArray(base.geography)?base.geography:[];base.preferences={quiet:5,coziness:4,spa:5,waterparks:0,pools:4,amusement:0,nature:5,mountains:4,active:2,calm:5,kids:0,culture:2,entertainment:1,...base.preferences};hotels=h.hotels;profile=load();profile.date={...base.date,...profile.date};profile.preferences={...base.preferences,...profile.preferences};profile.geography=R.selectedGeography(profile);if(!Array.isArray(profile.travellers)||!profile.travellers.length)profile.travellers=structuredClone(base.travellers);profile.travellers=profile.travellers.slice(0,5).map((t,i)=>({label:`Мандрівник ${i+1}`,age:Math.max(0,Math.min(120,Number(t?.age)||0))}));document.body.dataset.travel2='ready';draw()}).catch(e=>{$('status').textContent='Помилка завантаження: '+e.message});
