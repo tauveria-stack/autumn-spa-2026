@@ -36,7 +36,8 @@ function regionGroup(h){return h.group||h.region||'Інші регіони'}
 function initRegions(){
   const select=document.getElementById('regionFilter');
   const order=['Карпати / Прикарпаття','Карпати / Буковина','Високі Карпати / Буковель','Закарпаття','Перлини України','Інші регіони'];
-  const groups=[...new Set(state.data.hotels.map(regionGroup))];
+  const existing=[...new Set(state.data.hotels.map(regionGroup))];
+  const groups=[...new Set([...order,...existing])];
   groups.sort((a,b)=>{
     const ai=order.indexOf(a),bi=order.indexOf(b);
     if(ai!==-1||bi!==-1)return (ai===-1?999:ai)-(bi===-1?999:bi);
