@@ -1,0 +1,11 @@
+const assert=require('assert');
+const fs=require('fs');
+const A=require('./hotel-base-adapter.js');
+const html=fs.readFileSync(__dirname+'/index.html','utf8');
+const app=fs.readFileSync(__dirname+'/app.js','utf8');
+assert(html.indexOf('hotel-base-adapter.js')>=0);
+assert(html.indexOf('hotel-base-adapter.js')<html.indexOf('app.js'));
+assert(A.DEFAULT_SOURCE.includes('/main/hotels.json'));
+assert(app.includes('A.loadHotelBase()'));
+assert(!app.includes('.slice(0,12)'));
+console.log('Travel 2.0 adapter integration: PASS');
