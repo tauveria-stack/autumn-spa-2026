@@ -33,12 +33,12 @@
       <div class="filters">
         <label><span>Регіон</span><select id="regionFilter"><option value="all">Усі</option></select></label>
         <label><span>Макс. ціна/ніч</span><select id="priceFilter">
-          <option value="999999">Без ліміту</option>
+          <option value="999999" selected>Без ліміту</option>
           <option value="5000">до 5 000 ₴</option>
-          <option value="7000" selected>до 7 000 ₴</option>
+          <option value="7000">до 7 000 ₴</option>
           <option value="9000">до 9 000 ₴</option>
         </select></label>
-        <label class="check"><input id="spaFilter" type="checkbox" checked /> <span>Критий SPA/басейн</span></label>
+        <label class="check"><input id="spaFilter" type="checkbox" /> <span>Критий SPA/басейн</span></label>
       </div>
     </section>
 
@@ -50,10 +50,10 @@
     <article class="hotel-card">
       <div class="hotel-media">
         <img class="hotel-photo" alt="" loading="lazy" />
-        <div class="photo-fallback">Фото готелю перевіряється</div>
+        <div class="photo-fallback">Фото поки відсутнє</div>
         <div class="rank-badge"></div>
         <div class="score-box"><span>Наша оцінка</span><strong class="score"></strong><small>/10</small></div>
-        <span class="photo-source">Фото: офіційний сайт</span>
+        <span class="photo-source">Фото поки відсутнє</span>
       </div>
 
       <div class="card-body">
@@ -107,9 +107,9 @@
   </template>
 
   <footer class="wrap footer">
-    <p>Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, осінньою придатністю, репутацією та співвідношенням ціна/якість. Ціни перевіряються саме на 24–31.10.2026, коли це доступно онлайн.</p>
+    <p>Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, зручністю для відпочинку наприкінці жовтня, репутацією та співвідношенням ціни і якості. Ціни перевіряємо саме на 24–31.10.2026, коли це доступно онлайн.</p>
   </footer>
 
-  <script src="app.js?v=20260913-3" defer></script>
+  <script src="app.js?v=20260914-3" defer></script>
 </body>
 </html>
