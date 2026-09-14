@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#132a24" />
+  <title>Куди поїхати? · Travel 2.0</title>
+  <style>
+    :root{--bg:#f5f3ec;--card:#fff;--ink:#18302a;--muted:#6d7974;--line:#dfe5e1;--accent:#1f6a55;--soft:#e8f2ee;--shadow:0 14px 40px rgba(25,49,42,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}.wrap{width:min(980px,calc(100% - 28px));margin:auto}.hero{background:linear-gradient(135deg,#102a23,#1d4d3d);color:#fff;padding:42px 0 34px}.eyebrow{margin:0 0 8px;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;opacity:.75}.hero h1{margin:0 0 12px;font-size:clamp(2rem,6vw,3.7rem);line-height:1}.lead{margin:0;max-width:760px;color:#dbe8e3}.back{display:inline-block;margin-top:18px;color:#fff;font-weight:800;text-decoration:none}.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px;margin:24px 0}.panel h2{margin:0 0 6px}.hint{margin:0 0 18px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:grid;gap:6px}.field span{font-size:.8rem;color:var(--muted);font-weight:700}.field.full{grid-column:1/-1}select,input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;color:var(--ink);font:inherit}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 12px;font-weight:700;cursor:pointer}.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.primary{background:var(--accent);color:#fff}.btn.secondary{background:#eef1ef;color:var(--ink)}.summary{margin-top:18px;padding:16px;border-radius:16px;background:var(--soft)}.summary strong{display:block;margin-bottom:6px}.summary p{margin:0;color:#36584d}.experimental{display:inline-flex;background:#f4ead8;color:#79501a;border-radius:999px;padding:6px 10px;font-size:.78rem;font-weight:800;margin-bottom:12px}@media(max-width:680px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:18px}.actions{display:grid}.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Travel 2.0</p>
+      <span class="experimental">Експериментальний режим</span>
+      <h1>Куди поїхати?</h1>
+      <p class="lead">Починаємо не з конкретного готелю, а з того, якої поїздки ви хочете. Поточний «Осінній SPA 2026» працює окремо й не залежить від цієї версії.</p>
+      <a class="back" href="../">← Осіння поїздка 2026</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Профіль поїздки</h2>
+      <p class="hint">Перший робочий зріз 2.0. Ці параметри стануть основою персонального рейтингу.</p>
+
+      <div class="grid">
+        <label class="field"><span>Куди</span><select id="destination"><option>Україна</option><option>Карпати</option><option>Море</option><option>Європа</option><option>Круїз</option><option>Будь-куди</option></select></label>
+        <label class="field"><span>Коли</span><select id="dateMode"><option>Точні дати</option><option>Гнучкі дати</option><option>Осінні канікули</option><option>Зимові канікули</option><option>Весняні канікули</option><option>Літо</option></select></label>
+        <label class="field"><span>Початок</span><input id="startDate" type="date" value="2026-10-24" /></label>
+        <label class="field"><span>Кінець</span><input id="endDate" type="date" value="2026-10-31" /></label>
+        <label class="field"><span>Дорослих</span><select id="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></label>
+        <label class="field"><span>Дітей</span><select id="children"><option selected>0</option><option>1</option><option>2</option><option>3</option></select></label>
+        <label class="field"><span>Бюджет за ніч</span><select id="budget"><option value="5000">до 5 000 ₴</option><option value="7000" selected>до 7 000 ₴</option><option value="9000">до 9 000 ₴</option><option value="999999">без жорсткого ліміту</option></select></label>
+        <label class="field"><span>Темп відпочинку</span><select id="tempo"><option>Спокійно</option><option>Баланс</option><option>Активно</option></select></label>
+
+        <div class="field full">
+          <span>Що важливо</span>
+          <div class="chips" id="prefs">
+            <button class="chip active" type="button">Тиша</button>
+            <button class="chip active" type="button">SPA</button>
+            <button class="chip active" type="button">Басейн</button>
+            <button class="chip" type="button">Гори</button>
+            <button class="chip" type="button">Екскурсії</button>
+            <button class="chip" type="button">Активності</button>
+            <button class="chip" type="button">Аквапарк</button>
+            <button class="chip" type="button">Розваги для дітей</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" id="buildProfile" type="button">Сформувати профіль</button>
+        <a class="btn secondary" href="../">Повернутися до готового рейтингу</a>
+      </div>
+
+      <div class="summary" id="summary" hidden></div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=>btn.classList.toggle('active')));
+    document.getElementById('buildProfile').addEventListener('click',()=>{
+      const destination=document.getElementById('destination').value;
+      const dateMode=document.getElementById('dateMode').value;
+      const start=document.getElementById('startDate').value;
+      const end=document.getElementById('endDate').value;
+      const adults=document.getElementById('adults').value;
+      const children=document.getElementById('children').value;
+      const budget=document.getElementById('budget').selectedOptions[0].textContent;
+      const tempo=document.getElementById('tempo').value;
+      const prefs=[...document.querySelectorAll('.chip.active')].map(x=>x.textContent.trim());
+      const box=document.getElementById('summary');
+      box.hidden=false;
+      box.innerHTML=`<strong>Профіль сформовано</strong><p>${destination} · ${dateMode}: ${start || '—'} — ${end || '—'} · ${adults} дорослих, ${children} дітей · ${budget} · ${tempo.toLowerCase()} · ${prefs.join(', ') || 'без додаткових пріоритетів'}.</p><p style="margin-top:8px">Наступний крок 2.0 — підключити цей профіль до нашої бази й показати персонально перерахований shortlist.</p>`;
+    });
+  </script>
+</body>
+</html>
