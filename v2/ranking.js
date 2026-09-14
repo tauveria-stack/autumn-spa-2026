@@ -45,14 +45,25 @@
     if(coverageMatchesProfile(p,coverage))return {...snapshot,coverageStatus:'matched'};
     return {...snapshot,availability:'needs_confirmation',source_regular_price:snapshot.regular_price,regular_price:null,best_offer_before_personal_discount:null,final_price_after_personal_discounts:null,totalPrice:null,coverageStatus:'date_mismatch'};
   }
+  function selectedPersonalDiscountTypes(p){
+    return [...new Set((Array.isArray(p?.personalDiscountTypes)?p.personalDiscountTypes:[]).filter(t=>D.DISCOUNT_TYPES.includes(t)))];
+  }
+  function matchingPersonalDiscounts(raw,p){
+    const selected=selectedPersonalDiscountTypes(p);
+    if(!selected.length)return [];
+    const discounts=Array.isArray(raw?.personalDiscounts)?raw.personalDiscounts:[];
+    return discounts.filter(d=>selected.includes(d?.discount_type));
+  }
   function adaptHotel(raw,p){
     const profileKind=groupType(p),variant=raw?.[profileKind];if(!variant?.eligible)return null;
     const hotel={id:raw.id,name:raw.name,location:raw.location,region:raw.region,group:raw.group,url:raw.url,indoorSpa:!!raw.indoorSpa,thermal:!!raw.thermal};
     const created=D.createSearchSnapshot({hotelId:raw.id,profileKind,variant,checkedAt:raw.checkedAt||null,source:raw.url||null});
-    const snapshot=constrainSnapshotToCoverage(created,p,raw?._sourceCoverage||null);
-    const base=Number(variant.score)||0,bfit=budgetFit(snapshot.regular_price,p?.budgetPerNight),pfit=preferenceFit(raw,variant,p),profileScore=clamp(base*0.65+bfit*2+pfit*1.5,0,10);
+    const discounted=D.attachDiscounts(created,matchingPersonalDiscounts(raw,p));
+    const snapshot=constrainSnapshotToCoverage(discounted,p,raw?._sourceCoverage||null);
+    const effectivePrice=snapshot.discount_status==='confirmed'?snapshot.final_price_after_personal_discounts:snapshot.best_offer_before_personal_discount||snapshot.regular_price;
+    const base=Number(variant.score)||0,bfit=budgetFit(effectivePrice,p?.budgetPerNight),pfit=preferenceFit(raw,variant,p),profileScore=clamp(base*0.65+bfit*2+pfit*1.5,0,10);
     return {hotel,snapshot,variant,profileKind,taxonomy:D.classifyUkraineHotel(hotel),profileScore,budgetFit:bfit,preferenceFit:pfit};
   }
   function rankHotels(rawHotels,p,options={}){const rankingMode=D.normalizeRankingMode(p?.rankingMode);const maxShortlist=shortlistLimit(options.maxShortlist ?? p?.maxShortlist);return (rawHotels||[]).map(h=>adaptHotel(h,p)).filter(Boolean).filter(x=>destinationAllowed(x.hotel,p)).sort((a,b)=>b.profileScore-a.profileScore || String(a.hotel.name||'').localeCompare(String(b.hotel.name||''),'uk')).slice(0,maxShortlist).map(x=>({...x,rankingMode}))}
-  return {DEFAULT_MAX_SHORTLIST,PREF_SIGNALS,shortlistLimit,groupType,nights,preferenceFit,budgetFit,selectedGeography,geographyAllowed,destinationAllowed,coverageMatchesProfile,constrainSnapshotToCoverage,adaptHotel,rankHotels};
+  return {DEFAULT_MAX_SHORTLIST,PREF_SIGNALS,shortlistLimit,groupType,nights,preferenceFit,budgetFit,selectedGeography,geographyAllowed,destinationAllowed,coverageMatchesProfile,constrainSnapshotToCoverage,selectedPersonalDiscountTypes,matchingPersonalDiscounts,adaptHotel,rankHotels};
 });
