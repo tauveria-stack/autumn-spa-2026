@@ -12,6 +12,7 @@
   const RANKING_MODES=['ukraine','worldwide','sea'];
   const DISCOUNT_TYPES=['combat_veteran','disability','disability_group_1','war_disability','birthday'];
   const textOf=h=>[h?.name,h?.location,h?.region,h?.group].filter(Boolean).join(' ').toLowerCase();
+  const positiveNumber=value=>{const n=Number(value);return Number.isFinite(n)&&n>0?n:null};
   function classifyUkraineHotel(h){
     const text=textOf(h), out=[];
     for(const [key,def] of Object.entries(TAXONOMY)){
@@ -23,14 +24,18 @@
   }
   function normalizeRankingMode(mode){return RANKING_MODES.includes(mode)?mode:'ukraine'}
   function createSearchSnapshot({hotelId,profileKind,variant={},checkedAt=null,source=null}){
-    const regular=Number(variant.pricePerNight)||null;
+    const legacy=positiveNumber(variant.pricePerNight);
+    const regular=positiveNumber(variant.regularPricePerNight ?? variant.regular_price) ?? legacy;
+    const best=positiveNumber(variant.bestOfferPerNight ?? variant.best_offer_before_personal_discount) ?? legacy ?? regular;
+    const priceStatus=variant.priceStatus||'unknown';
     return {
       schemaVersion:1,hotelId,profileKind,
-      availability:variant.priceStatus==='unknown'?'needs_confirmation':'candidate',
+      availability:priceStatus==='unknown'?'needs_confirmation':'candidate',
+      price_status:priceStatus,
       regular_price:regular,
-      best_offer_before_personal_discount:regular,
-      final_price_after_personal_discounts:regular,
-      totalPrice:Number(variant.total7Nights)||null,
+      best_offer_before_personal_discount:best,
+      final_price_after_personal_discounts:best,
+      totalPrice:positiveNumber(variant.totalPrice ?? variant.total7Nights),
       room:variant.room||null,
       inclusions:variant.included||'',meals:variant.meals||'',
       cancellation:variant.cancellation||'needs_confirmation',

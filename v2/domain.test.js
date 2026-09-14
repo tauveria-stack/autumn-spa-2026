@@ -11,6 +11,14 @@ const snap=D.createSearchSnapshot({hotelId:'h1',profileKind:'family',variant:{pr
 assert.equal(snap.regular_price,5000);
 assert.equal(snap.best_offer_before_personal_discount,5000);
 assert.equal(snap.final_price_after_personal_discounts,5000);
+assert.equal(snap.price_status,'known');
+
+const offerSnap=D.createSearchSnapshot({hotelId:'h2',profileKind:'couple',variant:{regularPricePerNight:7000,bestOfferPerNight:5600,totalPrice:39200,priceStatus:'estimate'}});
+assert.equal(offerSnap.regular_price,7000);
+assert.equal(offerSnap.best_offer_before_personal_discount,5600);
+assert.equal(offerSnap.final_price_after_personal_discounts,5600);
+assert.equal(offerSnap.totalPrice,39200);
+assert.equal(offerSnap.price_status,'estimate');
 
 const exclusive=D.attachDiscounts(snap,[
   {discount_type:'birthday',discount_value:10,stacking_rule:'exclusive'},
@@ -25,8 +33,13 @@ const stacked=D.attachDiscounts(snap,[
 ]);
 assert.equal(stacked.final_price_after_personal_discounts,4050);
 
+const discountedOffer=D.attachDiscounts(offerSnap,[{discount_type:'birthday',discount_value:10,stacking_rule:'stackable'}]);
+assert.equal(discountedOffer.regular_price,7000);
+assert.equal(discountedOffer.best_offer_before_personal_discount,5600);
+assert.equal(discountedOffer.final_price_after_personal_discounts,5040);
+
 const uncertain=D.attachDiscounts(snap,[{discount_type:'birthday',discount_value:10,stacking_rule:'needs_confirmation'}]);
 assert.equal(uncertain.final_price_after_personal_discounts,5000);
 assert.equal(uncertain.discount_status,'needs_confirmation');
 
-console.log('Travel 2.0 domain tests: PASS');
+console.log('Travel 2.0 domain/pricing-layer tests: PASS');
