@@ -43,6 +43,25 @@
     const n=Math.round((b-a)/86400000);
     return Number.isFinite(n)&&n>0?n:null;
   }
+  function profileYear(p){
+    const explicit=Math.trunc(Number(p?.date?.year));
+    if(explicit>=2020&&explicit<=2100)return explicit;
+    for(const value of [p?.date?.checkIn,p?.date?.flexFrom]){
+      const year=Math.trunc(Number(String(value||'').slice(0,4)));
+      if(year>=2020&&year<=2100)return year;
+    }
+    return null;
+  }
+  function seasonCoverageMatches(p,coverage){
+    if(coverage?.dateMode!=='exact')return false;
+    const duration=requestedDuration(p),coverageNights=exactCoverageNights(coverage),year=profileYear(p);
+    if(!duration||coverageNights!==duration||!year)return false;
+    const months={winter:[12,1,2],spring:[3,4,5],summer:[6,7,8],autumn:[9,10,11]}[p?.date?.season];
+    if(!months)return false;
+    const start=new Date(coverage.checkIn+'T00:00:00Z'),end=new Date(coverage.checkOut+'T00:00:00Z');
+    if(Number.isNaN(start.getTime())||Number.isNaN(end.getTime()))return false;
+    return start.getUTCFullYear()===year&&end.getUTCFullYear()===year&&months.includes(start.getUTCMonth()+1)&&months.includes(end.getUTCMonth()+1);
+  }
   function coverageMatchesProfile(p,coverage){
     if(!coverage)return true;
     if(coverage.dateMode!=='exact')return false;
@@ -53,6 +72,7 @@
       if(!from||!to||!duration||coverageNights!==duration)return false;
       return coverage.checkIn>=from&&coverage.checkOut<=to;
     }
+    if(mode==='season')return seasonCoverageMatches(p,coverage);
     return false;
   }
   function constrainSnapshotToCoverage(snapshot,p,coverage){
@@ -79,5 +99,5 @@
     return {hotel,snapshot,variant,profileKind,taxonomy:D.classifyUkraineHotel(hotel),profileScore,budgetFit:bfit,preferenceFit:pfit};
   }
   function rankHotels(rawHotels,p,options={}){const rankingMode=D.normalizeRankingMode(p?.rankingMode);const maxShortlist=shortlistLimit(options.maxShortlist ?? p?.maxShortlist);return (rawHotels||[]).map(h=>adaptHotel(h,p)).filter(Boolean).filter(x=>destinationAllowed(x.hotel,p)).sort((a,b)=>b.profileScore-a.profileScore || String(a.hotel.name||'').localeCompare(String(b.hotel.name||''),'uk')).slice(0,maxShortlist).map(x=>({...x,rankingMode}))}
-  return {DEFAULT_MAX_SHORTLIST,PREF_SIGNALS,shortlistLimit,groupType,requestedDuration,nights,preferenceFit,budgetFit,selectedGeography,geographyAllowed,destinationAllowed,exactCoverageNights,coverageMatchesProfile,constrainSnapshotToCoverage,selectedPersonalDiscountTypes,matchingPersonalDiscounts,adaptHotel,rankHotels};
+  return {DEFAULT_MAX_SHORTLIST,PREF_SIGNALS,shortlistLimit,groupType,requestedDuration,nights,preferenceFit,budgetFit,selectedGeography,geographyAllowed,destinationAllowed,exactCoverageNights,profileYear,seasonCoverageMatches,coverageMatchesProfile,constrainSnapshotToCoverage,selectedPersonalDiscountTypes,matchingPersonalDiscounts,adaptHotel,rankHotels};
 });
