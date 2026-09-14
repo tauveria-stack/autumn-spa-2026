@@ -7,6 +7,13 @@
   <meta name="description" content="Живий рейтинг SPA-готелів України на 24–31 жовтня 2026" />
   <title>Осінній SPA 2026</title>
   <link rel="stylesheet" href="styles.css?v=20260913-1" />
+  <style>
+    .mode-switch{margin:-18px auto 26px;position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#fff;border-radius:20px;padding:12px;box-shadow:0 14px 40px rgba(25,49,42,.08)}
+    .mode-link{display:block;padding:13px 15px;border-radius:13px;text-decoration:none;font-weight:800;line-height:1.25}
+    .mode-link small{display:block;margin-top:4px;font-weight:500;opacity:.75}
+    .mode-link.current{background:#18302a;color:#fff}.mode-link.v2{background:#e8f2ee;color:#1f6a55;border:1px solid #cfe3da}
+    @media(max-width:620px){.mode-switch{grid-template-columns:1fr;margin-top:-12px}.mode-link{padding:12px 13px}}
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -23,6 +30,11 @@
       </div>
     </div>
   </header>
+
+  <nav class="wrap mode-switch" aria-label="Режим пошуку">
+    <a class="mode-link current" href="#hotelGrid">Осіння поїздка 2026<small>Поточний перевірений рейтинг на 24–31 жовтня</small></a>
+    <a class="mode-link v2" href="v2/">Куди поїхати? · Travel 2.0<small>Новий персональний підбір за параметрами поїздки</small></a>
+  </nav>
 
   <main class="wrap">
     <section class="toolbar" aria-label="Фільтри">
