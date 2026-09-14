@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   const footer=document.querySelector('.footer p');
   if(footer) footer.textContent='Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, репутацією, співвідношенням ціни та якості й тим, наскільки готель підходить для відпочинку наприкінці жовтня. Ціни перевіряємо саме на 24–31.10.2026, коли це доступно онлайн.';
 
-  // Hero policy: the first image must identify the hotel/complex, not merely show scenery.
-  // Temporary overrides are allowed only when the image is tied to the exact property and represents it.
   const provisionalPhotos={
     'RESPECT Hotel & SPA':{src:'https://www.respecthotel.com.ua/wp-content/uploads/2026/07/zagal-1920x800-2.webp',alt:'RESPECT Hotel & SPA у Східниці',source:'офіційний сайт'},
     'Belle Royalle':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/117/11701/1170170/Otel-Belle-Royalle-Mukachevo-snjat-1170170z600.jpg',alt:'Belle Royalle — корпус готелю та територія',source:'Hotels24.ua'},
@@ -51,4 +49,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   new MutationObserver(applyProvisionalPhotos).observe(document.getElementById('hotelGrid'),{childList:true});
   applyProvisionalPhotos();
 });
-import('./app-20260914.js?v=20260914-4');
+import('./app-20260914.js?v=20260914-5');
