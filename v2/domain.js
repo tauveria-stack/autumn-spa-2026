@@ -11,6 +11,19 @@
   };
   const RANKING_MODES=['ukraine','worldwide','sea'];
   const DISCOUNT_TYPES=['combat_veteran','disability','disability_group_1','war_disability','birthday'];
+  const SCHOOL_HOLIDAY_CALENDARS={
+    kyiv:{
+      label:'Київ',
+      authority:'КМДА / Департамент освіти і науки',
+      source:'https://kyivcity.gov.ua/news/grafik_kanikul_20262027_kiv_rekomenduvav_strukturu_nastupnogo_shkilnogo_roku/',
+      status:'recommended',
+      checkedAt:'2026-09-15',
+      years:{
+        2026:{autumn:{from:'2026-10-26',to:'2026-11-01'},winter:{from:'2026-12-24',to:'2027-01-10'}},
+        2027:{winter:{from:'2026-12-24',to:'2027-01-10'},spring:{from:'2027-03-22',to:'2027-03-28'}}
+      }
+    }
+  };
   const textOf=h=>[h?.name,h?.location,h?.region,h?.group].filter(Boolean).join(' ').toLowerCase();
   const positiveNumber=value=>{const n=Number(value);return Number.isFinite(n)&&n>0?n:null};
   function classifyUkraineHotel(h){
@@ -23,6 +36,12 @@
     return [...new Set(out)];
   }
   function normalizeRankingMode(mode){return RANKING_MODES.includes(mode)?mode:'ukraine'}
+  function resolveSchoolHoliday({region='kyiv',year,holiday}={}){
+    const calendar=SCHOOL_HOLIDAY_CALENDARS[region];
+    const window=calendar?.years?.[Number(year)]?.[holiday];
+    if(!calendar||!window?.from||!window?.to)return null;
+    return {region,label:calendar.label,holiday,from:window.from,to:window.to,authority:calendar.authority,source:calendar.source,status:calendar.status,checkedAt:calendar.checkedAt};
+  }
   function createSearchSnapshot({hotelId,profileKind,variant={},checkedAt=null,source=null}){
     const legacy=positiveNumber(variant.pricePerNight);
     const regular=positiveNumber(variant.regularPricePerNight ?? variant.regular_price) ?? legacy;
@@ -79,5 +98,5 @@
     const r=priceAfterPersonalDiscounts(snapshot.best_offer_before_personal_discount,normalized);
     return {...snapshot,discounts:normalized,final_price_after_personal_discounts:r.price,discount_status:r.status,applied_discounts:r.applied};
   }
-  return {TAXONOMY,RANKING_MODES,DISCOUNT_TYPES,classifyUkraineHotel,normalizeRankingMode,createSearchSnapshot,normalizeDiscount,priceAfterPersonalDiscounts,attachDiscounts};
+  return {TAXONOMY,RANKING_MODES,DISCOUNT_TYPES,SCHOOL_HOLIDAY_CALENDARS,classifyUkraineHotel,normalizeRankingMode,resolveSchoolHoliday,createSearchSnapshot,normalizeDiscount,priceAfterPersonalDiscounts,attachDiscounts};
 });

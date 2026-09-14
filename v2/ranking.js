@@ -62,6 +62,14 @@
     if(Number.isNaN(start.getTime())||Number.isNaN(end.getTime()))return false;
     return start.getUTCFullYear()===year&&end.getUTCFullYear()===year&&months.includes(start.getUTCMonth()+1)&&months.includes(end.getUTCMonth()+1);
   }
+  function schoolHolidayCoverageMatches(p,coverage){
+    if(coverage?.dateMode!=='exact')return false;
+    const duration=requestedDuration(p),coverageNights=exactCoverageNights(coverage),year=profileYear(p);
+    if(!duration||coverageNights!==duration||!year)return false;
+    const holiday=D.resolveSchoolHoliday({region:p?.date?.schoolRegion||'kyiv',year,holiday:p?.date?.schoolHoliday});
+    if(!holiday)return false;
+    return coverage.checkIn>=holiday.from&&coverage.checkOut<=holiday.to;
+  }
   function coverageMatchesProfile(p,coverage){
     if(!coverage)return true;
     if(coverage.dateMode!=='exact')return false;
@@ -73,6 +81,7 @@
       return coverage.checkIn>=from&&coverage.checkOut<=to;
     }
     if(mode==='season')return seasonCoverageMatches(p,coverage);
+    if(mode==='schoolHoliday')return schoolHolidayCoverageMatches(p,coverage);
     return false;
   }
   function constrainSnapshotToCoverage(snapshot,p,coverage){
@@ -99,5 +108,5 @@
     return {hotel,snapshot,variant,profileKind,taxonomy:D.classifyUkraineHotel(hotel),profileScore,budgetFit:bfit,preferenceFit:pfit};
   }
   function rankHotels(rawHotels,p,options={}){const rankingMode=D.normalizeRankingMode(p?.rankingMode);const maxShortlist=shortlistLimit(options.maxShortlist ?? p?.maxShortlist);return (rawHotels||[]).map(h=>adaptHotel(h,p)).filter(Boolean).filter(x=>destinationAllowed(x.hotel,p)).sort((a,b)=>b.profileScore-a.profileScore || String(a.hotel.name||'').localeCompare(String(b.hotel.name||''),'uk')).slice(0,maxShortlist).map(x=>({...x,rankingMode}))}
-  return {DEFAULT_MAX_SHORTLIST,PREF_SIGNALS,shortlistLimit,groupType,requestedDuration,nights,preferenceFit,budgetFit,selectedGeography,geographyAllowed,destinationAllowed,exactCoverageNights,profileYear,seasonCoverageMatches,coverageMatchesProfile,constrainSnapshotToCoverage,selectedPersonalDiscountTypes,matchingPersonalDiscounts,adaptHotel,rankHotels};
+  return {DEFAULT_MAX_SHORTLIST,PREF_SIGNALS,shortlistLimit,groupType,requestedDuration,nights,preferenceFit,budgetFit,selectedGeography,geographyAllowed,destinationAllowed,exactCoverageNights,profileYear,seasonCoverageMatches,schoolHolidayCoverageMatches,coverageMatchesProfile,constrainSnapshotToCoverage,selectedPersonalDiscountTypes,matchingPersonalDiscounts,adaptHotel,rankHotels};
 });

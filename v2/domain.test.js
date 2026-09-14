@@ -7,6 +7,12 @@ assert.deepEqual(D.classifyUkraineHotel({location:'Київ'}),['pearls_ukraine'
 assert.equal(D.normalizeRankingMode('sea'),'sea');
 assert.equal(D.normalizeRankingMode('unknown'),'ukraine');
 
+const autumnHoliday=D.resolveSchoolHoliday({region:'kyiv',year:2026,holiday:'autumn'});
+assert.deepEqual({from:autumnHoliday.from,to:autumnHoliday.to,status:autumnHoliday.status},{from:'2026-10-26',to:'2026-11-01',status:'recommended'});
+assert.match(autumnHoliday.source,/kyivcity\.gov\.ua/);
+assert.equal(D.resolveSchoolHoliday({region:'kyiv',year:2026,holiday:'summer'}),null);
+assert.equal(D.resolveSchoolHoliday({region:'unknown',year:2026,holiday:'autumn'}),null);
+
 const snap=D.createSearchSnapshot({hotelId:'h1',profileKind:'family',variant:{pricePerNight:5000,total7Nights:35000,priceStatus:'known'}});
 assert.equal(snap.regular_price,5000);
 assert.equal(snap.best_offer_before_personal_discount,5000);
@@ -42,4 +48,4 @@ const uncertain=D.attachDiscounts(snap,[{discount_type:'birthday',discount_value
 assert.equal(uncertain.final_price_after_personal_discounts,5000);
 assert.equal(uncertain.discount_status,'needs_confirmation');
 
-console.log('Travel 2.0 domain/pricing-layer tests: PASS');
+console.log('Travel 2.0 domain/pricing/school-holiday tests: PASS');
