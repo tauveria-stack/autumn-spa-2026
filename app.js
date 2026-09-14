@@ -18,10 +18,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     'Червона Рута':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15091/1509125/Otel-Chervona-Ruta-Shayan-snjat-1509125z600.jpg',alt:'Червона Рута — котедж, басейн і територія',source:'Hotels24.ua'},
     'RIKKA Khust Thermal Resort':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15068/1506821/Otel-Rikka-Khust-Thermal-Resort-Hust-snjat-1506821z600.jpg',alt:'RIKKA Khust Thermal Resort — корпус і термальний басейн',source:'Hotels24.ua'},
     'Forest House':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/149/14987/1498780/Gostinica-Forest-House-Migovo-foto-1498780z600.jpg',alt:'Forest House — вхідна частина комплексу',source:'Hotels24.ua'},
-    'Чорна скеля':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/141/14178/1417816/Otel-Chorna-Skelya-Vinogradov-ceny-1417816z600.jpg',alt:'Чорна скеля — готельний комплекс і басейни',source:'Hotels24.ua'}
+    'Чорна скеля':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/141/14178/1417816/Otel-Chorna-Skelya-Vinogradov-ceny-1417816z600.jpg',alt:'Чорна скеля — готельний комплекс і басейни',source:'Hotels24.ua'},
+    'Solva Resort Medical & SPA':{src:'https://solvahotel.com/wp-content/uploads/2025/04/frontpage-hero-slide-desktop-1-upd.jpg',alt:'Solva Resort Medical & SPA — головний корпус комплексу',source:'офіційний сайт'},
+    'Воєводино':{src:'https://voevodyno.com/wp-content/uploads/2026/08/vasya.shtefaniak-29-optimized.jpg',alt:'Воєводино — корпус комплексу восени',source:'офіційний сайт'}
   };
-  // Existing images that are attractive but do not identify the property are suppressed until replaced.
-  const rejectCurrentHero=new Set(['Воєводино']);
+  const rejectCurrentHero=new Set();
 
   const applyProvisionalPhotos=()=>{
     document.querySelectorAll('.hotel-card').forEach(card=>{
