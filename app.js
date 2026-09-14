@@ -11,10 +11,17 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Temporary overrides are allowed only when the image is tied to the exact property and represents it.
   const provisionalPhotos={
     'RESPECT Hotel & SPA':{src:'https://www.respecthotel.com.ua/wp-content/uploads/2026/07/zagal-1920x800-2.webp',alt:'RESPECT Hotel & SPA у Східниці',source:'офіційний сайт'},
-    'SPA Hotel «Гора»':{src:'https://gorahotel.com/wp-content/uploads/2026/05/home-slide-1.jpg',alt:'SPA Hotel «Гора» — готельний комплекс у Поляниці',source:'офіційний сайт'}
+    'Belle Royalle':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/117/11701/1170170/Otel-Belle-Royalle-Mukachevo-snjat-1170170z600.jpg',alt:'Belle Royalle — корпус готелю та територія',source:'Hotels24.ua'},
+    'Phoenix Medical Resort':{src:'https://phoenix-sh.com.ua/wp-content/uploads/2026/08/rooms2.webp',alt:'Phoenix Medical Resort — готельні шале та територія',source:'офіційний сайт'},
+    'Kyivska Russ Resort Medical & Spa':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/127/12702/1270207/Gostinica-Kyivska-Russ-Resort-Medical-Spa-Shodnica-snjat-1270207z600.jpg',alt:'Kyivska Russ Resort Medical & Spa — корпус і басейн',source:'Hotels24.ua'},
+    'SPA Hotel «Гора»':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15075/1507560/1507560z600.jpg',alt:'SPA Hotel «Гора» — готельний комплекс, басейн і ліс',source:'Hotels24.ua'},
+    'Червона Рута':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15091/1509125/Otel-Chervona-Ruta-Shayan-snjat-1509125z600.jpg',alt:'Червона Рута — котедж, басейн і територія',source:'Hotels24.ua'},
+    'RIKKA Khust Thermal Resort':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15068/1506821/Otel-Rikka-Khust-Thermal-Resort-Hust-snjat-1506821z600.jpg',alt:'RIKKA Khust Thermal Resort — корпус і термальний басейн',source:'Hotels24.ua'},
+    'Forest House':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/149/14987/1498780/Gostinica-Forest-House-Migovo-foto-1498780z600.jpg',alt:'Forest House — вхідна частина комплексу',source:'Hotels24.ua'},
+    'Чорна скеля':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/141/14178/1417816/Otel-Chorna-Skelya-Vinogradov-ceny-1417816z600.jpg',alt:'Чорна скеля — готельний комплекс і басейни',source:'Hotels24.ua'}
   };
   // Existing images that are attractive but do not identify the property are suppressed until replaced.
-  const rejectCurrentHero=new Set(['Kyivska Russ Resort Medical & Spa','Воєводино']);
+  const rejectCurrentHero=new Set(['Воєводино']);
 
   const applyProvisionalPhotos=()=>{
     document.querySelectorAll('.hotel-card').forEach(card=>{
@@ -41,4 +48,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   new MutationObserver(applyProvisionalPhotos).observe(document.getElementById('hotelGrid'),{childList:true});
   applyProvisionalPhotos();
 });
-import('./app-20260914.js?v=20260914-3');
+import('./app-20260914.js?v=20260914-4');
