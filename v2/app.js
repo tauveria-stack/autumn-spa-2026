@@ -6,7 +6,7 @@ const dest={ukraine:'Україна',europe:'Європа',sea:'Море',cruise
 const dateModes={exact:'Точні дати',flexible:'Гнучко',season:'Пора року',schoolHoliday:'Канікули'};
 const seasons={winter:'Зима',spring:'Весна',summer:'Літо',autumn:'Осінь'};
 const holidays={autumn:'Осінні',winter:'Зимові',spring:'Весняні',summer:'Літні'};
-const prefs={quiet:'Тиша',spa:'SPA',pools:'Басейни',nature:'Природа',active:'Активність',kids:'Дітям',culture:'Екскурсії',entertainment:'Двіж'};
+const prefs={quiet:'Тиша',coziness:'Затишок',spa:'SPA',waterparks:'Аквапарки',pools:'Басейни',amusement:'Атракціони',nature:'Природа',mountains:'Гори',active:'Активний відпочинок',calm:'Спокійний відпочинок',kids:'Дітям',culture:'Екскурсії',entertainment:'Двіж'};
 function load(){try{return Object.assign(structuredClone(base),JSON.parse(localStorage.getItem(KEY))||{})}catch{return structuredClone(base)}}
 function save(){localStorage.setItem(KEY,JSON.stringify(profile))}
 function setDest(v){profile.destinationMode=v;profile.rankingMode=['sea','worldwide'].includes(v)?v:'ukraine';save();draw()}
@@ -41,4 +41,4 @@ function results(){
  $('results').innerHTML=ranked.map(x=>`<article class="card"><div class="cardtop"><h3>${esc(x.hotel.name)}</h3><div class="score">${x.profileScore.toFixed(1)}<small>/10</small></div></div><div class="meta">${esc(x.hotel.location)} · ${(x.taxonomy||[]).map(k=>esc(D.TAXONOMY[k]?.label||k)).join(' · ')}</div><div class="price">${x.snapshot.regular_price?x.snapshot.regular_price.toLocaleString('uk-UA')+' грн / ніч':'Ціна уточнюється'}</div><p>${esc(x.variant.verdict||'')}</p><div class="hint">budget ${Math.round(x.budgetFit*100)}% · preference ${Math.round(x.preferenceFit*100)}% · ${esc(x.snapshot.availability)}</div></article>`).join('')||'<p>Для цього режиму підключених кандидатів поки немає.</p>';
 }
 function draw(){controls();results()}
-Promise.all([fetch('profile.json',{cache:'no-store'}).then(r=>r.json()),A.loadHotelBase()]).then(([p,h])=>{base=p;base.version=2;base.preferences={quiet:5,spa:5,pools:4,nature:5,active:2,kids:0,culture:2,entertainment:1,...base.preferences};hotels=h.hotels;profile=load();profile.date={...base.date,...profile.date};document.body.dataset.travel2='ready';draw()}).catch(e=>{$('status').textContent='Помилка завантаження: '+e.message});
+Promise.all([fetch('profile.json',{cache:'no-store'}).then(r=>r.json()),A.loadHotelBase()]).then(([p,h])=>{base=p;base.version=2;base.preferences={quiet:5,coziness:4,spa:5,waterparks:0,pools:4,amusement:0,nature:5,mountains:4,active:2,calm:5,kids:0,culture:2,entertainment:1,...base.preferences};hotels=h.hotels;profile=load();profile.date={...base.date,...profile.date};profile.preferences={...base.preferences,...profile.preferences};document.body.dataset.travel2='ready';draw()}).catch(e=>{$('status').textContent='Помилка завантаження: '+e.message});

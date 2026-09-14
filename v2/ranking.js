@@ -5,7 +5,21 @@
 })(typeof globalThis!=='undefined'?globalThis:this,function(D){
   if(!D) throw new Error('Travel2Domain is required');
   const DEFAULT_MAX_SHORTLIST=20;
-  const PREF_SIGNALS={quiet:['тихо','тиша','камерн','ліс','природ'],spa:['spa','спа','саун','хамам','парн'],pools:['басейн','аква','терм'],nature:['ліс','гора','природ','річк','парк'],active:['актив','спорт','велосип','похід'],kids:['дитяч','kids','аніма','педагог'],culture:['екскурс','музей','замок','культур'],entertainment:['аніма','розваг','програм','бар','вечір']};
+  const PREF_SIGNALS={
+    quiet:['тихо','тиша','камерн','ліс','природ'],
+    coziness:['затиш','камерн','бутик','шале','котедж','домашн'],
+    spa:['spa','спа','саун','хамам','парн'],
+    waterparks:['аквапарк','водн','гірк'],
+    pools:['басейн','терм'],
+    amusement:['лунапарк','атракціон','розважальн','ігров'],
+    nature:['ліс','гора','природ','річк','парк'],
+    mountains:['гора','карпат','полонин','хребет','підйомник'],
+    active:['актив','спорт','велосип','похід','лижі','рафт'],
+    calm:['спокійн','релакс','відпочинок','усаміт','тиша'],
+    kids:['дитяч','kids','аніма','педагог'],
+    culture:['екскурс','музей','замок','культур'],
+    entertainment:['аніма','розваг','програм','бар','вечір','двіж']
+  };
   const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
   const shortlistLimit=value=>clamp(Number.isFinite(Number(value))?Math.trunc(Number(value)):DEFAULT_MAX_SHORTLIST,1,100);
   const groupType=p=>(p?.travellers||[]).some(t=>Number(t.age)<18)?'family':'couple';
