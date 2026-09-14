@@ -49,4 +49,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   new MutationObserver(applyProvisionalPhotos).observe(document.getElementById('hotelGrid'),{childList:true});
   applyProvisionalPhotos();
 });
-import('./app-20260914.js?v=20260914-5');
+import('./pearls-bootstrap.js?v=20260914-1').then(()=>import('./app-20260914.js?v=20260914-6'));
