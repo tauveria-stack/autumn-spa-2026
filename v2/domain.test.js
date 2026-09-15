@@ -39,6 +39,21 @@ const stacked=D.attachDiscounts(snap,[
 ]);
 assert.equal(stacked.final_price_after_personal_discounts,4050);
 
+const mixed=D.attachDiscounts(snap,[
+  {discount_type:'birthday',discount_value:5,stacking_rule:'stackable'},
+  {discount_type:'combat_veteran',discount_value:15,stacking_rule:'exclusive'}
+]);
+assert.equal(mixed.final_price_after_personal_discounts,4250);
+assert.deepEqual(mixed.applied_discounts,['combat_veteran']);
+
+const mixedStackWins=D.attachDiscounts(snap,[
+  {discount_type:'birthday',discount_value:10,stacking_rule:'stackable'},
+  {discount_type:'disability',discount_value:10,stacking_rule:'stackable'},
+  {discount_type:'combat_veteran',discount_value:15,stacking_rule:'exclusive'}
+]);
+assert.equal(mixedStackWins.final_price_after_personal_discounts,4050);
+assert.deepEqual(mixedStackWins.applied_discounts,['birthday','disability']);
+
 const discountedOffer=D.attachDiscounts(offerSnap,[{discount_type:'birthday',discount_value:10,stacking_rule:'stackable'}]);
 assert.equal(discountedOffer.regular_price,7000);
 assert.equal(discountedOffer.best_offer_before_personal_discount,5600);

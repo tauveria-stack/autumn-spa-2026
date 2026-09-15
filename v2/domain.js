@@ -81,17 +81,13 @@
     const ds=discounts.map(normalizeDiscount).filter(d=>d.discount_type&&d.discount_value>0);
     if(!(base>0)||!ds.length) return {price:base||null,status:'none',applied:[]};
     if(ds.some(d=>d.stacking_rule==='needs_confirmation')) return {price:base,status:'needs_confirmation',applied:[]};
+    const candidates=[];
     const stackable=ds.filter(d=>d.stacking_rule==='stackable');
-    if(stackable.length){
-      const price=stackable.reduce((p,d)=>applyDiscount(p,d),base);
-      return {price,status:'confirmed',applied:stackable.map(d=>d.discount_type)};
-    }
-    const exclusive=ds.filter(d=>d.stacking_rule==='exclusive');
-    if(exclusive.length){
-      const ranked=exclusive.map(d=>({d,price:applyDiscount(base,d)})).sort((a,b)=>a.price-b.price);
-      return {price:ranked[0].price,status:'confirmed',applied:[ranked[0].d.discount_type]};
-    }
-    return {price:base,status:'none',applied:[]};
+    if(stackable.length)candidates.push({price:stackable.reduce((p,d)=>applyDiscount(p,d),base),applied:stackable.map(d=>d.discount_type)});
+    for(const d of ds.filter(d=>d.stacking_rule==='exclusive'))candidates.push({price:applyDiscount(base,d),applied:[d.discount_type]});
+    if(!candidates.length)return {price:base,status:'none',applied:[]};
+    candidates.sort((a,b)=>a.price-b.price);
+    return {price:candidates[0].price,status:'confirmed',applied:candidates[0].applied};
   }
   function attachDiscounts(snapshot,discounts){
     const normalized=discounts.map(normalizeDiscount);
