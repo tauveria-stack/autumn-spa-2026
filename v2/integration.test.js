@@ -9,7 +9,8 @@ assert(html.indexOf('domain.js')>=0,'domain.js must be loaded');
 assert(html.indexOf('domain.js')<html.indexOf('ranking.js'),'domain.js must load before ranking.js');
 assert(html.indexOf('ranking.js')<html.indexOf('app.js'),'ranking.js must load before app.js');
 assert(!app.includes('.slice(0,12)'),'UI must not impose a hidden TOP-12 cap');
-assert(app.includes("$('results').innerHTML=ranked.map"),'UI must render the complete ranked shortlist returned by ranking engine');
+assert(!app.includes('shortlistLimit'),'UI must not reintroduce a shortlist-limit compatibility path');
+assert(app.includes("$('results').innerHTML=ranked.map"),'UI must render the complete ranked result set returned by ranking engine');
 
 const hotel={id:'demo',name:'Demo',location:'Яремче',region:'Івано-Франківська область',group:'Карпати',url:'https://example.test',checkedAt:'2026-09-14T00:00:00Z'};
 const variant={eligible:true,pricePerNight:6000,total7Nights:42000,priceStatus:'confirmed',room:'Standard',included:'SPA',meals:'breakfast',score:8};
@@ -33,9 +34,9 @@ assert.equal(pending.final_price_after_personal_discounts,6000);
 assert.equal(pending.discount_status,'needs_confirmation');
 
 const profile={destinationMode:'ukraine',rankingMode:'ukraine',travellers:[{age:35}],budgetPerNight:7000,preferences:{spa:5},maxShortlist:20};
-const many=Array.from({length:25},(_,i)=>({id:`h${i}`,name:`Hotel ${String(i).padStart(2,'0')}`,location:'Яремче',region:'Івано-Франківська область',group:'Карпати',couple:{...variant,score:10-i/10},family:{...variant,score:10-i/10}}));
-const shortlist=R.rankHotels(many,profile);
-assert.equal(shortlist.length,20,'default/profile shortlist must stop at 20');
-assert(shortlist[0].profileScore>=shortlist[19].profileScore,'shortlist must remain ranking ordered');
-assert.equal(R.rankHotels(many,{...profile,maxShortlist:7}).length,7,'maxShortlist must stay parameterized');
+const many=Array.from({length:55},(_,i)=>({id:`h${i}`,name:`Hotel ${String(i).padStart(2,'0')}`,location:'Яремче',region:'Івано-Франківська область',group:'Карпати',couple:{...variant,score:10-i/100},family:{...variant,score:10-i/100}}));
+const ranked=R.rankHotels(many,profile);
+assert.equal(ranked.length,55,'all qualifying candidates must survive ranking regardless of legacy maxShortlist');
+assert(ranked[0].profileScore>=ranked[54].profileScore,'full result set must remain ranking ordered');
+assert.equal(R.rankHotels(many,{...profile,maxShortlist:7}).length,55,'legacy maxShortlist must not cap candidate data');
 console.log('Travel 2.0 integration contract: PASS');
