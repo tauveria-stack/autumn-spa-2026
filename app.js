@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const spa=document.getElementById('spaFilter');if(spa)spa.checked=false;
   const footer=document.querySelector('.footer p');if(footer)footer.textContent='Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, репутацією, співвідношенням ціни та якості й тим, наскільки готель підходить для відпочинку наприкінці жовтня. Ціни перевіряємо саме на 24–31.10.2026, коли це доступно онлайн.';
   const provisionalPhotos={
+    'Верховель':{src:'https://media.joinup.travel/storage/hotel/33107/photos/otel-2.jpg',alt:'Готель Верховель у Верховині — головний корпус',source:'Join UP!'},
     '7 Днів':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
     'VitaPark Сонячний Прованс':{src:'https://optimahotels.com.ua/media/images/hotels/hotelphoto-c5e24c93-afd9-4e1b-9fec-2f152a5ca867.JPEG',alt:'VitaPark Сонячний Прованс — головний корпус у Сатанові',source:'Optima Hotels and Resorts'},
     'Dodo spa & hotel':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/506252655.jpg?k=8e10f20fdc7193567afce81fca52a1c547863aa6e5df577693d45e6b210227e3&o=',alt:'Dodo spa & hotel — номер готелю у Житомирі',source:'Booking.com'},
