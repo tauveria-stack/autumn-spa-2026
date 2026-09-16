@@ -1,0 +1,13 @@
+{
+  "automation_id":"6aa64f8b99e881919124d8ccb2f045e6",
+  "protocol_revision_set":{"manager":"Universal Manager Automation Protocol v1.3 DRAFT","production_context":"Universal Production Execution Protocol v1.2 DRAFT","personal_overlay":"Personal ChatGPT Operating Protocol v1.0 DRAFT"},
+  "started_at":"2026-09-16T18:38:42+03:00",
+  "lifecycle_state":"CHECKPOINT",
+  "current_cluster":"Ivano-Frankivsk city-SPA -> Bukovel/Polyanytsia new/renovated indoor-SPA",
+  "source_family":"official hotel sites + Booking/OTA",
+  "productive_evidence":{"ganz":"Official Ivano-Frankivsk GANZ confirms 2023 opening, quiet central street, Roman steam room + warm pool and SPA included; Booking remains 9.6/10 with 214 reviews/value 9.2. Exact 24-31 Oct quote was not exposed after bounded search, so no repeated dynamic-booking loop.","nadiya_palace":"New strong candidate: official site confirms wellness included with pool hydromassage/counter-current/geyser, Roman steam room, Finnish sauna and gym, plus direct-booking -13%; fresh Booking crawl 9.7/10 with >1100 reviews/value 9.5; price band starts around 5000 UAH from March 2026 aggregator evidence, target-date room selection still needs qualification.","rotation":"Low-yield exact-date GANZ branch transitioned materially to Bukovel/Polyanytsia new/renovated indoor-SPA; Eterna Hotel & Spa by Fomich identified from official group site with indoor pool, restaurant and SPA included, pending price/reputation/family-fit qualification."},
+  "photo_debt":{"resolved_recently":["derenivska-kupil","sribni-leleky-lutsk"],"active_missing":["bukovyna-chernivtsi","lh-hotel-spa-lviv"],"active_weak_hero":["dodo-spa-hotel"],"needs_review":["kyivska-russ"],"inventory":"not regression-closed"},
+  "next_ready":["qualify Eterna Hotel & Spa by Fomich","extract current Nadiya Palace price band and publish if value clears threshold","publish GANZ when price can be represented honestly without pretending exact availability","close Bukovyna/LH/Dodo hero debt and compare Kyivska Russ","continue new cluster/source rotation"],
+  "blocker":null,
+  "updated_at":"2026-09-16T18:48:00+03:00"
+}
