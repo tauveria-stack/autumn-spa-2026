@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const provisionalPhotos={
     '7 Днів':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
+    'VitaPark Сонячний Прованс':{src:'https://optimahotels.com.ua/media/images/hotels/hotelphoto-c5e24c93-afd9-4e1b-9fec-2f152a5ca867.JPEG',alt:'VitaPark Сонячний Прованс — головний корпус у Сатанові',source:'Optima Hotels and Resorts'},
+    'Dodo spa & hotel':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/506252655.jpg?k=8e10f20fdc7193567afce81fca52a1c547863aa6e5df577693d45e6b210227e3&o=',alt:'Dodo spa & hotel — номер готелю у Житомирі',source:'Booking.com'},
     'RESPECT Hotel & SPA':{src:'https://www.respecthotel.com.ua/wp-content/uploads/2026/07/zagal-1920x800-2.webp',alt:'RESPECT Hotel & SPA у Східниці',source:'офіційний сайт'},
     'Belle Royalle':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/117/11701/1170170/Otel-Belle-Royalle-Mukachevo-snjat-1170170z600.jpg',alt:'Belle Royalle — корпус готелю та територія',source:'Hotels24.ua'},
     'Phoenix Medical Resort':{src:'https://phoenix-sh.com.ua/wp-content/uploads/2026/08/rooms2.webp',alt:'Phoenix Medical Resort — готельні шале та територія',source:'офіційний сайт'},
