@@ -1,12 +1,8 @@
 document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.photo-fallback').forEach(el=>el.textContent='Фото поки відсутнє');
-  const price=document.getElementById('priceFilter');
-  if(price) price.value='999999';
-  const spa=document.getElementById('spaFilter');
-  if(spa) spa.checked=false;
-  const footer=document.querySelector('.footer p');
-  if(footer) footer.textContent='Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, репутацією, співвідношенням ціни та якості й тим, наскільки готель підходить для відпочинку наприкінці жовтня. Ціни перевіряємо саме на 24–31.10.2026, коли це доступно онлайн.';
-
+  const price=document.getElementById('priceFilter');if(price)price.value='999999';
+  const spa=document.getElementById('spaFilter');if(spa)spa.checked=false;
+  const footer=document.querySelector('.footer p');if(footer)footer.textContent='Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, репутацією, співвідношенням ціни та якості й тим, наскільки готель підходить для відпочинку наприкінці жовтня. Ціни перевіряємо саме на 24–31.10.2026, коли це доступно онлайн.';
   const provisionalPhotos={
     '7 Днів':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
     'VitaPark Сонячний Прованс':{src:'https://optimahotels.com.ua/media/images/hotels/hotelphoto-c5e24c93-afd9-4e1b-9fec-2f152a5ca867.JPEG',alt:'VitaPark Сонячний Прованс — головний корпус у Сатанові',source:'Optima Hotels and Resorts'},
@@ -25,31 +21,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     'Богольвар':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/100/10024/1002472/Otel-Bogolvar-Ujgorod-ceny-1002472z600.jpg',alt:'Богольвар — корпуси курорту та територія',source:'Hotels24.ua'},
     'Воєводино':{src:'https://funtime.com.ua/u/i/gallery/2023/01/voyevodyno-2-63cd0c80b201b.jpg',alt:'Воєводино — корпус комплексу та відкритий басейн',source:'Funtime.com.ua'}
   };
-  const rejectCurrentHero=new Set();
-
-  const applyProvisionalPhotos=()=>{
-    document.querySelectorAll('.hotel-card').forEach(card=>{
-      const name=card.querySelector('.hotel-name')?.textContent?.trim();
-      const media=card.querySelector('.hotel-media');
-      const img=card.querySelector('.hotel-photo');
-      const source=card.querySelector('.photo-source');
-      if(!media||!img||!source)return;
-      if(rejectCurrentHero.has(name)){
-        img.removeAttribute('src');
-        img.alt='';
-        media.classList.remove('has-photo');
-        source.textContent='Фото поки відсутнє';
-      }
-      const photo=provisionalPhotos[name];
-      if(!photo)return;
-      img.alt=photo.alt;
-      img.onload=()=>media.classList.add('has-photo');
-      img.onerror=()=>{media.classList.remove('has-photo');source.textContent='Фото поки відсутнє'};
-      img.src=photo.src;
-      source.textContent='Фото: '+photo.source;
-    });
-  };
-  new MutationObserver(applyProvisionalPhotos).observe(document.getElementById('hotelGrid'),{childList:true});
-  applyProvisionalPhotos();
+  const applyProvisionalPhotos=()=>{document.querySelectorAll('.hotel-card').forEach(card=>{const name=card.querySelector('.hotel-name')?.textContent?.trim(),media=card.querySelector('.hotel-media'),img=card.querySelector('.hotel-photo'),source=card.querySelector('.photo-source');if(!media||!img||!source)return;const photo=provisionalPhotos[name];if(!photo)return;img.alt=photo.alt;img.onload=()=>media.classList.add('has-photo');img.onerror=()=>{media.classList.remove('has-photo');source.textContent='Фото поки відсутнє'};img.src=photo.src;source.textContent='Фото: '+photo.source;});};
+  new MutationObserver(applyProvisionalPhotos).observe(document.getElementById('hotelGrid'),{childList:true});applyProvisionalPhotos();
 });
-import('./pearls-bootstrap.js?v=20260916-1').then(()=>import('./app-20260914.js?v=20260914-6'));
+import('./pearls-bootstrap.js?v=20260916-1').then(()=>import('./app-20260914.js?v=20260916-categories-1'));
