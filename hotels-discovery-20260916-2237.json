@@ -1,0 +1,25 @@
+{
+  "meta":{"updatedAt":"2026-09-16T22:37:00+03:00","status":"Discovery: under-covered western/north-central Pearls — Uzhhorod/Kamianytsia"},
+  "hotels":[{
+    "id":"verkhovyna-resort-kamianytsia",
+    "name":"Verkhovyna Resort Medical & Wellness",
+    "location":"Кам’яниця, біля Ужгорода",
+    "region":"Закарпатська область",
+    "group":"Перлини України",
+    "url":"https://verkhovyna-resort.com/",
+    "checkedAt":"2026-09-16T22:37:00+03:00",
+    "indoorSpa":true,
+    "thermal":false,
+    "lowPrice":false,
+    "budgetTrip":false,
+    "rareFind":true,
+    "nearbyAttractions":true,
+    "turnkey":false,
+    "categories":["rareFind","nearbyAttractions"],
+    "photo":{"status":"missing","heroQuality":"needs_review","checkedAt":"2026-09-16T22:37:00+03:00","source":"official site / Booking","qualityReason":"Official SPA and Pool Palace galleries exist; stable high-information exact-property pool/SPA hero URL still needs resolution."},
+    "availability":{"status":"needs_confirmation","title":"Сильний жовтневий кандидат; точний тариф 24–31.10 потрібно підтвердити","message":"Офіційний сайт підтверджує цілорічний критий Pool Palace, SPA Gallery, ресторани та 2+1 категорії. Поточний партнерський тариф стартує приблизно від 4950 грн/ніч, але exact-date 24–31.10 ще не зафіксований."},
+    "reputation":{"bookingScore":9.5,"bookingReviews":505,"valueScore":8.9,"notes":"Booking 2026: 9.5/10 на 505 відгуках, location 9.8, value 8.9. Official resort confirms 5-star hotel, medical centre, SPA complex, indoor pools and restaurants."},
+    "couple":{"eligible":true,"score":9.2,"pricePerNight":4950,"total7Nights":34650,"priceStatus":"approx_current_not_exact_dates","value":"9.0/10","meals":"сніданок","verdict":"Рідкісна знахідка: повноцінний 5★ wellness-resort біля Ужгорода з великим критим басейном і дуже сильною репутацією; орієнтир ціни потрапляє у наш робочий діапазон, але exact-date тариф треба підтвердити.","pros":["Booking 9.5/10, 505 відгуків; location 9.8","критий Pool Palace 25×12 м","SPA Gallery: хамам, фінська сауна, соляна та снігова кімнати, гідромасажний басейн","сніданок включено у базове проживання за актуальним партнерським тарифом","15 км до Ужгорода та окрема destination-програма"],"cons":["точна ціна 24–31.10 не підтверджена","SPA Gallery входить не в усі категорії номерів; Pool Palace — базове включення","hero-фото ще в photo debt"],"included":"Сніданок і Pool Palace за актуальним тарифним описом; SPA Gallery залежить від категорії номера."},
+    "family":{"eligible":true,"score":9.1,"pricePerNight":6050,"total7Nights":42350,"priceStatus":"estimate_from_current_extra_bed_rule","value":"8.8/10","meals":"сніданок","verdict":"Сильний 2+1-кандидат: офіційно є категорії 2+1, великий критий басейн і повноцінний resort-продукт; орієнтир сімейної ціни рахується з актуальної доплати 1100 грн/ніч і потребує exact-date підтвердження.","pros":["офіційні категорії номерів 2+1","критий Pool Palace 25×12 м працює незалежно від осінньої погоди","додаткове місце за актуальним партнерським тарифом 1100 грн/ніч зі сніданком","велика територія і близькість до Ужгорода"],"cons":["точний 2+1 тариф 24–31.10 треба підтвердити","SPA Gallery має категорійні обмеження","фінальний бюджет вищий за бюджетні сімейні варіанти"],"included":"Орієнтир: базове проживання + додаткове місце зі сніданком; Pool Palace включений, SPA Gallery залежить від категорії."}
+  }]
+}
