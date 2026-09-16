@@ -2,7 +2,7 @@ const nativeFetch=window.fetch.bind(window);
 window.fetch=async (input,init)=>{
   const url=typeof input==='string'?input:input?.url||'';
   if(!url.endsWith('hotels-20260914.json')) return nativeFetch(input,init);
-  const [baseRes,pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes]=await Promise.all([
+  const [baseRes,pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes]=await Promise.all([
     nativeFetch(input,init),
     nativeFetch('hotels-pearls-20260914.json',{cache:'no-store'}).catch(()=>null),
     nativeFetch('hotels-lowprice-20260916.json',{cache:'no-store'}).catch(()=>null),
@@ -11,7 +11,8 @@ window.fetch=async (input,init)=>{
     nativeFetch('hotels-discovery-20260916-1542.json',{cache:'no-store'}).catch(()=>null),
     nativeFetch('hotels-discovery-20260916-1940.json',{cache:'no-store'}).catch(()=>null),
     nativeFetch('hotels-discovery-20260916-2039.json',{cache:'no-store'}).catch(()=>null),
-    nativeFetch('hotels-discovery-20260916-2138.json',{cache:'no-store'}).catch(()=>null)
+    nativeFetch('hotels-discovery-20260916-2138.json',{cache:'no-store'}).catch(()=>null),
+    nativeFetch('hotels-discovery-20260916-2237.json',{cache:'no-store'}).catch(()=>null)
   ]);
   if(!baseRes.ok)return baseRes;
   const base=await baseRes.json();
@@ -23,6 +24,7 @@ window.fetch=async (input,init)=>{
   const bukovelDiscovery=bukovelDiscoveryRes?.ok?await bukovelDiscoveryRes.json():{hotels:[],meta:{}};
   const westernDiscovery=westernDiscoveryRes?.ok?await westernDiscoveryRes.json():{hotels:[],meta:{}};
   const ternopilDiscovery=ternopilDiscoveryRes?.ok?await ternopilDiscoveryRes.json():{hotels:[],meta:{}};
+  const westernPearl=westernPearlRes?.ok?await westernPearlRes.json():{hotels:[],meta:{}};
   const byId=new Map((base.hotels||[]).map(h=>[h.id,h]));
   (pearls.hotels||[]).forEach(h=>byId.set(h.id,h));
   (lowPrice.hotels||[]).forEach(h=>byId.set(h.id,h));
@@ -32,7 +34,8 @@ window.fetch=async (input,init)=>{
   (bukovelDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
   (westernDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
   (ternopilDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
-  return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...base.meta,...pearls.meta,...lowPrice.meta,...discovery.meta,...latestDiscovery.meta,...volynDiscovery.meta,...bukovelDiscovery.meta,...westernDiscovery.meta,...ternopilDiscovery.meta}}),{
+  (westernPearl.hotels||[]).forEach(h=>byId.set(h.id,h));
+  return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...base.meta,...pearls.meta,...lowPrice.meta,...discovery.meta,...latestDiscovery.meta,...volynDiscovery.meta,...bukovelDiscovery.meta,...westernDiscovery.meta,...ternopilDiscovery.meta,...westernPearl.meta}}),{
     status:200,
     headers:{'Content-Type':'application/json'}
   });
