@@ -1,50 +1,47 @@
 {
   "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
   "protocol_revision_set": {
-    "manager": "Universal Manager Automation Protocol v1.3 DRAFT / ANLCKQmgnQzcm3DyyhgJjOq63DEWbh3KqocpeuQDG3GuOoSpKZLBmhVkxmx0E1DTONs8cJbQ7ktzAWZbcNPMF_zI-lh7B72FTTcVmca-3x4",
-    "production_context": "Universal Production Execution Protocol v1.2 DRAFT / ANLCKQmoLYDiFl7V5_h2lWiz8rKd5mx7tWvxwC0SBI915SGVYXFOJre0U5H5quk9bt6VwVdX00s1OCmCoEaht5TaHZrJXGTlSAx34nZqHe0",
-    "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT / ANLCKQlPTT54aK931Mhibqea5eNhtMA-_K7pml3wvWUk83bhvzao7l8bkUjE4--D5mD4tgr6XYs8d2isUJ9EeqJ9McprbAFTtND4nK2yW68"
+    "manager": "Universal Manager Automation Protocol v1.3 DRAFT / requested revision token retained; direct Drive revision lookup returned 404 this run",
+    "production_context": "Universal Production Execution Protocol v1.2 DRAFT",
+    "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT"
   },
-  "started_at": "2026-09-16T16:20:21+03:00",
+  "started_at": "2026-09-16T16:37:48+03:00",
   "lifecycle_state": "CHECKPOINT",
-  "current_mission": "discovery-first expansion plus systemic photo-debt migration/audit",
-  "current_cluster": "Volyn / Lutsk -> western and north-central Pearls of Ukraine",
-  "current_source_family": "official hotel + Hotels24/OTA",
-  "latest_completed_unit": "verified current merged-feed architecture and durable Sribni Leleky candidate with stable-id photo metadata",
-  "last_productive_at": "2026-09-16T16:20:21+03:00",
+  "current_mission": "discovery-first expansion plus systemic photo-debt and hero-quality-debt closure",
+  "current_cluster": "western/north-central Pearls; bounded photo regression slice from user evidence",
+  "current_source_family": "official hotel + Hotels24/Booking evidence",
+  "latest_completed_unit": "generalized hero-information-value gate applied; Derenivska Kupil placeholder closed with stable-id canonical photo; Bukovyna/LH exact-property photo sources located; Dodo old generic-room hero classified weak",
+  "last_productive_at": "2026-09-16T16:47:00+03:00",
   "latest_durable_evidence": {
-    "candidate_file": "hotels-discovery-20260916-1542.json",
-    "candidate": "sribni-leleky-lutsk",
-    "photo_state": "resolved in canonical candidate record",
-    "frontend_photo_pipeline": "app-20260914.js reads h.photo first; broken image is marked client-side debt",
-    "legacy_debt": "app.js still contains NAME-keyed provisionalPhotos and remains migration debt"
+    "commit": "98af97377b6c71926c7c0d784c05176e0be36dcf",
+    "photo_fixed": "derenivska-kupil",
+    "photo_source": "Hotels24 exact-property main image; official Derenivska source independently confirms indoor Iris pool",
+    "identified_photo_debt": ["bukovyna-chernivtsi", "lh-hotel-spa-lviv"],
+    "identified_hero_quality_debt": ["dodo-spa-hotel legacy generic room", "kyivska-russ landscape needs comparative review"],
+    "legacy_debt": "app.js still contains NAME-keyed provisionalPhotos; migration remains open"
   },
   "rotation_history": [
-    {
-      "cluster": "Volyn / Lutsk",
-      "source_family": "official + Hotels24/OTA",
-      "outcome": "qualified and published candidate: Sribni Leleky; budgetTrip + nearbyAttractions; stable-id photo metadata present"
-    },
-    {
-      "cluster": "western/north-central Pearls of Ukraine",
-      "source_family": "regional discovery + official/OTA",
-      "outcome": "NEXT_READY after Volyn checkpoint; do not re-loop Lutsk known candidates"
-    }
+    {"cluster":"Volyn / Lutsk","source_family":"official + Hotels24/OTA","outcome":"Sribni Leleky published; user-visible old hero exposed hero-quality invariant"},
+    {"cluster":"western/north-central Pearls","source_family":"official + Hotels24/Booking","outcome":"bounded systemic photo regression audit: Derenivska fixed canonically; Bukovyna and LH exact photo sources found; Dodo pool evidence found"}
   ],
   "photo_debt": {
     "architecture": "migration_in_progress",
-    "canonical_rule": "hotel.photo keyed by stable hotel id",
+    "canonical_rule": "hotel.photo keyed by stable hotel id with technical status plus heroQuality",
     "legacy_name_map_present": true,
-    "known_resolved_fixture": "sribni-leleky-lutsk",
-    "known_regression_fixture": "verhovel",
-    "inventory_status": "not yet regression-closed; full merged-record inventory remains READY"
+    "resolved_this_run": ["derenivska-kupil"],
+    "active_known_missing": ["bukovyna-chernivtsi", "lh-hotel-spa-lviv"],
+    "active_known_weak_hero": ["dodo-spa-hotel legacy generic room", "kyivska-russ comparative review"],
+    "unavailable_after_search": [],
+    "inventory_status": "not regression-closed; full merged-record hero-quality inventory remains READY"
   },
   "blocker": null,
   "next_ready": [
-    "inventory merged published hotel ids for missing/broken/unresolved canonical photo metadata",
-    "migrate oldest obvious legacy NAME-keyed photos into stable-id canonical records without blocking discovery",
-    "rotate discovery to a materially different western/north-central cluster/source family and publish only qualified candidates"
+    "add stable-id canonical informative heroes for Bukovyna and LH from exact-property sources, preferring pool/SPA over generic exterior when direct image URL can be validated",
+    "replace Dodo generic room legacy hero with exact-property indoor pool image and migrate it out of NAME-keyed map",
+    "review Kyivska Russ landscape against available SPA/complex alternatives",
+    "continue full merged-record photo/hero-quality inventory without blocking discovery",
+    "rotate discovery to materially different under-covered cluster/source family after bounded debt slice"
   ],
-  "stop_reason": "restart-safe checkpoint reached; useful READY work remains for subsequent invocation",
-  "updated_at": "2026-09-16T16:20:21+03:00"
+  "stop_reason": "restart-safe productive checkpoint; useful READY work remains",
+  "updated_at": "2026-09-16T16:47:00+03:00"
 }
