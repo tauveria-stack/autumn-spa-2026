@@ -1,0 +1,50 @@
+{
+  "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
+  "protocol_revision_set": {
+    "manager": "Universal Manager Automation Protocol v1.3 DRAFT / ANLCKQmgnQzcm3DyyhgJjOq63DEWbh3KqocpeuQDG3GuOoSpKZLBmhVkxmx0E1DTONs8cJbQ7ktzAWZbcNPMF_zI-lh7B72FTTcVmca-3x4",
+    "production_context": "Universal Production Execution Protocol v1.2 DRAFT / ANLCKQmoLYDiFl7V5_h2lWiz8rKd5mx7tWvxwC0SBI915SGVYXFOJre0U5H5quk9bt6VwVdX00s1OCmCoEaht5TaHZrJXGTlSAx34nZqHe0",
+    "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT / ANLCKQlPTT54aK931Mhibqea5eNhtMA-_K7pml3wvWUk83bhvzao7l8bkUjE4--D5mD4tgr6XYs8d2isUJ9EeqJ9McprbAFTtND4nK2yW68"
+  },
+  "started_at": "2026-09-16T16:20:21+03:00",
+  "lifecycle_state": "CHECKPOINT",
+  "current_mission": "discovery-first expansion plus systemic photo-debt migration/audit",
+  "current_cluster": "Volyn / Lutsk -> western and north-central Pearls of Ukraine",
+  "current_source_family": "official hotel + Hotels24/OTA",
+  "latest_completed_unit": "verified current merged-feed architecture and durable Sribni Leleky candidate with stable-id photo metadata",
+  "last_productive_at": "2026-09-16T16:20:21+03:00",
+  "latest_durable_evidence": {
+    "candidate_file": "hotels-discovery-20260916-1542.json",
+    "candidate": "sribni-leleky-lutsk",
+    "photo_state": "resolved in canonical candidate record",
+    "frontend_photo_pipeline": "app-20260914.js reads h.photo first; broken image is marked client-side debt",
+    "legacy_debt": "app.js still contains NAME-keyed provisionalPhotos and remains migration debt"
+  },
+  "rotation_history": [
+    {
+      "cluster": "Volyn / Lutsk",
+      "source_family": "official + Hotels24/OTA",
+      "outcome": "qualified and published candidate: Sribni Leleky; budgetTrip + nearbyAttractions; stable-id photo metadata present"
+    },
+    {
+      "cluster": "western/north-central Pearls of Ukraine",
+      "source_family": "regional discovery + official/OTA",
+      "outcome": "NEXT_READY after Volyn checkpoint; do not re-loop Lutsk known candidates"
+    }
+  ],
+  "photo_debt": {
+    "architecture": "migration_in_progress",
+    "canonical_rule": "hotel.photo keyed by stable hotel id",
+    "legacy_name_map_present": true,
+    "known_resolved_fixture": "sribni-leleky-lutsk",
+    "known_regression_fixture": "verhovel",
+    "inventory_status": "not yet regression-closed; full merged-record inventory remains READY"
+  },
+  "blocker": null,
+  "next_ready": [
+    "inventory merged published hotel ids for missing/broken/unresolved canonical photo metadata",
+    "migrate oldest obvious legacy NAME-keyed photos into stable-id canonical records without blocking discovery",
+    "rotate discovery to a materially different western/north-central cluster/source family and publish only qualified candidates"
+  ],
+  "stop_reason": "restart-safe checkpoint reached; useful READY work remains for subsequent invocation",
+  "updated_at": "2026-09-16T16:20:21+03:00"
+}
