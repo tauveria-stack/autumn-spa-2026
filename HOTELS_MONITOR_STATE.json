@@ -1,47 +1,18 @@
 {
-  "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
-  "protocol_revision_set": {
-    "manager": "Universal Manager Automation Protocol v1.3 DRAFT / requested revision token retained; direct Drive revision lookup returned 404 this run",
-    "production_context": "Universal Production Execution Protocol v1.2 DRAFT",
-    "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT"
-  },
-  "started_at": "2026-09-16T16:37:48+03:00",
-  "lifecycle_state": "CHECKPOINT",
-  "current_mission": "discovery-first expansion plus systemic photo-debt and hero-quality-debt closure",
-  "current_cluster": "western/north-central Pearls; bounded photo regression slice from user evidence",
-  "current_source_family": "official hotel + Hotels24/Booking evidence",
-  "latest_completed_unit": "generalized hero-information-value gate applied; Derenivska Kupil placeholder closed with stable-id canonical photo; Bukovyna/LH exact-property photo sources located; Dodo old generic-room hero classified weak",
-  "last_productive_at": "2026-09-16T16:47:00+03:00",
-  "latest_durable_evidence": {
-    "commit": "98af97377b6c71926c7c0d784c05176e0be36dcf",
-    "photo_fixed": "derenivska-kupil",
-    "photo_source": "Hotels24 exact-property main image; official Derenivska source independently confirms indoor Iris pool",
-    "identified_photo_debt": ["bukovyna-chernivtsi", "lh-hotel-spa-lviv"],
-    "identified_hero_quality_debt": ["dodo-spa-hotel legacy generic room", "kyivska-russ landscape needs comparative review"],
-    "legacy_debt": "app.js still contains NAME-keyed provisionalPhotos; migration remains open"
-  },
-  "rotation_history": [
-    {"cluster":"Volyn / Lutsk","source_family":"official + Hotels24/OTA","outcome":"Sribni Leleky published; user-visible old hero exposed hero-quality invariant"},
-    {"cluster":"western/north-central Pearls","source_family":"official + Hotels24/Booking","outcome":"bounded systemic photo regression audit: Derenivska fixed canonically; Bukovyna and LH exact photo sources found; Dodo pool evidence found"}
-  ],
-  "photo_debt": {
-    "architecture": "migration_in_progress",
-    "canonical_rule": "hotel.photo keyed by stable hotel id with technical status plus heroQuality",
-    "legacy_name_map_present": true,
-    "resolved_this_run": ["derenivska-kupil"],
-    "active_known_missing": ["bukovyna-chernivtsi", "lh-hotel-spa-lviv"],
-    "active_known_weak_hero": ["dodo-spa-hotel legacy generic room", "kyivska-russ comparative review"],
-    "unavailable_after_search": [],
-    "inventory_status": "not regression-closed; full merged-record hero-quality inventory remains READY"
-  },
-  "blocker": null,
-  "next_ready": [
-    "add stable-id canonical informative heroes for Bukovyna and LH from exact-property sources, preferring pool/SPA over generic exterior when direct image URL can be validated",
-    "replace Dodo generic room legacy hero with exact-property indoor pool image and migrate it out of NAME-keyed map",
-    "review Kyivska Russ landscape against available SPA/complex alternatives",
-    "continue full merged-record photo/hero-quality inventory without blocking discovery",
-    "rotate discovery to materially different under-covered cluster/source family after bounded debt slice"
-  ],
-  "stop_reason": "restart-safe productive checkpoint; useful READY work remains",
-  "updated_at": "2026-09-16T16:47:00+03:00"
+  "automation_id":"6aa64f8b99e881919124d8ccb2f045e6",
+  "protocol_revision_set":{"manager":"Universal Manager Automation Protocol v1.3 DRAFT","production_context":"Universal Production Execution Protocol v1.2 DRAFT","personal_overlay":"Personal ChatGPT Operating Protocol v1.0 DRAFT"},
+  "started_at":"2026-09-16T17:39:12+03:00",
+  "lifecycle_state":"CHECKPOINT",
+  "current_mission":"discovery-first expansion plus systemic photo-debt and hero-quality-debt closure",
+  "current_cluster":"Ivano-Frankivsk destination-rich boutique/city SPA base",
+  "current_source_family":"Booking + OTA cross-check; bounded photo debt official/OTA cross-check",
+  "latest_completed_unit":"material cluster rotation from photo-regression slice to Ivano-Frankivsk city-SPA discovery; GANZ Hotel & Spa qualified as strong couple candidate pending exact 24-31 Oct price; hero-quality evidence strengthened for existing debt set",
+  "last_productive_at":"2026-09-16T17:47:00+03:00",
+  "latest_durable_evidence":{"discovery_candidate":"GANZ Hotel & Spa, Ivano-Frankivsk","candidate_evidence":"Booking 9.6/10, 214 reviews, value 9.2, indoor pool, sauna, spa, restaurant and continental breakfast; control tariff 14,250 UAH/3 nights = 4,750/night for Deluxe, not target-date quote","candidate_status":"qualified_not_published_exact_target_price_pending","photo_evidence":"Booking exposes exact-property pool imagery; future GANZ hero should prefer pool/SPA over generic room","existing_debt_evidence":"Bukovyna indoor pool/sauna confirmed; LH official SPA zone and sports pool confirmed; Dodo pool/jacuzzi/saunas reinforce generic-room heroQuality FAIL; Kyivska Russ official site confirms nature is part of product but SPA is also core, so landscape remains comparative review"},
+  "rotation_history":[{"cluster":"Volyn / Lutsk","source_family":"official + Hotels24/OTA","outcome":"Sribni Leleky published; old hero exposed hero-quality invariant"},{"cluster":"western/north-central Pearls","source_family":"official + Hotels24/Booking","outcome":"Derenivska fixed canonically; Bukovyna/LH sources identified; Dodo weak hero classified"},{"cluster":"Ivano-Frankivsk boutique/city SPA base","source_family":"Booking + OTA","outcome":"GANZ qualified: exceptional reputation and real indoor SPA; exact target-date price remains to verify before publication/value classification"}],
+  "photo_debt":{"architecture":"migration_in_progress","canonical_rule":"hotel.photo keyed by stable hotel id with technical status plus heroQuality","legacy_name_map_present":true,"resolved_recently":["derenivska-kupil","sribni-leleky-lutsk"],"active_known_missing":["bukovyna-chernivtsi","lh-hotel-spa-lviv"],"active_known_weak_hero":["dodo-spa-hotel legacy generic room"],"active_needs_review":["kyivska-russ landscape versus SPA/complex alternative"],"unavailable_after_search":[],"inventory_status":"not regression-closed; full merged-record technical + hero-quality inventory remains READY"},
+  "blocker":null,
+  "next_ready":["verify GANZ exact 24-31 Oct 2026 couple price and if value remains strong publish with informative exact-property pool/SPA hero or explicit tracked photo debt","close stable-id canonical informative heroes for Bukovyna and LH","replace Dodo generic-room legacy hero with exact-property pool/SPA image","compare Kyivska Russ landscape hero with SPA/complex alternatives","continue merged-record photo/hero inventory in bounded slices while rotating discovery onward after GANZ"],
+  "stop_reason":"restart-safe productive checkpoint; useful READY work remains",
+  "updated_at":"2026-09-16T17:47:00+03:00"
 }
