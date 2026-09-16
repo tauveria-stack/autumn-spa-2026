@@ -1,0 +1,47 @@
+{
+  "meta":{"updatedAt":"2026-09-16T20:39:00+03:00","status":"Discovery: western/north-central Pearls and destination-rich city SPA bases"},
+  "hotels":[
+    {
+      "id":"underhill-resort-spa-pidhiria",
+      "name":"UNDERHILL Resort & SPA",
+      "location":"Підгір’я / Богородчани",
+      "region":"Івано-Франківська область",
+      "group":"Перлини України",
+      "url":"https://underhill-resort.com.ua/",
+      "checkedAt":"2026-09-16T20:39:00+03:00",
+      "indoorSpa":true,
+      "thermal":false,
+      "lowPrice":true,
+      "budgetTrip":false,
+      "nearbyAttractions":true,
+      "turnkey":true,
+      "categories":["lowPrice","nearbyAttractions","turnkey"],
+      "photo":{"status":"missing","heroQuality":"needs_review","checkedAt":"2026-09-16T20:39:00+03:00","source":"official site","qualityReason":"Exact-property gallery exists; stable high-information SPA/pool hero URL still needs resolution."},
+      "availability":{"status":"needs_confirmation","title":"Поточний офіційний тариф опублікований","message":"Точну наявність одного номера на 24–31.10.2026 потрібно підтвердити; не блокує включення до каталогу."},
+      "reputation":{"bookingScore":9.3,"bookingReviews":659,"valueScore":9.2,"notes":"Booking 2026: 9.3/10 на 659 відгуках; location 9.2, value 9.2. Офіційний сайт підтверджує включені сніданок і SPA."},
+      "couple":{"eligible":true,"score":9.1,"pricePerNight":3900,"total7Nights":27300,"priceStatus":"current_published","value":"9.4/10","meals":"сніданок","verdict":"Низька ціна відносно продукту: поточний офіційний номер від 3900 грн/ніч для двох; сніданок, SPA, басейн, гідромасажний басейн, фінська сауна та римська парна включені.","pros":["Booking 9.3/10, 659 відгуків","сніданок і SPA включені","басейн зі збалансованою температурою та гідромасажний басейн","фінська сауна, римська парна, холодна купель","тиха територія; поруч Парк історії Землі"],"cons":["точна наявність 24–31.10 не підтверджена","SPA за правилами має денні години доступу","hero-фото ще в photo debt"],"included":"Сніданок, SPA, басейни, сауни/парна, спортзал, паркінг."},
+      "family":{"eligible":true,"score":9.0,"pricePerNight":null,"total7Nights":null,"priceStatus":"needs_confirmation","value":"9.2/10","meals":"сніданок","verdict":"Сильний 2+1-кандидат: Booking підтверджує сімейні номери, а відгуки прямо згадують відпочинок із дітьми; точну конфігурацію і тариф для дитини 10 років треба підтвердити.","pros":["сімейні номери","SPA і басейни незалежно від погоди","Парк історії Землі дає окреме дитяче дозвілля","сніданок включено","сильна репутація"],"cons":["точний тариф 2+1 не підтверджений","дитячі правила SPA треба уточнити"],"included":"Сніданок, SPA та базові готельні послуги; точний 2+1 тариф потребує підтвердження."}
+    },
+    {
+      "id":"lybid-plaza-khmelnytskyi",
+      "name":"Boutique Spa Casino Hotel Lybid Plaza",
+      "location":"Хмельницький",
+      "region":"Хмельницька область",
+      "group":"Перлини України",
+      "url":"https://hotel-plaza.com.ua/",
+      "checkedAt":"2026-09-16T20:39:00+03:00",
+      "indoorSpa":true,
+      "thermal":false,
+      "lowPrice":true,
+      "budgetTrip":true,
+      "nearbyAttractions":true,
+      "turnkey":false,
+      "categories":["budget","lowPrice","nearbyAttractions"],
+      "photo":{"status":"missing","heroQuality":"needs_review","checkedAt":"2026-09-16T20:39:00+03:00","source":"official site","qualityReason":"Official property gallery/SPA exists; stable informative pool/SPA hero URL still needs resolution."},
+      "availability":{"status":"needs_confirmation","title":"Поточні офіційні room rates опубліковані","message":"Точну наявність 24–31.10.2026 і конкретний тариф на всі 7 ночей потрібно підтвердити."},
+      "reputation":{"bookingScore":9.2,"bookingReviews":776,"valueScore":9.2,"notes":"Booking 2026: 9.2/10, 776 відгуків; location 9.5, value 9.2. Офіційний комплекс підтверджує SPA MAIAMI; Booking підтверджує indoor pool."},
+      "couple":{"eligible":true,"score":8.8,"pricePerNight":4400,"total7Nights":30800,"priceStatus":"current_published_reference","value":"9.0/10","meals":"потрібно підтвердити для конкретного тарифу","verdict":"Сильна міська SPA-база: офіційний сайт зараз показує SPA-access категорії від 4400 грн/ніч; Booking 9.2/10 і критий басейн.","pros":["Booking 9.2/10, 776 відгуків","критий басейн і SPA","центр Хмельницького","висока оцінка location 9.5","місто дає незалежне від погоди дозвілля"],"cons":["точна ціна 24–31.10 не підтверджена","харчування залежить від тарифу","hero-фото ще в photo debt"],"included":"SPA-access є в окремих офіційних категоріях; точний пакет на дати потребує підтвердження."},
+      "family":{"eligible":true,"score":8.9,"pricePerNight":3700,"total7Nights":25900,"priceStatus":"current_published_reference","value":"9.2/10","meals":"потрібно підтвердити","verdict":"Бюджетний міський 2+1-кандидат: офіційний Family room with double bed and SPA access зараз показаний за 3700 грн/ніч; точну місткість для дитини 10 років і тариф на наші дати треба підтвердити.","pros":["офіційна family SPA-access категорія","критий басейн/SPA","центр міста","Booking 9.2/10","додаткові міські розваги"],"cons":["місткість/ліжко для 10-річної дитини треба підтвердити","точна наявність і ціна 24–31.10 не підтверджені"],"included":"SPA access за назвою офіційної категорії; інші умови конкретного тарифу потребують підтвердження."}
+    }
+  ]
+}
