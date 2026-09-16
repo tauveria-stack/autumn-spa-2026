@@ -1,0 +1,24 @@
+{
+  "meta":{"updatedAt":"2026-09-16T21:38:00+03:00","status":"Discovery: Ternopil destination-rich family indoor-water base"},
+  "hotels":[{
+    "id":"aquapark-alligator-ternopil",
+    "name":"Hotel Aquapark Alligator",
+    "location":"Тернопіль",
+    "region":"Тернопільська область",
+    "group":"Перлини України",
+    "url":"https://alligator.te.ua/4",
+    "checkedAt":"2026-09-16T21:38:00+03:00",
+    "indoorSpa":true,
+    "thermal":false,
+    "lowPrice":false,
+    "budgetTrip":false,
+    "nearbyAttractions":true,
+    "turnkey":false,
+    "categories":["nearbyAttractions"],
+    "photo":{"status":"missing","heroQuality":"needs_review","checkedAt":"2026-09-16T21:38:00+03:00","source":"official site / Booking","qualityReason":"Exact-property galleries exist; high-information indoor aquapark/pool hero still needs a stable attributable URL."},
+    "availability":{"status":"needs_confirmation","title":"Готель і критий водний комплекс працюють; точний тариф 24–31.10 потрібно підтвердити","message":"Офіційний сайт підтверджує 2+1 конфігурації, сніданок і знижку 10% від 5 діб при прямому бронюванні; актуальна базова ціна номера на потрібні дати не відображається текстом."},
+    "reputation":{"bookingScore":8.6,"bookingReviews":963,"valueScore":8.8,"notes":"Booking 2026: 8.6/10 на 963 відгуках, value 8.8; indoor pool, SPA/wellness, restaurant and breakfast confirmed. Official complex confirms aquapark, hammam and SPA."},
+    "couple":{"eligible":true,"score":8.2,"pricePerNight":null,"total7Nights":null,"priceStatus":"needs_confirmation","value":"8.5/10","meals":"сніданок","verdict":"Міська SPA-база з великим критим водним комплексом; для пари цікава передусім як недорога база для Тернополя, але точний жовтневий тариф і вартість аквапарку/SPA треба підтвердити.","pros":["Booking 8.6/10, 963 відгуки; value 8.8","критий басейн і SPA/wellness","офіційно є хамам, сауни та аквапарк","сніданок включений у проживання","при прямому бронюванні від 5 діб офіційно заявлена знижка 10%"],"cons":["точна ціна 24–31.10 не підтверджена","доступ до аквапарку/SPA не підтверджений як включений у номер","готельний продукт простіший за преміальні resort-кандидати"],"included":"Сніданок; інші включення та фінальна ціна потребують підтвердження."},
+    "family":{"eligible":true,"score":9.0,"pricePerNight":null,"total7Nights":null,"priceStatus":"needs_confirmation","value":"9.1/10","meals":"сніданок","verdict":"Сильний осінній 2+1-кандидат завдяки критому аквапарку й басейнам: погода майже не впливає на дитяче дозвілля, а Тернопіль додає міську програму.","pros":["офіційні 2+1 конфігурації номерів із розкладною частиною","критий аквапарк — реальне дозвілля для 10-річної дитини","Booking позначає сімейні номери та indoor pool","сніданок включено","Тернопіль дає окрему програму поза готелем"],"cons":["актуальну дитячу доплату і доступ до аквапарку треба підтвердити","точний тариф 24–31.10 не підтверджений","hero-фото ще в photo debt"],"included":"Сніданок; фінальний бюджет 2+1 рахуємо після підтвердження номера, дитячої доплати та правил аквапарку/SPA."}
+  }]
+}
