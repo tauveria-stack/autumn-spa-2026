@@ -1,0 +1,26 @@
+{
+  "meta":{"updatedAt":"2026-09-16T19:40:00+03:00","status":"Discovery: Bukovel fringe low-season indoor-SPA value"},
+  "hotels":[
+    {
+      "id":"nikoletta-hotel-spa-polyanytsia",
+      "name":"Nikoletta Hotel & SPA",
+      "location":"Поляниця / Буковель",
+      "region":"Івано-Франківська область",
+      "group":"Карпати",
+      "url":"https://nikoletta-hotel.com/",
+      "checkedAt":"2026-09-16T19:40:00+03:00",
+      "indoorSpa":true,
+      "thermal":false,
+      "lowPrice":true,
+      "budgetTrip":true,
+      "nearbyAttractions":true,
+      "turnkey":true,
+      "categories":["budget","lowPrice","nearbyAttractions","turnkey"],
+      "photo":{"status":"missing","heroQuality":"needs_review","checkedAt":"2026-09-16T19:40:00+03:00","source":"official site","qualityReason":"Official site exposes indoor-pool imagery; stable direct hero URL still needs resolution."},
+      "availability":{"status":"needs_confirmation","title":"Опублікований low-season тариф охоплює 24–31.10","message":"Офіційний тариф діє до 31.10.2026; точну наявність одного номера на всі 7 ночей потрібно підтвердити."},
+      "reputation":{"notes":"Новий discovery-кандидат; репутаційну базу OTA ще треба окремо закрити. Офіційний сайт підтверджує критий підігрітий басейн, SPA, сауну, сніданок і парковку."},
+      "couple":{"eligible":true,"score":8.7,"pricePerNight":2850,"total7Nights":20250,"priceStatus":"published_seasonal","value":"9.3/10","meals":"сніданок","verdict":"Низька ціна: орієнтовно 20,3 тис. грн за 7 ночей для двох за опублікованим жовтневим тарифом; сніданок, SPA, критий підігрітий басейн і парковка включені.","pros":["low-season Standard 01.09–31.10: 2850 грн будні / 3000 грн вихідні","сніданок і SPA включені","критий підігрітий басейн працює у холодний сезон","сауна","близько 950 м до витягу №1 Буковеля"],"cons":["точна наявність 24–31.10 не підтверджена","OTA-репутацію ще треба закрити","hero-фото ще в photo debt"],"included":"Сніданок, SPA, парковка, BBQ-зона."},
+      "family":{"eligible":true,"score":8.9,"pricePerNight":2700,"total7Nights":18900,"priceStatus":"published_seasonal","value":"9.5/10","meals":"сніданок","verdict":"Бюджетна поїздка для 2+1: Mansard Triple має 3 місця і low-season тариф 2700 грн будні / 3000 грн вихідні; сніданок і SPA включені.","pros":["Mansard Triple розрахований на 3 гостей","low-season 31.08–31.10: 2700 грн будні / 3000 грн вихідні","сніданок + SPA включені","критий підігрітий басейн незалежно від погоди","Буковель дає додаткове дозвілля"],"cons":["точну наявність на 7 ночей треба підтвердити","правила дитячого доступу до SPA на офіційній сторінці номера не деталізовані","OTA-репутацію ще треба перевірити"],"included":"Сніданок, SPA, парковка, BBQ-зона."}
+    }
+  ]
+}
