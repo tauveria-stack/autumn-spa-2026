@@ -2,7 +2,7 @@ const nativeFetch=window.fetch.bind(window);
 window.fetch=async (input,init)=>{
   const url=typeof input==='string'?input:input?.url||'';
   if(!url.endsWith('hotels-20260914.json')) return nativeFetch(input,init);
-  const [baseRes,pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes]=await Promise.all([
+  const [baseRes,pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes]=await Promise.all([
     nativeFetch(input,init),
     nativeFetch('hotels-pearls-20260914.json',{cache:'no-store'}).catch(()=>null),
     nativeFetch('hotels-lowprice-20260916.json',{cache:'no-store'}).catch(()=>null),
@@ -12,7 +12,8 @@ window.fetch=async (input,init)=>{
     nativeFetch('hotels-discovery-20260916-1940.json',{cache:'no-store'}).catch(()=>null),
     nativeFetch('hotels-discovery-20260916-2039.json',{cache:'no-store'}).catch(()=>null),
     nativeFetch('hotels-discovery-20260916-2138.json',{cache:'no-store'}).catch(()=>null),
-    nativeFetch('hotels-discovery-20260916-2237.json',{cache:'no-store'}).catch(()=>null)
+    nativeFetch('hotels-discovery-20260916-2237.json',{cache:'no-store'}).catch(()=>null),
+    nativeFetch('hotels-helikon-20260917.json',{cache:'no-store'}).catch(()=>null)
   ]);
   if(!baseRes.ok)return baseRes;
   const base=await baseRes.json();
@@ -25,6 +26,7 @@ window.fetch=async (input,init)=>{
   const westernDiscovery=westernDiscoveryRes?.ok?await westernDiscoveryRes.json():{hotels:[],meta:{}};
   const ternopilDiscovery=ternopilDiscoveryRes?.ok?await ternopilDiscoveryRes.json():{hotels:[],meta:{}};
   const westernPearl=westernPearlRes?.ok?await westernPearlRes.json():{hotels:[],meta:{}};
+  const helikon=helikonRes?.ok?await helikonRes.json():{hotels:[],meta:{}};
   const byId=new Map((base.hotels||[]).map(h=>[h.id,h]));
   (pearls.hotels||[]).forEach(h=>byId.set(h.id,h));
   (lowPrice.hotels||[]).forEach(h=>byId.set(h.id,h));
@@ -35,6 +37,7 @@ window.fetch=async (input,init)=>{
   (westernDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
   (ternopilDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
   (westernPearl.hotels||[]).forEach(h=>byId.set(h.id,h));
+  (helikon.hotels||[]).forEach(h=>byId.set(h.id,h));
 
   // Canonical physical-property identity: the older `chervona-ruta` record and the
   // richer `chervona-ruta-shayan` record describe the same Chervona Ruta in Shayan.
@@ -42,7 +45,7 @@ window.fetch=async (input,init)=>{
   // rankings cannot be inflated by a duplicate property.
   if(byId.has('chervona-ruta-shayan')) byId.delete('chervona-ruta');
 
-  return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...base.meta,...pearls.meta,...lowPrice.meta,...discovery.meta,...latestDiscovery.meta,...volynDiscovery.meta,...bukovelDiscovery.meta,...westernDiscovery.meta,...ternopilDiscovery.meta,...westernPearl.meta}}),{
+  return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...base.meta,...pearls.meta,...lowPrice.meta,...discovery.meta,...latestDiscovery.meta,...volynDiscovery.meta,...bukovelDiscovery.meta,...westernDiscovery.meta,...ternopilDiscovery.meta,...westernPearl.meta,...helikon.meta}}),{
     status:200,
     headers:{'Content-Type':'application/json'}
   });
