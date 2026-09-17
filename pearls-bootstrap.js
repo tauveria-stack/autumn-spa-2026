@@ -35,6 +35,13 @@ window.fetch=async (input,init)=>{
   (westernDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
   (ternopilDiscovery.hotels||[]).forEach(h=>byId.set(h.id,h));
   (westernPearl.hotels||[]).forEach(h=>byId.set(h.id,h));
+
+  // Canonical physical-property identity: the older `chervona-ruta` record and the
+  // richer `chervona-ruta-shayan` record describe the same Chervona Ruta in Shayan.
+  // Keep only the newer canonical record so result counts, meal/filter support and
+  // rankings cannot be inflated by a duplicate property.
+  if(byId.has('chervona-ruta-shayan')) byId.delete('chervona-ruta');
+
   return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...base.meta,...pearls.meta,...lowPrice.meta,...discovery.meta,...latestDiscovery.meta,...volynDiscovery.meta,...bukovelDiscovery.meta,...westernDiscovery.meta,...ternopilDiscovery.meta,...westernPearl.meta}}),{
     status:200,
     headers:{'Content-Type':'application/json'}
