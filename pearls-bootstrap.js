@@ -39,11 +39,11 @@ window.fetch=async (input,init)=>{
   (westernPearl.hotels||[]).forEach(h=>byId.set(h.id,h));
   (helikon.hotels||[]).forEach(h=>byId.set(h.id,h));
 
-  // Canonical physical-property identity: the older `chervona-ruta` record and the
-  // richer `chervona-ruta-shayan` record describe the same Chervona Ruta in Shayan.
-  // Keep only the newer canonical record so result counts, meal/filter support and
-  // rankings cannot be inflated by a duplicate property.
+  // Canonical physical-property identity migrations. These pairs are supported by
+  // stronger property evidence (same locality + official site/contact), not by name.
+  // Keep the richer/newer stable-ID record so counts and rankings represent one property.
   if(byId.has('chervona-ruta-shayan')) byId.delete('chervona-ruta');
+  if(byId.has('solva-resort-medical-spa')) byId.delete('solva');
 
   return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...base.meta,...pearls.meta,...lowPrice.meta,...discovery.meta,...latestDiscovery.meta,...volynDiscovery.meta,...bukovelDiscovery.meta,...westernDiscovery.meta,...ternopilDiscovery.meta,...westernPearl.meta,...helikon.meta}}),{
     status:200,
