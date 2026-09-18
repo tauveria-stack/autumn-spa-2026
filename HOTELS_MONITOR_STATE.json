@@ -1,15 +1,53 @@
 {
-  "automation_id":"6aa64f8b99e881919124d8ccb2f045e6",
-  "protocol_revision_set":{"manager":"Universal Manager Automation Protocol v1.3 DRAFT / ANLCKQnIar-WTq5LFCZqxSVrW9Av_VMXvEjM8pbvbW4TGMEpve3zjhO4ABfEYZP9Fwp_o_t9XqHiP-sLj25zy8_EoVDGvTZfMvSiERVlWno","production_context":"Universal Production Execution Protocol v1.2 DRAFT / ANLCKQleWNeCHzkVTnDLRGXuF21LKdQTzGs7hjcbEFAyd3gV0fptcRv9MznKAc4DVDcCJcBfKHUAK17O06f7TAfWoWKBHCKdhsSsoQNro0I","personal_overlay":"Personal ChatGPT Operating Protocol v1.0 DRAFT / ANLCKQk3tBhIMMdGOloEBN9xAaMBzAgDQ-4p0amTiB8eIWkDgDepzYF_MWQBXXnsHve5lMamCbI0GhaUB95gZZtlMK9t3LgBH9fVyWMm-mk"},
-  "lifecycle_state":"CHECKPOINT",
-  "current_phase":"A",
-  "current_mission":"PHASE A — Helikon live-filter + physical-property identity/count + value-ranking regressions before photo debt",
-  "latest_completed_unit":"Added executable inventory-count ledger over the exact 11-feed runtime chain. It reports raw rows, unique stable IDs before physical migrations, exact-ID overlays, applied strong-evidence physical migrations, canonical physical-property count and canonical IDs; asserts Helikon presence and one-card Solva/Chervona Ruta invariants. This converts 35→34→31 reconciliation from narrative inference into a reproducible ledger slice.",
-  "last_productive_at":"2026-09-18T09:00:00+03:00",
-  "latest_durable_evidence":{"inventory_count_ledger_commit":"ebb37cfd15378f97075f873fe9988485d8891165","inventory_count_ledger_path":"tests/inventory-count-ledger.mjs","helikon_regression_test_commit":"5c3981f4c56d9b4c6857bf8908100da499eeb86c","helikon_regression_test_path":"tests/helikon-runtime-regression.mjs","meal_filter_code_commit":"53e79cc0b0da67bd0df620441f89c5c6cc80054f","runtime_nested_cache_commit":"69e973c376fa21e84c079c0596f3d4bd8651ad14","runtime_top_cache_commit":"18ea5e304fe1785bdf325b68356f5f78d52adf60","solva_identity_dedupe_commit":"116472b1bb8bde719d0f7b79646e2befcb1ad6af","offer_value_integrity_commit":"f2ecea8fac465a774e3e30a634c274cc0c87dfcc","live_verification":"Independent GitHub Pages interaction remains unavailable through current web path; published live acceptance is not promoted to PASS.","test_execution":"Both regression artifacts are persisted/readable but no repository execution runner is exposed by the current connector path; do not claim executed PASS."},
-  "architecture_status":{"physical_property_dedupe":"Chervona Ruta Shayan and Solva known duplicate identities resolved by strong-evidence migrations; executable ledger now locks these migrations.","offer_filter_integrity":"SYSTEMIC CODE FIXED + DURABLE REGRESSION ARTIFACT ADDED; published live acceptance pending.","count_regression":"EXECUTABLE LEDGER ADDED — exact runtime feed chain and known physical migrations encoded; execution/output still pending.","value_ranking":"SYSTEMIC INHERITANCE DEFECT FIXED — explicit offers without own value remain UNKNOWN rather than inheriting unrelated base-tariff value.","phase_a_gate":"NOT PASS"},
-  "blocker":"Independent interactive published Pages smoke is unavailable through current web path, so Helikon cannot be promoted to LIVE PASS. Current GitHub connector exposes repository reads/writes but no code runner, so exact inventory ledger numbers cannot yet be claimed from execution.",
-  "next_ready":["execute tests/inventory-count-ledger.mjs and preserve exact raw/unique/canonical counts","execute tests/helikon-runtime-regression.mjs and preserve output","independent published Helikon smoke for couple and family under `Триразове`","audit offer-specific value methodology/rank after live filter PASS","resume photo debt and targeted all-property smoke"],
-  "stop_reason":"tool boundary: current connector exposes no repository code runner and web path cannot interact with published Pages UI; executable regression/ledger artifacts are persisted for the next runner-capable slice",
-  "updated_at":"2026-09-18T09:00:00+03:00"
+  "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
+  "protocol_revision_set": {
+    "manager": "Universal Manager Automation Protocol v1.3 DRAFT / ANLCKQmSUlJUGW8y1Dr5BQoE6f36qx4bKx8TmGKOZbwOpoYbSUzpVEkJki7WyAu-PqmJw8UeLnBYq5FzZHS3ePBy9vxmsiX0PdsaIFxy1Ms",
+    "production_context": "Universal Production Execution Protocol v1.2 DRAFT / ANLCKQll83VXs0ZvwWzDSl54otBab7qJ0ZWCDHXyovVTOtBNWKa88X4lpTNNkawlFN8VhRap0qyyVI9l5slsbN5py_FDFlc1W3-AIsSNb-4",
+    "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT / ANLCKQmZiBYGDLxLicnMIog8RpI0eAlv1CkktDnENFzZjVMvUjSMBx1XW7wVjBVmCIb9TcH0Oo0XjuSwzaL7TZDYRp7J7XdUAZTeymEvjdc"
+  },
+  "lifecycle_state": "BLOCKED",
+  "current_phase": "A",
+  "current_mission": "Hotel Helikon, Yanoshi — close three-meals published acceptance only",
+  "current_node": "HELIKON_LIVE_FULLBOARD_ACCEPTANCE",
+  "scope_classification": {
+    "required_for_current_pass": [
+      "published Helikon remains visible after first-click narrowing to three-meals for couple",
+      "published Helikon remains visible after first-click narrowing to three-meals for family",
+      "selected displayed price is the compatible full-board offer: 20,766.67 UAH normalized couple / 31,150 UAH normalized family",
+      "base 15,400 UAH no-meal tariff does not masquerade as full-board",
+      "one negative-control hotel without compatible full-board fails the filter"
+    ],
+    "useful_but_deferrable": [
+      "Solva duplicate audit",
+      "35→34→31 count ledger execution",
+      "broader Helikon value-ranking audit",
+      "Phase A photo debt",
+      "general hotel discovery"
+    ]
+  },
+  "latest_completed_unit": "Applied proportional-effort tripwire to Helikon. Verified current default-branch runtime chain and data statically: index.html loads app.js meal-filter-2; app.js loads pearls-bootstrap identity-2 then app-20260914.js meal-filter-2; meal chip first click from all-selected narrows to the clicked meal; selectedView considers base plus explicit offers and chooses cheapest compatible total7Nights; Helikon feed contains full-board couple 17,800/6 normalized 20,766.67 and family 26,700/6 normalized 31,150. No additional code change is justified without a reproduced live failure.",
+  "last_productive_at": "2026-09-18T10:15:00+03:00",
+  "latest_durable_evidence": {
+    "scope_checkpoint": "this state commit",
+    "index_blob": "3704cab7e8a7e2106fa57e323b97fddff0f0ffda",
+    "app_blob": "ca700ab27aee480af6a7c7f875d58d50c36dac98",
+    "runtime_blob": "54ce90725539dcfa195f889e1e132f5b641dec05",
+    "bootstrap_blob": "643306bf13fc0f0c8aceab3eaa5b341913cd8e4d",
+    "helikon_feed_blob": "1f16ca9234501d35838c8f2ed49c2b005cb02555",
+    "meal_filter_code_commit": "53e79cc0b0da67bd0df620441f89c5c6cc80054f",
+    "helikon_regression_test_commit": "5c3981f4c56d9b4c6857bf8908100da499eeb86c",
+    "live_verification": "BLOCKED: current web path cannot access the published GitHub Pages URL interactively; therefore no LIVE PASS claim."
+  },
+  "architecture_status": {
+    "offer_filter_integrity": "STATIC DEFAULT-BRANCH PATH VERIFIED; LIVE PASS PENDING",
+    "phase_a_gate": "NOT PASS"
+  },
+  "blocker": "The remaining acceptance condition is specifically interactive published-site verification. Current web access returns the Pages URL as inaccessible, and the GitHub connector has no browser/UI execution surface. This is a tooling boundary, not evidence of a product failure.",
+  "next_ready": [
+    "independent published Helikon smoke for couple under three-meals",
+    "independent published Helikon smoke for family under three-meals",
+    "if and only if live FAIL reproduces: bounded diagnosis of the exact failing published path, smallest sufficient fix, one positive + one negative control, republish and re-smoke"
+  ],
+  "stop_reason": "BLOCKED_TOOLING: current acceptance boundary requires interactive published Pages verification; adjacent audits are deliberately deferred by proportional-effort/scope-containment.",
+  "updated_at": "2026-09-18T10:15:00+03:00"
 }
