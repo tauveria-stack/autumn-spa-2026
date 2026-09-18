@@ -57,7 +57,8 @@ window.fetch=async (input,init)=>{
     'solva-resort-medical-spa':{src:'https://solvahotel.com/wp-content/uploads/2025/04/frontpage-hero-slide-desktop-1-upd.jpg',alt:'Solva Resort Medical & SPA — головний корпус комплексу',source:'офіційний сайт'},
     'osonnya':{src:'https://osonnya.com/upload/medialibrary/4ce/q4p97o0hy0ts5k3uvn8ygp8oghdkbxn9.jpg',alt:'Осоння Карпати RESORT MEDICAL & SPA — корпус, басейн і територія',source:'офіційний сайт Осоння Карпати'},
     'nikoletta-hotel-spa-polyanytsia':{src:'https://nikoletta-hotel.com/wp-content/uploads/2026/09/nikoletta-hero-winter.webp',alt:'Nikoletta Hotel & SPA у Поляниці — головний корпус',source:'офіційний сайт Nikoletta Hotel & SPA'},
-    'aquapark-alligator-ternopil':{src:'https://alligator.te.ua/aligator.org.ua/userfiles/image/%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%B4%D0%BE%202%20%D0%BC%D0%B1.jpg',alt:'Hotel Alligator у Тернополі — готельний комплекс та аквапарк',source:'офіційний сайт ТОК Алігатор'}
+    'aquapark-alligator-ternopil':{src:'https://alligator.te.ua/aligator.org.ua/userfiles/image/%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%B4%D0%BE%202%20%D0%BC%D0%B1.jpg',alt:'Hotel Alligator у Тернополі — готельний комплекс та аквапарк',source:'офіційний сайт ТОК Алігатор'},
+    'underhill-resort-spa-pidhiria':{src:'https://cdn.karpaty.rocks/s3fs-public/photo/hotels24/underhill_resort_spa_hotel_1.jpg',alt:'UNDERHILL Resort & Spa Hotel у Підгір’ї — номер готелю',source:'Karpaty.rocks / Hotels24 attributable property photo'}
   };
   for(const [id,p] of Object.entries(photoById)){
     const h=byId.get(id);
