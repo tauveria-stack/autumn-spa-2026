@@ -5,48 +5,43 @@
     "production_context": "Universal Production Execution Protocol v1.2 DRAFT / ANLCKQnVA-JfIGBdL-OyIEcFpY_eC-c6e5MjSRrUXczw42nzD9-gd1SknBZcxofUSRPmHExce6akQHcuEe4U9vT_XjYu-AxrhEQ6Wu5ZeEI",
     "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT / ANLCKQmZiBYGDLxLicnMIog8RpI0eAlv1CkktDnENFzZjVMvUjSMBx1XW7wVjBVmCIb9TcH0Oo0XjuSwzaL7TZDYRp7J7XdUAZTeymEvjdc"
   },
-  "lifecycle_state": "PRODUCTIVE",
+  "lifecycle_state": "CHECKPOINT",
   "current_phase": "A",
-  "current_mission": "Hotel Helikon live acceptance waits for user probe; continue independent bounded READY work",
-  "current_node": "PHOTO_DEBT_TARGETED_CLOSURE",
+  "current_mission": "Helikon published three-meal acceptance after decisive user LIVE FAIL",
+  "current_node": "HELIKON_LIVE_FULLBOARD_REPAIR_WAITING_REPROBE",
   "waiting_user_probe": {
     "node": "HELIKON_LIVE_FULLBOARD_ACCEPTANCE",
-    "status": "BLOCKED_EXTERNAL",
-    "reason": "interactive published-site verification pending user availability; do not redo static Helikon work",
+    "status": "WAITING_USER_PROBE",
+    "reason": "owner-scoped runtime fix committed and cache-busted; published interactive acceptance must be re-probed after Pages propagation",
     "acceptance": [
-      "Helikon remains visible under three-meals for couple and family",
-      "selected display/price/ranking bind to compatible full-board offer",
+      "Helikon visible under only three-meals for couple and family",
+      "couple display uses compatible full-board offer: 20,767 UAH normalized 7-night equivalent from 17,800/6",
+      "family display uses compatible full-board offer: 31,150 UAH normalized 7-night equivalent from 26,700/6",
       "15,400 UAH base no-meal tariff cannot masquerade as full-board",
-      "one negative-control hotel without compatible full-board fails"
+      "negative-control hotel without compatible full-board fails"
     ]
   },
-  "latest_completed_unit": "HELIKON_VALUE_CONTAMINATION_AUDIT_CLOSED: commit f2ecea8fac465a774e3e30a634c274cc0c87dfcc was read back and verifies the bounded systemic fix. Explicit offers no longer inherit base-tariff `value` when the explicit offer lacks its own value; valueNum returns null for unknown and value sorting places UNKNOWN after scored offers. Current app-20260914.js still contains the same isolation semantics. No further value-polish is required for this acceptance boundary. COUNT_LEDGER remains evidence-ready but exact numeric execution output is deferred because the current connector exposes no repository code runner; no invented 35→34→31 attribution.",
-  "last_productive_at": "2026-09-18T11:30:36+03:00",
+  "latest_completed_unit": "HELIKON_NUMERIC_MEAL_CLASS_FIX: user live probe proved Helikon absent under only `Триразове` for both couple and family while Chervona Ruta remained. Canonical Helikon offers use meals=`3-разове харчування`; runtime mealClass recognized `трираз` and textual breakfast+obid+dinner but not numeric `3-раз`, so Helikon offers were deterministically classified null and filtered out. Smallest owner-scoped fix adds `3-раз`/`3 раз` recognition. Cache lineage bumped through app.js and index.html. Source fix commit 89249f452b9a82957ae58709167695e445898252; app cache commit 8f789001a0481c8af1d72544ff29174927ccec36; published entry cache commit 153c8acbdab7e256372601cc84ab0f860b0e666f. No LIVE PASS claimed until user reprobe.",
+  "last_productive_at": "2026-09-18T12:28:10+03:00",
   "latest_durable_evidence": {
+    "helikon_live_fail": "2026-09-18 user probe: only fullboard selected; couple and family each showed only Chervona Ruta; Helikon absent",
+    "helikon_data_blob": "1f16ca9234501d35838c8f2ed49c2b005cb02555",
+    "root_cause": "runtime mealClass did not recognize numeric `3-разове харчування` used by Helikon explicit offers",
+    "fix_commit": "89249f452b9a82957ae58709167695e445898252",
+    "app_cache_commit": "8f789001a0481c8af1d72544ff29174927ccec36",
+    "entry_cache_commit": "153c8acbdab7e256372601cc84ab0f860b0e666f",
     "helikon_value_fix_commit": "f2ecea8fac465a774e3e30a634c274cc0c87dfcc",
-    "current_app_blob": "54ce90725539dcfa195f889e1e132f5b641dec05",
-    "inventory_count_ledger_commit": "ebb37cfd15378f97075f873fe9988485d8891165",
-    "inventory_count_ledger_blob": "84d17c124de4a98699f77ed5a0fc7ff3d8578192",
     "solva_dedupe_commit": "116472b1bb8bde719d0f7b79646e2befcb1ad6af",
-    "helikon_static_checkpoint_commit": "10f7ac33dc568855b3fd90ed8a281111452b4d64",
     "helikon_live_verification": "WAITING_USER_PROBE; no LIVE PASS claim"
   },
-  "completed_independent_nodes": [
-    "SOLVA_PHYSICAL_DEDUPE",
-    "HELIKON_VALUE_CONTAMINATION"
-  ],
-  "deferred": [
-    {
-      "node": "COUNT_LEDGER_35_34_31",
-      "reason": "Executable 11-feed ledger exists and is readable, but exact numeric output cannot be honestly claimed without a repository runner. UI result count is proven to be post-selectedView/matches filtered rows, while canonical physical count is a separate ledger quantity. Preserve and execute when a runner is available; do not block independent work."
-    }
-  ],
-  "blocker": "Helikon final live acceptance requires interactive published-site user probe; count-ledger exact numeric output additionally awaits runner capability. Both are branch-local.",
+  "completed_independent_nodes": ["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION"],
+  "deferred": [{"node":"COUNT_LEDGER_35_34_31","reason":"exact numeric execution output still requires executable runner; do not invent attribution"}],
+  "blocker": "Only final published interactive reprobe after Pages propagation; source/data mismatch itself is fixed.",
   "next_ready": [
-    "Phase A photo debt: use existing 17-entry mapping evidence; reconcile only the 12 active stable-ID mappings, preserve information first, stop when canonical photo contract is handoff-ready",
-    "resume discovery of new strong hotels for 24–31.10.2026 for couple and 2+1 child age 10",
-    "when user says they can check, immediately return to Helikon published live probe without replay"
+    "user reprobe: couple + only Триразове; expect Helikon plus correct compatible offer",
+    "user reprobe: family + only Триразове; expect Helikon plus correct compatible offer",
+    "if reprobe PASS, close Helikon and resume photo debt then discovery; if FAIL, classify new evidence and change method"
   ],
-  "stop_reason": null,
-  "updated_at": "2026-09-18T11:30:36+03:00"
+  "stop_reason": "published interactive acceptance requires external browser/user probe after deployment propagation",
+  "updated_at": "2026-09-18T12:28:10+03:00"
 }
