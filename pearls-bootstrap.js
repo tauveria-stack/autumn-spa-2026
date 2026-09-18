@@ -39,9 +39,9 @@ window.fetch=async (input,init)=>{
   (westernPearl.hotels||[]).forEach(h=>byId.set(h.id,h));
   (helikon.hotels||[]).forEach(h=>byId.set(h.id,h));
 
-  // Canonical photo ownership registry. This restores previously verified photos by
-  // stable physical-property ID after the unsafe name-keyed fallback was removed.
-  // Existing canonical hotel.photo always wins; registry entries never cross IDs.
+  // Canonical photo ownership registry. Every entry is bound to one stable physical-property ID.
+  // Existing resolved canonical hotel.photo wins; explicit source 'missing' debt is replaced only by
+  // a registry asset whose property provenance was independently verified.
   const photoById={
     'verhovel':{src:'https://media.joinup.travel/storage/hotel/33107/photos/otel-2.jpg',alt:'Готель Верховель у Верховині — головний корпус',source:'Join UP!'},
     '7-dniv-kamianets':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
@@ -55,16 +55,17 @@ window.fetch=async (input,init)=>{
     'forest-house':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/149/14987/1498780/Gostinica-Forest-House-Migovo-foto-1498780z600.jpg',alt:'Forest House — вхідна частина комплексу',source:'Hotels24.ua'},
     'chorna-skelya':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/141/14178/1417816/Otel-Chorna-Skelya-Vinogradov-ceny-1417816z600.jpg',alt:'Чорна скеля — готельний комплекс і басейни',source:'Hotels24.ua'},
     'solva-resort-medical-spa':{src:'https://solvahotel.com/wp-content/uploads/2025/04/frontpage-hero-slide-desktop-1-upd.jpg',alt:'Solva Resort Medical & SPA — головний корпус комплексу',source:'офіційний сайт'},
-    'osonnya':{src:'https://osonnya.com/upload/medialibrary/4ce/q4p97o0hy0ts5k3uvn8ygp8oghdkbxn9.jpg',alt:'Осоння Карпати RESORT MEDICAL & SPA — корпус, басейн і територія',source:'офіційний сайт Осоння Карпати'}
+    'osonnya':{src:'https://osonnya.com/upload/medialibrary/4ce/q4p97o0hy0ts5k3uvn8ygp8oghdkbxn9.jpg',alt:'Осоння Карпати RESORT MEDICAL & SPA — корпус, басейн і територія',source:'офіційний сайт Осоння Карпати'},
+    'nikoletta-hotel-spa-polyanytsia':{src:'https://nikoletta-hotel.com/wp-content/uploads/2026/09/nikoletta-hero-winter.webp',alt:'Nikoletta Hotel & SPA у Поляниці — головний корпус',source:'офіційний сайт Nikoletta Hotel & SPA'},
+    'aquapark-alligator-ternopil':{src:'https://alligator.te.ua/aligator.org.ua/userfiles/image/%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%B4%D0%BE%202%20%D0%BC%D0%B1.jpg',alt:'Hotel Alligator у Тернополі — готельний комплекс та аквапарк',source:'офіційний сайт ТОК Алігатор'}
   };
   for(const [id,p] of Object.entries(photoById)){
     const h=byId.get(id);
-    if(h&&!h.photo) h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'migrated verified legacy mapping 2026-09-18'};
+    if(h&&(!h.photo||h.photo.status==='missing')) h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'stable canonical-ID mapping; attributable source verified 2026-09-18'};
   }
 
   // Canonical physical-property identity migrations. These pairs are supported by
   // stronger property evidence (same locality + official site/contact), not by name.
-  // Keep the richer/newer stable-ID record so counts and rankings represent one property.
   if(byId.has('chervona-ruta-shayan')) byId.delete('chervona-ruta');
   if(byId.has('solva-resort-medical-spa')) byId.delete('solva');
 
