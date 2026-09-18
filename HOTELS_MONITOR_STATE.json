@@ -3,79 +3,17 @@
   "lifecycle_state": "PRODUCTIVE",
   "current_phase": "A",
   "current_mission": "Systemic canonical photo coverage/ownership closure",
-  "current_node": "PHOTO_RUNTIME_ENUMERATION_LOADABILITY",
-  "helikon_live_acceptance": {
-    "status": "PASS",
-    "couple_fullboard": "20,767 UAH / normalized 7-night equivalent",
-    "family_fullboard": "31,150 UAH / normalized 7-night equivalent",
-    "evidence": "user published-site screenshots after numeric 3-разове normalization"
-  },
-  "latest_completed_unit": "Lybid Plaza daytime facade accepted by user and bound to stable canonical ID lybid-plaza-khmelnytskyi. Canonical photo registry commit c9ea7a3a0a00cb950e37eee594a4ab568395bd89. Known photo repair/source-resolution mappings now 17; explicit MISSING in active repair path now 0. Exact all-card runtime enumeration and published loadability/no-cross-ID smoke remain before photo-node closure.",
-  "last_productive_at": "2026-09-18T23:30:00+03:00",
-  "protocol_auto_refresh": {
-    "status": "CHANGED_ADOPTED",
-    "drive_revision_ids": {
-      "manager": "ANLCKQl2TSVA4g1WkH-HB5WbJ6oGffKlTCD-gO_8Ka_DDfzsZL2cLLI8Y_0h5tHCBDyZMsyqIkBK7xMZyJUQgIzDZ03lGaj4ysTtbEstRoU",
-      "production": "ANLCKQmAqvuGDPA2Cs4ylnabT3dXtzOb0tL8YtmiexdKGcB1QPYF8F_1sxcYOcGcqeAIDM3xO9eXy5g9PQDd9dnRhhGotYn9NkKpaCk_7LU",
-      "personal": "16"
-    },
-    "checked_at": "2026-09-18T23:10:25+03:00",
-    "compatibility": "PASS; L2/L3 preserved; new decision-sufficient validation semantics directly apply to current low-risk photo node"
-  },
-  "latest_durable_evidence": {
-    "root_cause_commit": "2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
-    "photo_registry_fix_commit": "c08609b507b690fd50abdfae7206513e42890e4d",
-    "osonnia_photo_commit": "e3784ae95eba3ee1ce98c18a41df7415b97bfb99",
-    "nikoletta_alligator_photo_commit": "eaa159a3df41ba396dd474e3019ca30d329d1642",
-    "missing_source_resolution_commit": "7076ca7f6373f3b9bad91d82b5817cbbaf30a897",
-    "underhill_photo_commit": "22599adaf638f7b619a796f1ec10c177c8f79ff8",
-    "runtime_enumerator_commit": "aba60c4dd873e764e68a5519ec9b33722a885e20",
-    "coverage_artifact": "PHOTO_COVERAGE_20260918.md",
-    "known_resolved_id_mappings": 17,
-    "explicit_missing_ids": [],
-    "lybid_photo_commit": "c9ea7a3a0a00cb950e37eee594a4ab568395bd89"
-  },
-  "photo_coverage": {
-    "status": "OPEN",
-    "repaired_or_resolved_known_mappings": 17,
-    "explicit_missing": 0,
-    "explicit_missing_ids": [],
-    "missing_source_resolution": "CLOSED; UNDERHILL PASS; LYBID PASS by user-accepted daytime facade and stable canonical-ID binding",
-    "enumerator": "tests/photo-runtime-enumeration.mjs",
-    "enumerator_status": "IMPLEMENTED_NOT_YET_EXECUTED",
-    "exact_total_canonical_cards": "PENDING executable enumerator output",
-    "exact_valid_owned": "PENDING executable enumerator output",
-    "exact_broken": "PENDING published loadability smoke",
-    "exact_identity_risk": "no positive evidence found in active canonical-ID repair path; final runtime smoke pending"
-  },
-  "completed_independent_nodes": [
-    "SOLVA_PHYSICAL_DEDUPE",
-    "HELIKON_VALUE_CONTAMINATION",
-    "HELIKON_LIVE_FULLBOARD_ACCEPTANCE",
-    "PHOTO_STABLE_ID_MIGRATION_REPAIR",
-    "OSONNIA_PROVENANCE_PHOTO_RESOLUTION",
-    "PHOTO_FEED_DEBT_CLASSIFICATION",
-    "NIKOLETTA_PROVENANCE_PHOTO_RESOLUTION",
-    "ALLIGATOR_PROVENANCE_PHOTO_RESOLUTION",
-    "PHOTO_RUNTIME_ENUMERATOR_IMPLEMENTATION",
-    "UNDERHILL_DECISION_SUFFICIENT_PHOTO_RESOLUTION"
-  ],
-  "deferred": [
-    {
-      "node": "COUNT_LEDGER_35_34_31",
-      "reason": "after photo closure"
-    },
-    {
-      "node": "MEAL_SYNONYM_FULL_AUDIT",
-      "reason": "resume immediately after current photo priority; include one-meal semantics"
-    }
-  ],
-  "blocker": "No source/identity blocker remains in active photo repair path. Remaining acceptance gate is exact merged-runtime enumeration plus published image loadability/no-cross-ID smoke.",
-  "next_ready": [
-    "execute tests/photo-runtime-enumeration.mjs and persist exact counts",
-    "verify published runtime image loadability and no cross-ID leakage",
-    "close photo node, then resume full meal-synonym audit"
-  ],
-  "stop_reason": "runtime/tool boundary after productive canonical photo binding + protocol revision adoption; READY work remains",
-  "updated_at": "2026-09-18T23:30:00+03:00"
+  "current_node": "PHOTO_PUBLISHED_RUNTIME_LOADABILITY",
+  "helikon_live_acceptance": {"status":"PASS","couple_fullboard":"20,767 UAH / normalized 7-night equivalent","family_fullboard":"31,150 UAH / normalized 7-night equivalent","evidence":"user published-site screenshots after numeric 3-разове normalization"},
+  "latest_completed_unit": "Root cause of user-visible placeholders identified: published index bypassed pearls-bootstrap canonical photo registry by loading app.js directly. Production entry chain repaired in commit 3dc254313bf1651d41edf5251968350e9b186613 to index -> app-entry -> pearls-bootstrap -> app. Runtime enumerator was then found stale (missing newly accepted Underhill and Lybid registry entries) and synchronized in commit 076d8bd3796a5db02d03da1912b2487131425aa5. Do not claim exact coverage until this synchronized enumerator is executed and published loadability is verified.",
+  "last_productive_at": "2026-09-19T02:10:00+03:00",
+  "protocol_auto_refresh": {"status":"CHEAP_IDENTITY_CHECK_PERFORMED","canonical_file_ids":{"manager":"1LZl7fbC6jDssWE5Qn-_eGVrqm97GpgaR27HR34NIRdI","production":"1Dum_-eLS6rQClBxr5aVM-ruAzODDDem8SOLE4kbUxiY","personal":"1uEtt8soqYB_9CZEcGYaBTSeDtacgtZOrSGsZbc2fKX4"},"modified_times":{"manager":"2026-09-18T21:00:42.578Z","production":"2026-09-18T21:00:44.040Z","personal":"2026-09-18T21:00:45.652Z"},"checked_at":"2026-09-19T02:10:00+03:00","compatibility":"No L2/L3 reset; current mission preserved"},
+  "latest_durable_evidence": {"root_cause_commit":"2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c","photo_registry_fix_commit":"c08609b507b690fd50abdfae7206513e42890e4d","osonnia_photo_commit":"e3784ae95eba3ee1ce98c18a41df7415b97bfb99","nikoletta_alligator_photo_commit":"eaa159a3df41ba396dd474e3019ca30d329d1642","underhill_photo_commit":"22599adaf638f7b619a796f1ec10c177c8f79ff8","lybid_photo_commit":"c9ea7a3a0a00cb950e37eee594a4ab568395bd89","published_runtime_chain_fix_commit":"3dc254313bf1651d41edf5251968350e9b186613","runtime_enumerator_sync_commit":"076d8bd3796a5db02d03da1912b2487131425aa5","coverage_artifact":"PHOTO_COVERAGE_20260918.md","known_resolved_id_mappings":17,"explicit_missing_ids":[]},
+  "photo_coverage": {"status":"OPEN","repaired_or_resolved_known_mappings":17,"explicit_missing":0,"explicit_missing_ids":[],"enumerator":"tests/photo-runtime-enumeration.mjs","enumerator_status":"SYNCED_WITH_RUNTIME_REGISTRY_NOT_YET_EXECUTED","exact_total_canonical_cards":"PENDING executable enumerator output","exact_valid_owned":"PENDING executable enumerator output","exact_broken":"PENDING published loadability smoke","exact_identity_risk":"PENDING final runtime smoke"},
+  "completed_independent_nodes":["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR","OSONNIA_PROVENANCE_PHOTO_RESOLUTION","NIKOLETTA_PROVENANCE_PHOTO_RESOLUTION","ALLIGATOR_PROVENANCE_PHOTO_RESOLUTION","UNDERHILL_DECISION_SUFFICIENT_PHOTO_RESOLUTION","LYBID_HUMAN_ACCEPTED_PHOTO_RESOLUTION","PHOTO_PUBLISHED_ENTRY_CHAIN_REPAIR","PHOTO_RUNTIME_ENUMERATOR_SYNC"],
+  "deferred":[{"node":"COUNT_LEDGER_35_34_31","reason":"after photo closure"},{"node":"MEAL_SYNONYM_FULL_AUDIT","reason":"resume immediately after photo closure; include one-meal semantics"}],
+  "blocker":"No photo source/identity blocker. Current execution environment cannot access the GitHub Pages site or clone the repo, so synchronized enumerator execution and published browser loadability/no-cross-ID smoke remain unverified; this is a runtime/tool boundary, not a data blocker.",
+  "next_ready":["execute synchronized tests/photo-runtime-enumeration.mjs in repo-capable runtime and persist exact counts","verify published runtime image loadability and no cross-ID leakage after entry-chain fix","close photo node only on actual runtime evidence, then resume meal-synonym audit"],
+  "stop_reason":"productive systemic runtime repair checkpoint; acceptance gate remains externally executable",
+  "updated_at":"2026-09-19T02:10:00+03:00"
 }
