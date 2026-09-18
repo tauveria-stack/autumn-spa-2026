@@ -10,36 +10,37 @@
     "family_fullboard": "31,150 UAH / normalized 7-night equivalent",
     "evidence": "user published-site screenshots after numeric 3-разове normalization"
   },
-  "latest_completed_unit": "PHOTO_STABLE_ID_MIGRATION_REPAIR: diagnosed systemic regression: commit 2a9d8cd removed name-keyed fallback before 12 verified active mappings were migrated. Restored those 12 through centralized canonical-ID registry in pearls-bootstrap.js; existing canonical hotel.photo wins; no name matching; cache lineage bumped to published entry.",
-  "last_productive_at": "2026-09-18T13:12:00+03:00",
+  "latest_completed_unit": "OSONNIA_PROVENANCE_PHOTO_RESOLUTION: followed the official Osonnia /company/ hero image to a direct official osannya.com media URL, bound it only to canonical ID osonnya in centralized photoById, and cache-busted app-entry. No hotel-name fallback.",
+  "last_productive_at": "2026-09-18T14:10:45+03:00",
   "latest_durable_evidence": {
     "root_cause_commit": "2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
     "photo_registry_fix_commit": "c08609b507b690fd50abdfae7206513e42890e4d",
-    "app_cache_commit": "9ad93083d049668d3f07ac277a1505d541b1a241",
-    "entry_cache_commit": "80fffa35aa3905f6ff37cf2968a1ff2f6a8a69be",
-    "coverage_checkpoint_commit": "41e39f23fb6095eeddc98c7ee2134ae4adc9a83a",
+    "osonnia_photo_commit": "e3784ae95eba3ee1ce98c18a41df7415b97bfb99",
+    "osonnia_cache_commit": "5d3a146854b947bbe8e6b1f8dc66920248f28323",
+    "coverage_checkpoint_commit": "5a726e48cccaee5c9b016db83d11ac526f5de1df",
     "coverage_artifact": "PHOTO_COVERAGE_20260918.md",
-    "repaired_known_mappings": 12
+    "known_resolved_id_mappings": 13,
+    "osonnia_official_photo": "https://osonnya.com/upload/medialibrary/4ce/q4p97o0hy0ts5k3uvn8ygp8oghdkbxn9.jpg"
   },
   "photo_coverage": {
     "status": "OPEN",
-    "repaired_this_pass": 12,
-    "known_true_missing": ["osonnya"],
-    "osonnya_source_status": "official property/gallery verified; direct trustworthy media URL not yet extracted, so no guessed URL assigned",
+    "repaired_or_resolved_known_mappings": 13,
+    "known_true_missing": [],
+    "osonnia_source_status": "RESOLVED from official property page/image link; canonical ID only",
     "exact_total_canonical_cards": "PENDING merged-runtime enumeration",
     "exact_valid_owned": "PENDING",
     "exact_broken": "PENDING",
     "exact_identity_risk": "PENDING"
   },
-  "completed_independent_nodes": ["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR"],
+  "completed_independent_nodes": ["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR","OSONNIA_PROVENANCE_PHOTO_RESOLUTION"],
   "deferred": [{"node":"COUNT_LEDGER_35_34_31","reason":"after photo closure"},{"node":"MEAL_SYNONYM_FULL_AUDIT","reason":"resume immediately after current photo priority; include one-meal semantics"}],
-  "blocker": "No global blocker. Osonnia direct provenance-backed image URL still missing; continue merged-runtime photo enumeration and source retrieval.",
+  "blocker": "No global blocker. Exact all-card merged-runtime photo enumeration/loadability remains unfinished.",
   "next_ready": [
     "enumerate merged canonical runtime IDs across all feeds and classify every photo state",
-    "obtain direct provenance-backed image for osonnya and any other true MISSING IDs without guessing",
+    "source-repair any additional true MISSING/BROKEN/IDENTITY_RISK IDs without guessing",
     "verify published runtime image loadability and no cross-ID leakage",
     "close photo node with exact coverage counts, then resume full meal-synonym audit"
   ],
-  "stop_reason": "runtime/tool boundary after durable systemic migration repair checkpoint",
-  "updated_at": "2026-09-18T13:12:00+03:00"
+  "stop_reason": "runtime/tool boundary after provenance-backed Osonnia repair and durable checkpoint; READY work remains",
+  "updated_at": "2026-09-18T14:10:45+03:00"
 }
