@@ -4,44 +4,33 @@
   "current_phase": "A",
   "current_mission": "Systemic canonical photo coverage/ownership closure",
   "current_node": "PHOTO_MISSING_SOURCE_RESOLUTION",
-  "helikon_live_acceptance": {
-    "status": "PASS",
-    "couple_fullboard": "20,767 UAH / normalized 7-night equivalent",
-    "family_fullboard": "31,150 UAH / normalized 7-night equivalent",
-    "evidence": "user published-site screenshots after numeric 3-разове normalization"
-  },
-  "latest_completed_unit": "PHOTO_FEED_DEBT_CLASSIFICATION: current 11-feed merge chain inspected; four canonical records explicitly declare photo.status=missing. Nikoletta and Underhill official property/gallery pages re-verified; no guessed image assigned.",
-  "last_productive_at": "2026-09-18T15:10:17+03:00",
+  "helikon_live_acceptance": {"status":"PASS","couple_fullboard":"20,767 UAH / normalized 7-night equivalent","family_fullboard":"31,150 UAH / normalized 7-night equivalent","evidence":"user published-site screenshots after numeric 3-разове normalization"},
+  "latest_completed_unit": "Resolved Nikoletta Polyanytsia and Hotel Alligator Ternopil from direct official-site image assets and bound them only to their stable canonical IDs. Lybid gallery was explicitly rejected as unsafe for automatic assignment because the extracted gallery asset belonged to the nightclub category; Underhill remains missing pending decisive direct asset attribution.",
+  "last_productive_at": "2026-09-18T16:13:09+03:00",
   "latest_durable_evidence": {
-    "root_cause_commit": "2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
-    "photo_registry_fix_commit": "c08609b507b690fd50abdfae7206513e42890e4d",
-    "osonnia_photo_commit": "e3784ae95eba3ee1ce98c18a41df7415b97bfb99",
-    "osonnia_cache_commit": "5d3a146854b947bbe8e6b1f8dc66920248f28323",
-    "coverage_debt_commit": "065b231f187d4c260f749dd90230b8fabfa614b9",
-    "coverage_artifact": "PHOTO_COVERAGE_20260918.md",
-    "known_resolved_id_mappings": 13,
-    "explicit_missing_ids": ["nikoletta-hotel-spa-polyanytsia","underhill-resort-spa-pidhiria","lybid-plaza-khmelnytskyi","aquapark-alligator-ternopil"]
+    "root_cause_commit":"2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
+    "photo_registry_fix_commit":"c08609b507b690fd50abdfae7206513e42890e4d",
+    "osonnia_photo_commit":"e3784ae95eba3ee1ce98c18a41df7415b97bfb99",
+    "nikoletta_alligator_photo_commit":"eaa159a3df41ba396dd474e3019ca30d329d1642",
+    "coverage_artifact_commit":"12c93f0a2f0a459ebcc210ed4a54bec175f58515",
+    "coverage_artifact":"PHOTO_COVERAGE_20260918.md",
+    "known_resolved_id_mappings":15,
+    "explicit_missing_ids":["underhill-resort-spa-pidhiria","lybid-plaza-khmelnytskyi"]
   },
   "photo_coverage": {
-    "status": "OPEN",
-    "repaired_or_resolved_known_mappings": 13,
-    "explicit_missing": 4,
-    "explicit_missing_ids": ["nikoletta-hotel-spa-polyanytsia","underhill-resort-spa-pidhiria","lybid-plaza-khmelnytskyi","aquapark-alligator-ternopil"],
-    "osonnia_source_status": "RESOLVED from official property page/image link; canonical ID only",
-    "exact_total_canonical_cards": "PENDING executable merged-runtime enumeration",
-    "exact_valid_owned": "PENDING",
-    "exact_broken": "PENDING published loadability smoke",
-    "exact_identity_risk": "no positive evidence found in current repair path; final runtime smoke pending"
+    "status":"OPEN",
+    "repaired_or_resolved_known_mappings":15,
+    "explicit_missing":2,
+    "explicit_missing_ids":["underhill-resort-spa-pidhiria","lybid-plaza-khmelnytskyi"],
+    "exact_total_canonical_cards":"PENDING executable merged-runtime enumeration",
+    "exact_valid_owned":"PENDING",
+    "exact_broken":"PENDING published loadability smoke",
+    "exact_identity_risk":"no positive evidence found in active canonical-ID repair path; final runtime smoke pending"
   },
-  "completed_independent_nodes": ["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR","OSONNIA_PROVENANCE_PHOTO_RESOLUTION","PHOTO_FEED_DEBT_CLASSIFICATION"],
-  "deferred": [{"node":"COUNT_LEDGER_35_34_31","reason":"after photo closure"},{"node":"MEAL_SYNONYM_FULL_AUDIT","reason":"resume immediately after current photo priority; include one-meal semantics"}],
-  "blocker": "No global blocker. Four explicit missing photo assets require stable attributable direct URLs; exact all-card merged-runtime enumeration/loadability still unfinished.",
-  "next_ready": [
-    "resolve Nikoletta/Underhill/Lybid/Alligator direct attributable image assets without guessing",
-    "execute merged canonical ID/photo enumeration and exact counts",
-    "verify published runtime image loadability and no cross-ID leakage",
-    "close photo node, then resume full meal-synonym audit"
-  ],
-  "stop_reason": "productive bounded checkpoint after explicit missing-photo classification; READY work remains",
-  "updated_at": "2026-09-18T15:10:17+03:00"
+  "completed_independent_nodes":["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR","OSONNIA_PROVENANCE_PHOTO_RESOLUTION","PHOTO_FEED_DEBT_CLASSIFICATION","NIKOLETTA_PROVENANCE_PHOTO_RESOLUTION","ALLIGATOR_PROVENANCE_PHOTO_RESOLUTION"],
+  "deferred":[{"node":"COUNT_LEDGER_35_34_31","reason":"after photo closure"},{"node":"MEAL_SYNONYM_FULL_AUDIT","reason":"resume immediately after current photo priority; include one-meal semantics"}],
+  "blocker":"No global blocker. Underhill and Lybid remain explicit MISSING rather than risk wrong-property/cross-venue assignment. Exact merged-runtime enumeration/loadability still unfinished.",
+  "next_ready":["attempt decisive Underhill/Lybid direct asset attribution; otherwise preserve explicit MISSING","execute merged canonical ID/photo enumeration and exact counts","verify published runtime image loadability and no cross-ID leakage","close photo node, then resume full meal-synonym audit"],
+  "stop_reason":"productive bounded checkpoint; READY work remains",
+  "updated_at":"2026-09-18T16:13:09+03:00"
 }
