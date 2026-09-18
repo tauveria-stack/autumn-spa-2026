@@ -1,47 +1,45 @@
 {
   "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
-  "protocol_revision_set": {
-    "manager": "Universal Manager Automation Protocol v1.3 DRAFT / ANLCKQmSUlJUGW8y1Dr5BQoE6f36qx4bKx8TmGKOZbwOpoYbSUzpVEkJki7WyAu-PqmJw8UeLnBYq5FzZHS3ePBy9vxmsiX0PdsaIFxy1Ms",
-    "production_context": "Universal Production Execution Protocol v1.2 DRAFT / ANLCKQnVA-JfIGBdL-OyIEcFpY_eC-c6e5MjSRrUXczw42nzD9-gd1SknBZcxofUSRPmHExce6akQHcuEe4U9vT_XjYu-AxrhEQ6Wu5ZeEI",
-    "personal_overlay": "Personal ChatGPT Operating Protocol v1.0 DRAFT / ANLCKQmZiBYGDLxLicnMIog8RpI0eAlv1CkktDnENFzZjVMvUjSMBx1XW7wVjBVmCIb9TcH0Oo0XjuSwzaL7TZDYRp7J7XdUAZTeymEvjdc"
-  },
-  "lifecycle_state": "CHECKPOINT",
+  "lifecycle_state": "PRODUCTIVE",
   "current_phase": "A",
-  "current_mission": "Helikon published three-meal acceptance after decisive user LIVE FAIL",
-  "current_node": "HELIKON_LIVE_FULLBOARD_REPAIR_WAITING_REPROBE",
-  "waiting_user_probe": {
-    "node": "HELIKON_LIVE_FULLBOARD_ACCEPTANCE",
-    "status": "WAITING_USER_PROBE",
-    "reason": "owner-scoped runtime fix committed and cache-busted; published interactive acceptance must be re-probed after Pages propagation",
-    "acceptance": [
-      "Helikon visible under only three-meals for couple and family",
-      "couple display uses compatible full-board offer: 20,767 UAH normalized 7-night equivalent from 17,800/6",
-      "family display uses compatible full-board offer: 31,150 UAH normalized 7-night equivalent from 26,700/6",
-      "15,400 UAH base no-meal tariff cannot masquerade as full-board",
-      "negative-control hotel without compatible full-board fails"
-    ]
+  "current_mission": "Systemic canonical photo coverage/ownership closure",
+  "current_node": "PHOTO_RUNTIME_COVERAGE_ENUMERATION",
+  "helikon_live_acceptance": {
+    "status": "PASS",
+    "couple_fullboard": "20,767 UAH / normalized 7-night equivalent",
+    "family_fullboard": "31,150 UAH / normalized 7-night equivalent",
+    "evidence": "user published-site screenshots after numeric 3-разове normalization"
   },
-  "latest_completed_unit": "HELIKON_NUMERIC_MEAL_CLASS_FIX: user live probe proved Helikon absent under only `Триразове` for both couple and family while Chervona Ruta remained. Canonical Helikon offers use meals=`3-разове харчування`; runtime mealClass recognized `трираз` and textual breakfast+obid+dinner but not numeric `3-раз`, so Helikon offers were deterministically classified null and filtered out. Smallest owner-scoped fix adds `3-раз`/`3 раз` recognition. Cache lineage bumped through app.js and index.html. Source fix commit 89249f452b9a82957ae58709167695e445898252; app cache commit 8f789001a0481c8af1d72544ff29174927ccec36; published entry cache commit 153c8acbdab7e256372601cc84ab0f860b0e666f. No LIVE PASS claimed until user reprobe.",
-  "last_productive_at": "2026-09-18T12:28:10+03:00",
+  "latest_completed_unit": "PHOTO_STABLE_ID_MIGRATION_REPAIR: diagnosed systemic regression: commit 2a9d8cd removed name-keyed fallback before 12 verified active mappings were migrated. Restored those 12 through centralized canonical-ID registry in pearls-bootstrap.js; existing canonical hotel.photo wins; no name matching; cache lineage bumped to published entry.",
+  "last_productive_at": "2026-09-18T13:12:00+03:00",
   "latest_durable_evidence": {
-    "helikon_live_fail": "2026-09-18 user probe: only fullboard selected; couple and family each showed only Chervona Ruta; Helikon absent",
-    "helikon_data_blob": "1f16ca9234501d35838c8f2ed49c2b005cb02555",
-    "root_cause": "runtime mealClass did not recognize numeric `3-разове харчування` used by Helikon explicit offers",
-    "fix_commit": "89249f452b9a82957ae58709167695e445898252",
-    "app_cache_commit": "8f789001a0481c8af1d72544ff29174927ccec36",
-    "entry_cache_commit": "153c8acbdab7e256372601cc84ab0f860b0e666f",
-    "helikon_value_fix_commit": "f2ecea8fac465a774e3e30a634c274cc0c87dfcc",
-    "solva_dedupe_commit": "116472b1bb8bde719d0f7b79646e2befcb1ad6af",
-    "helikon_live_verification": "WAITING_USER_PROBE; no LIVE PASS claim"
+    "root_cause_commit": "2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
+    "photo_registry_fix_commit": "c08609b507b690fd50abdfae7206513e42890e4d",
+    "app_cache_commit": "9ad93083d049668d3f07ac277a1505d541b1a241",
+    "entry_cache_commit": "80fffa35aa3905f6ff37cf2968a1ff2f6a8a69be",
+    "coverage_checkpoint_commit": "41e39f23fb6095eeddc98c7ee2134ae4adc9a83a",
+    "coverage_artifact": "PHOTO_COVERAGE_20260918.md",
+    "repaired_known_mappings": 12
   },
-  "completed_independent_nodes": ["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION"],
-  "deferred": [{"node":"COUNT_LEDGER_35_34_31","reason":"exact numeric execution output still requires executable runner; do not invent attribution"}],
-  "blocker": "Only final published interactive reprobe after Pages propagation; source/data mismatch itself is fixed.",
+  "photo_coverage": {
+    "status": "OPEN",
+    "repaired_this_pass": 12,
+    "known_true_missing": ["osonnya"],
+    "osonnya_source_status": "official property/gallery verified; direct trustworthy media URL not yet extracted, so no guessed URL assigned",
+    "exact_total_canonical_cards": "PENDING merged-runtime enumeration",
+    "exact_valid_owned": "PENDING",
+    "exact_broken": "PENDING",
+    "exact_identity_risk": "PENDING"
+  },
+  "completed_independent_nodes": ["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR"],
+  "deferred": [{"node":"COUNT_LEDGER_35_34_31","reason":"after photo closure"},{"node":"MEAL_SYNONYM_FULL_AUDIT","reason":"resume immediately after current photo priority; include one-meal semantics"}],
+  "blocker": "No global blocker. Osonnia direct provenance-backed image URL still missing; continue merged-runtime photo enumeration and source retrieval.",
   "next_ready": [
-    "user reprobe: couple + only Триразове; expect Helikon plus correct compatible offer",
-    "user reprobe: family + only Триразове; expect Helikon plus correct compatible offer",
-    "if reprobe PASS, close Helikon and resume photo debt then discovery; if FAIL, classify new evidence and change method"
+    "enumerate merged canonical runtime IDs across all feeds and classify every photo state",
+    "obtain direct provenance-backed image for osonnya and any other true MISSING IDs without guessing",
+    "verify published runtime image loadability and no cross-ID leakage",
+    "close photo node with exact coverage counts, then resume full meal-synonym audit"
   ],
-  "stop_reason": "published interactive acceptance requires external browser/user probe after deployment propagation",
-  "updated_at": "2026-09-18T12:28:10+03:00"
+  "stop_reason": "runtime/tool boundary after durable systemic migration repair checkpoint",
+  "updated_at": "2026-09-18T13:12:00+03:00"
 }
