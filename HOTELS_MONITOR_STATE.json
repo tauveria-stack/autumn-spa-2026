@@ -4,39 +4,78 @@
   "current_phase": "A",
   "current_mission": "Systemic canonical photo coverage/ownership closure",
   "current_node": "PHOTO_RUNTIME_ENUMERATION_LOADABILITY",
-  "helikon_live_acceptance": {"status":"PASS","couple_fullboard":"20,767 UAH / normalized 7-night equivalent","family_fullboard":"31,150 UAH / normalized 7-night equivalent","evidence":"user published-site screenshots after numeric 3-разове normalization"},
-  "latest_completed_unit": "Underhill explicit MISSING reopened under canonical decision-sufficient validation semantics and resolved by stable canonical ID using a bounded exact-property image search. The selected direct Karpaty.rocks/Hotels24-attributed room image loaded successfully and exact property identity was corroborated by official UNDERHILL site/address plus multiple exact-property image results. Registry updated in commit 22599adaf638f7b619a796f1ec10c177c8f79ff8. Lybid remains the only explicit MISSING pending a stable direct image asset URL; identity ambiguity is no longer the blocker.",
-  "last_productive_at": "2026-09-18T23:10:25+03:00",
-  "protocol_auto_refresh": {"status":"CHANGED_ADOPTED","drive_revision_ids":{"manager":"ANLCKQl2TSVA4g1WkH-HB5WbJ6oGffKlTCD-gO_8Ka_DDfzsZL2cLLI8Y_0h5tHCBDyZMsyqIkBK7xMZyJUQgIzDZ03lGaj4ysTtbEstRoU","production":"ANLCKQmAqvuGDPA2Cs4ylnabT3dXtzOb0tL8YtmiexdKGcB1QPYF8F_1sxcYOcGcqeAIDM3xO9eXy5g9PQDd9dnRhhGotYn9NkKpaCk_7LU","personal":"16"},"checked_at":"2026-09-18T23:10:25+03:00","compatibility":"PASS; L2/L3 preserved; new decision-sufficient validation semantics directly apply to current low-risk photo node"},
+  "helikon_live_acceptance": {
+    "status": "PASS",
+    "couple_fullboard": "20,767 UAH / normalized 7-night equivalent",
+    "family_fullboard": "31,150 UAH / normalized 7-night equivalent",
+    "evidence": "user published-site screenshots after numeric 3-разове normalization"
+  },
+  "latest_completed_unit": "Lybid Plaza daytime facade accepted by user and bound to stable canonical ID lybid-plaza-khmelnytskyi. Canonical photo registry commit c9ea7a3a0a00cb950e37eee594a4ab568395bd89. Known photo repair/source-resolution mappings now 17; explicit MISSING in active repair path now 0. Exact all-card runtime enumeration and published loadability/no-cross-ID smoke remain before photo-node closure.",
+  "last_productive_at": "2026-09-18T23:30:00+03:00",
+  "protocol_auto_refresh": {
+    "status": "CHANGED_ADOPTED",
+    "drive_revision_ids": {
+      "manager": "ANLCKQl2TSVA4g1WkH-HB5WbJ6oGffKlTCD-gO_8Ka_DDfzsZL2cLLI8Y_0h5tHCBDyZMsyqIkBK7xMZyJUQgIzDZ03lGaj4ysTtbEstRoU",
+      "production": "ANLCKQmAqvuGDPA2Cs4ylnabT3dXtzOb0tL8YtmiexdKGcB1QPYF8F_1sxcYOcGcqeAIDM3xO9eXy5g9PQDd9dnRhhGotYn9NkKpaCk_7LU",
+      "personal": "16"
+    },
+    "checked_at": "2026-09-18T23:10:25+03:00",
+    "compatibility": "PASS; L2/L3 preserved; new decision-sufficient validation semantics directly apply to current low-risk photo node"
+  },
   "latest_durable_evidence": {
-    "root_cause_commit":"2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
-    "photo_registry_fix_commit":"c08609b507b690fd50abdfae7206513e42890e4d",
-    "osonnia_photo_commit":"e3784ae95eba3ee1ce98c18a41df7415b97bfb99",
-    "nikoletta_alligator_photo_commit":"eaa159a3df41ba396dd474e3019ca30d329d1642",
-    "missing_source_resolution_commit":"7076ca7f6373f3b9bad91d82b5817cbbaf30a897",
-    "underhill_photo_commit":"22599adaf638f7b619a796f1ec10c177c8f79ff8",
-    "runtime_enumerator_commit":"aba60c4dd873e764e68a5519ec9b33722a885e20",
-    "coverage_artifact":"PHOTO_COVERAGE_20260918.md",
-    "known_resolved_id_mappings":16,
-    "explicit_missing_ids":["lybid-plaza-khmelnytskyi"]
+    "root_cause_commit": "2a9d8cd1e04ed8fdf28d509ceadc4ac21381e42c",
+    "photo_registry_fix_commit": "c08609b507b690fd50abdfae7206513e42890e4d",
+    "osonnia_photo_commit": "e3784ae95eba3ee1ce98c18a41df7415b97bfb99",
+    "nikoletta_alligator_photo_commit": "eaa159a3df41ba396dd474e3019ca30d329d1642",
+    "missing_source_resolution_commit": "7076ca7f6373f3b9bad91d82b5817cbbaf30a897",
+    "underhill_photo_commit": "22599adaf638f7b619a796f1ec10c177c8f79ff8",
+    "runtime_enumerator_commit": "aba60c4dd873e764e68a5519ec9b33722a885e20",
+    "coverage_artifact": "PHOTO_COVERAGE_20260918.md",
+    "known_resolved_id_mappings": 17,
+    "explicit_missing_ids": [],
+    "lybid_photo_commit": "c9ea7a3a0a00cb950e37eee594a4ab568395bd89"
   },
   "photo_coverage": {
-    "status":"OPEN",
-    "repaired_or_resolved_known_mappings":16,
-    "explicit_missing":1,
-    "explicit_missing_ids":["lybid-plaza-khmelnytskyi"],
-    "missing_source_resolution":"REOPENED_BY_NEW_DECISION_SUFFICIENT_VALIDATION_SEMANTICS; UNDERHILL PASS; LYBID direct-asset binding pending",
-    "enumerator":"tests/photo-runtime-enumeration.mjs",
-    "enumerator_status":"IMPLEMENTED_NOT_YET_EXECUTED",
-    "exact_total_canonical_cards":"PENDING executable enumerator output",
-    "exact_valid_owned":"PENDING executable enumerator output",
-    "exact_broken":"PENDING published loadability smoke",
-    "exact_identity_risk":"no positive evidence found in active canonical-ID repair path; final runtime smoke pending"
+    "status": "OPEN",
+    "repaired_or_resolved_known_mappings": 17,
+    "explicit_missing": 0,
+    "explicit_missing_ids": [],
+    "missing_source_resolution": "CLOSED; UNDERHILL PASS; LYBID PASS by user-accepted daytime facade and stable canonical-ID binding",
+    "enumerator": "tests/photo-runtime-enumeration.mjs",
+    "enumerator_status": "IMPLEMENTED_NOT_YET_EXECUTED",
+    "exact_total_canonical_cards": "PENDING executable enumerator output",
+    "exact_valid_owned": "PENDING executable enumerator output",
+    "exact_broken": "PENDING published loadability smoke",
+    "exact_identity_risk": "no positive evidence found in active canonical-ID repair path; final runtime smoke pending"
   },
-  "completed_independent_nodes":["SOLVA_PHYSICAL_DEDUPE","HELIKON_VALUE_CONTAMINATION","HELIKON_LIVE_FULLBOARD_ACCEPTANCE","PHOTO_STABLE_ID_MIGRATION_REPAIR","OSONNIA_PROVENANCE_PHOTO_RESOLUTION","PHOTO_FEED_DEBT_CLASSIFICATION","NIKOLETTA_PROVENANCE_PHOTO_RESOLUTION","ALLIGATOR_PROVENANCE_PHOTO_RESOLUTION","PHOTO_RUNTIME_ENUMERATOR_IMPLEMENTATION","UNDERHILL_DECISION_SUFFICIENT_PHOTO_RESOLUTION"],
-  "deferred":[{"node":"COUNT_LEDGER_35_34_31","reason":"after photo closure"},{"node":"MEAL_SYNONYM_FULL_AUDIT","reason":"resume immediately after current photo priority; include one-meal semantics"}],
-  "blocker":"No global blocker. Lybid identity is sufficiently established by official hotel site and exact-property visual results; remaining local task is obtaining one stable direct image asset URL suitable for browser src binding. Exact merged-runtime count still requires executing the existing enumerator in a repo-capable runtime and published no-cross-ID/loadability smoke.",
-  "next_ready":["resolve one stable direct Lybid hotel image asset using bounded search","execute tests/photo-runtime-enumeration.mjs and persist exact counts","verify published runtime image loadability and no cross-ID leakage","close photo node, then resume full meal-synonym audit"],
-  "stop_reason":"runtime/tool boundary after productive canonical photo binding + protocol revision adoption; READY work remains",
-  "updated_at":"2026-09-18T23:10:25+03:00"
+  "completed_independent_nodes": [
+    "SOLVA_PHYSICAL_DEDUPE",
+    "HELIKON_VALUE_CONTAMINATION",
+    "HELIKON_LIVE_FULLBOARD_ACCEPTANCE",
+    "PHOTO_STABLE_ID_MIGRATION_REPAIR",
+    "OSONNIA_PROVENANCE_PHOTO_RESOLUTION",
+    "PHOTO_FEED_DEBT_CLASSIFICATION",
+    "NIKOLETTA_PROVENANCE_PHOTO_RESOLUTION",
+    "ALLIGATOR_PROVENANCE_PHOTO_RESOLUTION",
+    "PHOTO_RUNTIME_ENUMERATOR_IMPLEMENTATION",
+    "UNDERHILL_DECISION_SUFFICIENT_PHOTO_RESOLUTION"
+  ],
+  "deferred": [
+    {
+      "node": "COUNT_LEDGER_35_34_31",
+      "reason": "after photo closure"
+    },
+    {
+      "node": "MEAL_SYNONYM_FULL_AUDIT",
+      "reason": "resume immediately after current photo priority; include one-meal semantics"
+    }
+  ],
+  "blocker": "No source/identity blocker remains in active photo repair path. Remaining acceptance gate is exact merged-runtime enumeration plus published image loadability/no-cross-ID smoke.",
+  "next_ready": [
+    "execute tests/photo-runtime-enumeration.mjs and persist exact counts",
+    "verify published runtime image loadability and no cross-ID leakage",
+    "close photo node, then resume full meal-synonym audit"
+  ],
+  "stop_reason": "runtime/tool boundary after productive canonical photo binding + protocol revision adoption; READY work remains",
+  "updated_at": "2026-09-18T23:30:00+03:00"
 }
