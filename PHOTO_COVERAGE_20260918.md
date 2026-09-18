@@ -15,18 +15,20 @@ Original migration repair: `c08609b507b690fd50abdfae7206513e42890e4d`.
 - `aquapark-alligator-ternopil`: `https://alligator.te.ua/aligator.org.ua/userfiles/image/%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%B4%D0%BE%202%20%D0%BC%D0%B1.jpg` — direct image linked from the official Hotel Alligator page; panorama visibly shows HOTEL ALLIGATOR and the aquapark entrance.
 Nikoletta + Alligator canonical-ID repair commit: `eaa159a3df41ba396dd474e3019ca30d329d1642`.
 
-## Remaining explicit photo debt
-Two canonical records remain explicit MISSING after this pass:
-- `underhill-resort-spa-pidhiria` — official property/hotel/SPA pages verified, but a stable direct attributable image URL was not resolved in this bounded pass. Keep MISSING rather than guess.
-- `lybid-plaza-khmelnytskyi` — official Lybid Plaza site and gallery verified; gallery contains mixed hotel/restaurant/nightclub/entertainment images and the first extracted asset was a LUX nightclub image, so it is unsafe to assign without category-specific attribution. Keep MISSING rather than risk cross-venue ownership.
+## Remaining explicit photo debt — bounded source resolution CLOSED
+Two canonical records remain intentionally explicit `MISSING`; this is accepted visible debt, not a hidden mapping failure:
+- `underhill-resort-spa-pidhiria` — official `https://underhill-resort.com.ua/` and `/hotel/` re-verified 2026-09-18. They unambiguously identify UNDERHILL Resort & Spa Hotel at Pidhiria/Fermerska 2 and expose hotel/room imagery, but the available indexed evidence does not expose a stable direct attributable hero asset URL suitable for canonical binding. Keep `MISSING` rather than guess or scrape an unverified asset.
+- `lybid-plaza-khmelnytskyi` — official `https://lybid-plaza.ua/` re-verified 2026-09-18 and identifies the hotel at Kamianetska 21, Khmelnytskyi. The official complex gallery mixes hotel, restaurant, nightclub, entertainment and retail imagery; the previously extracted candidate was a LUX nightclub asset. No category-safe direct hotel hero URL was established in the bounded source pass. Keep `MISSING` rather than risk cross-venue ownership.
+
+Decision: do not spend additional cycles mining opaque page assets. Both IDs satisfy acceptance as explicit evidenced `MISSING`; source-resolution subnode is CLOSED. Reopen only on new decisive attributable asset evidence.
 
 ## Known resolved source-owned photos outside recovery registry
 Current feeds also contain canonical resolved photos including `derenivska-kupil`, `bukovyna-chernivtsi`, `lh-hotel-spa-lviv`, `sribni-leleky-lutsk`, `verkhovyna-resort-kamianytsia`, and `helikon-yanoshi`; leave untouched unless loadability proves broken.
 
 ## Current systemic coverage status
 - Canonical-ID recovery/source resolutions in registry: **15** (12 verified legacy + Osonnia + Nikoletta + Alligator).
-- Explicit canonical `MISSING` remaining: **2** (`underhill-resort-spa-pidhiria`, `lybid-plaza-khmelnytskyi`).
-- No evidence in this pass of wrong-property substitution or duplicate name-keyed fallback in the active repair path.
+- Explicit canonical `MISSING`: **2** (`underhill-resort-spa-pidhiria`, `lybid-plaza-khmelnytskyi`), both now evidence-backed and intentionally visible.
+- No evidence of wrong-property substitution or duplicate name-keyed fallback in the active repair path.
 - Exact merged-runtime total / exact VALID count still requires executable enumeration of all merged records; do not infer from UI filter counts.
 
-Next: resolve Underhill/Lybid only if attribution is decisive, then execute merged canonical enumeration plus published runtime loadability/no-cross-ID smoke and close with exact counts. Never revert to name-keyed fallback.
+Next acceptance gate: execute merged canonical enumeration plus published runtime loadability/no-cross-ID smoke. Photo node closes when exact totals/classification are persisted and no hidden broken/wrong-property mapping remains.
