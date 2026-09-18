@@ -25,10 +25,18 @@ Decision: do not spend additional cycles mining opaque page assets. Both IDs sat
 ## Known resolved source-owned photos outside recovery registry
 Current feeds also contain canonical resolved photos including `derenivska-kupil`, `bukovyna-chernivtsi`, `lh-hotel-spa-lviv`, `sribni-leleky-lutsk`, `verkhovyna-resort-kamianytsia`, and `helikon-yanoshi`; leave untouched unless loadability proves broken.
 
+## Published/direct-asset loadability smoke — 2026-09-18
+Targeted decisive probes of repaired official assets:
+- `osonnya` — PASS: direct official JPEG loaded and visibly depicts Osonnia property.
+- `aquapark-alligator-ternopil` — PASS: direct official JPEG loaded and visibly depicts HOTEL ALLIGATOR / aquapark complex.
+- `nikoletta-hotel-spa-polyanytsia` — INCONCLUSIVE in the current web probe: the direct WEBP endpoint was not accessible through the probe tool. This is not evidence that the browser/runtime URL is broken; keep it pending browser/runtime loadability verification rather than misclassify it.
+
+No cross-ID substitution was observed in the two successful targeted probes. This is partial smoke evidence only; it does not replace the all-card runtime gate.
+
 ## Current systemic coverage status
 - Canonical-ID recovery/source resolutions in registry: **15** (12 verified legacy + Osonnia + Nikoletta + Alligator).
-- Explicit canonical `MISSING`: **2** (`underhill-resort-spa-pidhiria`, `lybid-plaza-khmelnytskyi`), both now evidence-backed and intentionally visible.
+- Explicit canonical `MISSING`: **2** (`underhill-resort-spa-pidhiria`, `lybid-plaza-khmelnytskyi`), both evidence-backed and intentionally visible.
 - No evidence of wrong-property substitution or duplicate name-keyed fallback in the active repair path.
 - Exact merged-runtime total / exact VALID count still requires executable enumeration of all merged records; do not infer from UI filter counts.
 
-Next acceptance gate: execute merged canonical enumeration plus published runtime loadability/no-cross-ID smoke. Photo node closes when exact totals/classification are persisted and no hidden broken/wrong-property mapping remains.
+Next acceptance gate: execute merged canonical enumeration plus remaining published runtime loadability/no-cross-ID smoke. Photo node closes when exact totals/classification are persisted and no hidden broken/wrong-property mapping remains.
