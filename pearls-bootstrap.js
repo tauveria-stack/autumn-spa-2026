@@ -32,7 +32,7 @@ window.fetch=async (input,init)=>{
     'perlyna-resort-sokyrno':{src:'https://perlyna.biz/storage/media/01JWE9VBGYDA9ZF1WZ1JX8JVDV.jpg',alt:'Perlyna Resort у Сокирній — готельний номер',source:'офіційний сайт Perlyna Resort; room image verified 2026-09-19'},
     'karpaty-migovo':{src:'https://cdn.prod.website-files.com/665075b486e43029b8555c71/66a25072608b3f0e066b7412_%D0%97%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD.avif',alt:'Карпати Мигово — котеджі готельного комплексу серед карпатського лісу',source:'офіційний сайт Карпати Мигово; image asset exposed on canonical property page verified 2026-09-19'}
   };
-  for(const [id,p] of Object.entries(photoById)){const h=byId.get(id);if(h&&(!h.photo||h.photo.status==='missing'))h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'stable canonical-ID mapping; attributable source verified'};}
+  for(const [id,p] of Object.entries(photoById)){const h=byId.get(id);if(h)h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'stable canonical-ID mapping; attributable source verified'};}
   if(byId.has('chervona-ruta-shayan'))byId.delete('chervona-ruta'); if(byId.has('solva-resort-medical-spa'))byId.delete('solva');
   const mergedMeta=Object.assign({},base.meta,...docs.map(d=>d.meta||{}));
   return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:mergedMeta}),{status:200,headers:{'Content-Type':'application/json'}});
