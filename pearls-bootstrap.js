@@ -43,7 +43,7 @@ window.fetch=async (input,init)=>{
     'voevodyno':{src:'https://funtime.com.ua/u/i/gallery/2023/01/voyevodyno-2-63cd0c80b201b.jpg',alt:'Воєводино — корпус курорту та басейн',source:'Funtime exact-property imagery'},
     'molfar':{src:'https://molfarshayan.com.ua/wp-content/uploads/2023/06/IMG_7487-scaled.jpg',alt:'Molfar Hotel & SPA — комплекс у Шаяні',source:'офіційний сайт Molfar Hotel & SPA'},
     'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
-    'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'}
+    'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'},
     'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'},
   };
   photoById['mirotel-truskavets']={src:'https://sanatorii-karpat.com/upload/catalog/200/167/truskavets_mirotel25.jpg',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
