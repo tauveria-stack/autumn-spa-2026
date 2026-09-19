@@ -10,7 +10,7 @@ window.fetch=async (input,init)=>{
   const docs=await Promise.all([pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes].map(async r=>r?.ok?await r.json():{hotels:[],meta:{}}));
   const byId=new Map((base.hotels||[]).map(h=>[h.id,h])); docs.forEach(d=>(d.hotels||[]).forEach(h=>byId.set(h.id,h)));
   const photoById={
-    'verhovel':{src:'https://cf.bstatic.com/xdata/images/hotel/max1024x768/184590809.jpg?k=3e84dce1909824a70926fbd2ff6bc0b96e996a64a0db24568367b4ad1d3adccc&o=&hp=1',alt:'Готель Верховель у Верховині — інтер’єр рецепції',source:'Karpaty.rocks'},
+    'verhovel':{src:'https://static.karpaty.ua/uploads/house/55cc5c27c0557c2ebc003185/main_photo/big.jpg',alt:'Готель Верховель у Верховині — інтер’єр рецепції',source:'Karpaty.rocks'},
     '7-dniv-kamianets':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
     'sonyachnyi-provans-sataniv':{src:'https://optimahotels.com.ua/media/images/hotels/hotelphoto-c5e24c93-afd9-4e1b-9fec-2f152a5ca867.JPEG',alt:'VitaPark Сонячний Прованс — головний корпус у Сатанові',source:'Optima Hotels and Resorts'},
     'dodo-spa-zhytomyr':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/506252655.jpg?k=8e10f20fdc7193567afce81fca52a1c547863aa6e5df577693d45e6b210227e3&o=',alt:'Dodo spa & hotel — номер готелю у Житомирі',source:'Booking.com'},
@@ -26,7 +26,7 @@ window.fetch=async (input,init)=>{
     'osonnya':{src:'https://osonnya.com/upload/medialibrary/4ce/q4p97o0hy0ts5k3uvn8ygp8oghdkbxn9.jpg',alt:'Осоння Карпати RESORT MEDICAL & SPA — корпус, басейн і територія',source:'офіційний сайт Осоння Карпати'},
     'nikoletta-hotel-spa-polyanytsia':{src:'https://nikoletta-hotel.com/wp-content/uploads/2026/09/nikoletta-hero-winter.webp',alt:'Nikoletta Hotel & SPA у Поляниці — головний корпус',source:'офіційний сайт Nikoletta Hotel & SPA'},
     'aquapark-alligator-ternopil':{src:'https://alligator.te.ua/aligator.org.ua/userfiles/image/%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%B4%D0%BE%202%20%D0%BC%D0%B1.jpg',alt:'Hotel Alligator у Тернополі — готельний комплекс та аквапарк',source:'офіційний сайт ТОК Алігатор'},
-    'underhill-resort-spa-pidhiria':{src:'https://cf.bstatic.com/xdata/images/hotel/max1024x768/494870725.jpg?k=b21f1ca5e44ce5477b7698e9c8664f64e9d8705a71dbf1f5e67f7b546ba81b86&o=&hp=1',alt:'UNDERHILL Resort & Spa Hotel у Підгір’ї — номер готелю',source:'Karpaty.rocks / Hotels24 attributable property photo'},
+    'underhill-resort-spa-pidhiria':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/136/13604/1360439/1360439z1024.jpg',alt:'UNDERHILL Resort & Spa Hotel у Підгір’ї — номер готелю',source:'Karpaty.rocks / Hotels24 attributable property photo'},
     'lybid-plaza-khmelnytskyi':{src:'https://green.vsitury.com.ua/uploads/posts/2016-05/1464183148_object_tb87.jpg',alt:'Готель Либідь Плаза у Хмельницькому — денний фасад комплексу',source:'Vsitury / hotel property photo; human visual acceptance 2026-09-18'},
     'ivory':{src:'https://ivoryresortandspa.com/wp-content/uploads/2025/11/lux-main.webp',alt:'IVORY Resort & Spa — готельний номер із брендованими рушниками',source:'офіційний сайт IVORY Resort & Spa; hotel page asset verified 2026-09-19'},
     'rado-hotel-spa':{src:'https://radohotel.com.ua/system/images/files/000/000/294/original/IMG_8617___.jpg?1781806260=',alt:'RADO Hotel & Spa — фасад із вивіскою готелю',source:'офіційний сайт RADO Hotel & Spa; property image verified 2026-09-19'},
@@ -38,14 +38,14 @@ window.fetch=async (input,init)=>{
     'sribni-leleky-lutsk':{src:'https://stejka.com/cache/800_600_max/hbqg7ncggn.jpg',alt:'Срібні лелеки у Луцьку — головний корпус рекреаційного комплексу',source:'Stejka'},
     'verkhovyna-resort-kamianytsia':{src:'https://verkhovyna-resort.com/wp-content/uploads/2025/06/pool-palace-1024x532.jpg',alt:'Verkhovyna Resort — панорамний критий Pool Palace',source:'офіційний сайт Verkhovyna Resort'},
     'helikon-yanoshi':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/600802773.jpg?k=4a6ee4600bebc5bae068e0e326f2b6339bca1130bf0961f9b6a9f044e2507bf5&o=',alt:'Hotel Helikon у Яношах — головний корпус',source:'Booking/Agoda property imagery'},
-    'vedmezha-gora':{src:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1b/78/9f/vedmezha-gora-family.jpg',alt:'Vedmezha Gora Family Resort & Spa — корпуси серед Карпат',source:'Tripadvisor exact-property imagery'},
+    'vedmezha-gora':{src:'https://go-to.rest/wp-content/uploads/2022/08/facade_008-scaled.webp',alt:'Vedmezha Gora Family Resort & Spa — корпуси серед Карпат',source:'Tripadvisor exact-property imagery'},
     'taor':{src:'https://taor.com.ua/wp-content/uploads/2020/03/img_8031_vsco-min-scaled.jpeg',alt:'TAOR Karpaty Resort & Spa — карпатський SPA-чан з видом на гори',source:'офіційний сайт TAOR'},
     'voevodyno':{src:'https://funtime.com.ua/u/i/gallery/2023/01/voyevodyno-2-63cd0c80b201b.jpg',alt:'Воєводино — корпус курорту та басейн',source:'Funtime exact-property imagery'},
     'molfar':{src:'https://dorogovkaz.com/images/otel_molfar/otel_molfar_photo47.jpg',alt:'Molfar Hotel & SPA — критий SPA-простір',source:'Dorogovkaz exact-property imagery'},
     'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
     'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'}
   };
-  photoById['mirotel-truskavets']={src:'https://cf.bstatic.com/xdata/images/hotel/max1024x768/266941783.jpg?k=1c8f12f39cb9011d8b89d85e34664e81360f7c2836b7d4ef87684fbaf9998e55&o=&hp=1',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
+  photoById['mirotel-truskavets']={src:'https://sanatorii-karpat.com/upload/catalog/200/167/truskavets_mirotel25.jpg',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
   window.__HOTEL_PHOTO_REGISTRY__=Object.assign(window.__HOTEL_PHOTO_REGISTRY__||{},photoById);
   for(const [id,p] of Object.entries(photoById)){const h=byId.get(id);if(h)h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'stable canonical-ID mapping; attributable source verified'};}
   if(byId.has('chervona-ruta-shayan'))byId.delete('chervona-ruta'); if(byId.has('solva-resort-medical-spa'))byId.delete('solva');
