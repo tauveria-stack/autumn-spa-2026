@@ -2,12 +2,12 @@ const nativeFetch=window.fetch.bind(window);
 window.fetch=async (input,init)=>{
   const url=typeof input==='string'?input:input?.url||'';
   if(!url.endsWith('hotels-20260914.json')) return nativeFetch(input,init);
-  const [baseRes,pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes]=await Promise.all([
-    nativeFetch(input,init),nativeFetch('hotels-pearls-20260914.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-lowprice-20260916.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-1145.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-1542.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-1940.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-2039.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-2138.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-2237.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-helikon-20260917.json',{cache:'no-store'}).catch(()=>null)
+  const [baseRes,pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes,tavelRes]=await Promise.all([
+    nativeFetch(input,init),nativeFetch('hotels-pearls-20260914.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-lowprice-20260916.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-1145.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-1542.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-1940.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-2039.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-2138.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260916-2237.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-helikon-20260917.json',{cache:'no-store'}).catch(()=>null),nativeFetch('hotels-discovery-20260920-tavel.json',{cache:'no-store'}).catch(()=>null)
   ]);
   if(!baseRes.ok)return baseRes;
   const base=await baseRes.json();
-  const docs=await Promise.all([pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes].map(async r=>r?.ok?await r.json():{hotels:[],meta:{}}));
+  const docs=await Promise.all([pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes,tavelRes].map(async r=>r?.ok?await r.json():{hotels:[],meta:{}}));
   const byId=new Map((base.hotels||[]).map(h=>[h.id,h])); docs.forEach(d=>(d.hotels||[]).forEach(h=>byId.set(h.id,h)));
   const photoById={
     'verhovel':{src:'https://static.karpaty.ua/uploads/house/55cc5c27c0557c2ebc003185/main_photo/big.jpg',alt:'Готель Верховель у Верховині — інтер’єр рецепції',source:'Karpaty.rocks'},
@@ -44,7 +44,7 @@ window.fetch=async (input,init)=>{
     'molfar':{src:'https://molfarshayan.com.ua/wp-content/uploads/2023/06/IMG_7487-scaled.jpg',alt:'Molfar Hotel & SPA — комплекс у Шаяні',source:'офіційний сайт Molfar Hotel & SPA'},
     'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
     'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'},
-    'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'},
+    'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'}
   };
   photoById['mirotel-truskavets']={src:'https://sanatorii-karpat.com/upload/catalog/200/167/truskavets_mirotel25.jpg',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
   window.__HOTEL_PHOTO_REGISTRY__=Object.assign(window.__HOTEL_PHOTO_REGISTRY__||{},photoById);
