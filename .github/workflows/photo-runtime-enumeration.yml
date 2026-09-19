@@ -16,7 +16,30 @@ jobs:
           node-version: '20'
       - name: Run canonical photo enumerator
         run: node tests/photo-runtime-enumeration.mjs | tee photo-runtime-enumeration.json
+      - name: Verify every canonical photo URL is HTTP-loadable
+        shell: bash
+        run: |
+          node tests/photo-runtime-enumeration.mjs > photo-runtime-enumeration.json
+          node - <<'NODE'
+          const fs=require('fs'),{execFileSync}=require('child_process');
+          const d=JSON.parse(fs.readFileSync('photo-runtime-enumeration.json','utf8'));
+          const failures=[];
+          for(const r of d.rows){
+            if(!r.src){failures.push({id:r.id,error:'missing-src'});continue;}
+            try{
+              const out=execFileSync('curl',['-L','--fail','--silent','--show-error','--max-time','20','--retry','1','-o','/dev/null','-w','%{http_code} %{content_type}',r.src],{encoding:'utf8'}).trim();
+              const [code,...ct]=out.split(' '); const type=ct.join(' ');
+              console.log(`${r.id}\t${code}\t${type}`);
+              if(!/^2/.test(code)||!/^image\//i.test(type)) failures.push({id:r.id,result:out});
+            }catch(e){failures.push({id:r.id,error:String(e.stderr||e.message).slice(0,500)});}
+          }
+          fs.writeFileSync('photo-loadability.json',JSON.stringify({total:d.rows.length,failures},null,2));
+          if(failures.length){console.error(JSON.stringify(failures,null,2));process.exit(2)}
+          NODE
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: photo-runtime-enumeration
-          path: photo-runtime-enumeration.json
+          path: |
+            photo-runtime-enumeration.json
+            photo-loadability.json
