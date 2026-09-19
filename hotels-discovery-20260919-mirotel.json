@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "updatedAt": "2026-09-19T23:10:00+03:00",
+    "status": "Strong discovery: Mirotel Resort & SPA added with 2026 velvet-season tariffs valid through 31.10.2026 and official SPA evidence"
+  },
+  "hotels": [
+    {
+      "id": "mirotel-truskavets",
+      "name": "Mirotel Resort & SPA",
+      "location": "Трускавець",
+      "region": "Львівська область",
+      "group": "Трускавець / Прикарпаття",
+      "url": "https://mirotel.ua/",
+      "checkedAt": "2026-09-19T23:10:00+03:00",
+      "indoorSpa": true,
+      "thermal": false,
+      "bestSpa": true,
+      "forKids": true,
+      "childFriendly": true,
+      "categories": ["bestSpa","forKids"],
+      "features": {"pool":true,"sauna":true,"hammam":true,"jacuzzi":true,"gym":true},
+      "availability": {"status":"tariff_window_confirmed_availability_unknown","title":"Тариф 2026 покриває 24–31.10; наявність номера UNKNOWN","message":"Опублікований тариф «Оксамитовий сезон 2026» діє 16.07–31.10.2026, тобто повністю охоплює наші дати. Наявність конкретного Standard на всі 7 ночей не підтверджена й не прирівнюється до NO."},
+      "provenance": {
+        "spa":"https://mirotel.ua/spa/fitnes-i-akvazona",
+        "hotel":"https://mirotel.ua/",
+        "tariffs2026":"https://truskavets.travel/ua/sanatorii-mirotel.html",
+        "checkedAt":"2026-09-19"
+      },
+      "couple": {
+        "eligible": true,
+        "score": 9.4,
+        "pricePerNight": 8700,
+        "total7Nights": 60900,
+        "priceStatus": "published_2026_tariff_window",
+        "value": "9.0/10",
+        "meals": "сніданок",
+        "offers": [
+          {"offerId":"mirotel-standard-hb-2a","scenario":"couple","eligible":true,"pricePerNight":10100,"total7Nights":70700,"meals":"дворазове харчування","priceStatus":"published_2026_tariff_window"},
+          {"offerId":"mirotel-standard-fb-2a","scenario":"couple","eligible":true,"pricePerNight":11500,"total7Nights":80500,"meals":"3-разове харчування","priceStatus":"published_2026_tariff_window"}
+        ],
+        "verdict": "Дорогий, але дуже сильний осінній SPA-кандидат: великий критий аквакомплекс, п'ять типів саун/лазень включно з хамамом, джакузі, ресторан і сучасний 5* формат у центрі Трускавця.",
+        "pros": ["спортивний критий басейн 25 м + два додаткові басейни 9 і 12 м","4 джакузі; інфрачервона і фінська сауни, римська парна, класична лазня та хамам","тариф BB/HB/FB на 2026 рік опублікований саме для періоду до 31.10","поруч парк; сильна всепогодна осіння інфраструктура"],
+        "cons": ["суттєво дорожчий за value-лідерів","це міський курортний формат, а не відокремлений тихий лісовий resort","наявність Standard 24–31.10 потрібно підтвердити"],
+        "included": "Standard для 2 осіб: BB 8 700 грн/ніч = 60 900 грн/7 ночей; HB 10 100 = 70 700 грн; FB 11 500 = 80 500 грн. SPA входить у тариф за опублікованими умовами."
+      },
+      "family": {
+        "eligible": true,
+        "score": 9.5,
+        "pricePerNight": 10100,
+        "total7Nights": 70700,
+        "priceStatus": "published_2026_tariff_window",
+        "value": "9.1/10",
+        "meals": "сніданок",
+        "offers": [
+          {"offerId":"mirotel-standard-hb-2a1c","scenario":"family","eligible":true,"pricePerNight":11900,"total7Nights":83300,"meals":"дворазове харчування","priceStatus":"published_2026_tariff_window"},
+          {"offerId":"mirotel-standard-fb-2a1c","scenario":"family","eligible":true,"pricePerNight":13700,"total7Nights":95900,"meals":"3-разове харчування","priceStatus":"published_2026_tariff_window"}
+        ],
+        "verdict": "Особливо сильний для 2+1 восени: дитячий критий басейн із водоспадом і гіркою, ігрові кімнати та повноцінний дорослий SPA роблять погоду майже неважливою.",
+        "pros": ["дитячий басейн з водоспадом, гіркою та ігровими аксесуарами","дитячі ігрові кімнати; сімейний формат підтверджений офіційним описом","для дитини 6–12 років опублікована доплата: BB 1400, HB 1800, FB 2200 грн/ніч","великий критий SPA-комплекс працює незалежно від осінньої погоди"],
+        "cons": ["сімейний тиждень дорожчий за більшість поточного shortlist","наявність Standard з додатковим місцем на 24–31.10 не підтверджена"],
+        "included": "Standard 2 дорослих + дитина 10 років: BB (8 700 + 1 400) × 7 = 70 700 грн; HB (10 100 + 1 800) × 7 = 83 300 грн; FB (11 500 + 2 200) × 7 = 95 900 грн."
+      }
+    }
+  ]
+}
