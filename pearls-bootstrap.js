@@ -36,7 +36,13 @@ window.fetch=async (input,init)=>{
     'lh-hotel-spa-lviv':{src:'https://lviv.travel/image/locations/74/1c/741c76273702fa302423014db7e6334d66b72748_1775037023.jpg?crop=5472%2C2944%2C-8%2C5',alt:'LH Hotel & SPA у Львові — характерний фасад готелю',source:'Lviv Travel'},
     'sribni-leleky-lutsk':{src:'https://stejka.com/cache/800_600_max/hbqg7ncggn.jpg',alt:'Срібні лелеки у Луцьку — головний корпус рекреаційного комплексу',source:'Stejka'},
     'verkhovyna-resort-kamianytsia':{src:'https://verkhovyna-resort.com/wp-content/uploads/2025/06/pool-palace-1024x532.jpg',alt:'Verkhovyna Resort — панорамний критий Pool Palace',source:'офіційний сайт Verkhovyna Resort'},
-    'helikon-yanoshi':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/600802773.jpg?k=4a6ee4600bebc5bae068e0e326f2b6339bca1130bf0961f9b6a9f044e2507bf5&o=',alt:'Hotel Helikon у Яношах — головний корпус',source:'Booking/Agoda property imagery'}
+    'helikon-yanoshi':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/600802773.jpg?k=4a6ee4600bebc5bae068e0e326f2b6339bca1130bf0961f9b6a9f044e2507bf5&o=',alt:'Hotel Helikon у Яношах — головний корпус',source:'Booking/Agoda property imagery'},
+    'vedmezha-gora':{src:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1b/78/9f/vedmezha-gora-family.jpg',alt:'Vedmezha Gora Family Resort & Spa — корпуси серед Карпат',source:'Tripadvisor exact-property imagery'},
+    'taor':{src:'https://taor.com.ua/wp-content/uploads/2020/03/img_8031_vsco-min-scaled.jpeg',alt:'TAOR Karpaty Resort & Spa — карпатський SPA-чан з видом на гори',source:'офіційний сайт TAOR'},
+    'voevodyno':{src:'https://funtime.com.ua/u/i/gallery/2023/01/voyevodyno-2-63cd0c80b201b.jpg',alt:'Воєводино — корпус курорту та басейн',source:'Funtime exact-property imagery'},
+    'molfar':{src:'https://dorogovkaz.com/images/otel_molfar/otel_molfar_photo47.jpg',alt:'Molfar Hotel & SPA — критий SPA-простір',source:'Dorogovkaz exact-property imagery'},
+    'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
+    'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'}
   };
   for(const [id,p] of Object.entries(photoById)){const h=byId.get(id);if(h)h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'stable canonical-ID mapping; attributable source verified'};}
   if(byId.has('chervona-ruta-shayan'))byId.delete('chervona-ruta'); if(byId.has('solva-resort-medical-spa'))byId.delete('solva');
