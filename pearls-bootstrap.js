@@ -10,7 +10,7 @@ window.fetch=async (input,init)=>{
   const docs=await Promise.all([pearlsRes,lowPriceRes,discoveryRes,latestDiscoveryRes,volynDiscoveryRes,bukovelDiscoveryRes,westernDiscoveryRes,ternopilDiscoveryRes,westernPearlRes,helikonRes].map(async r=>r?.ok?await r.json():{hotels:[],meta:{}}));
   const byId=new Map((base.hotels||[]).map(h=>[h.id,h])); docs.forEach(d=>(d.hotels||[]).forEach(h=>byId.set(h.id,h)));
   const photoById={
-    'verhovel':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/39/3995/Otel-Verhovel-Verhovina-foto-3995z600.jpg',alt:'Готель Верховель у Верховині — головний корпус',source:'Hotels24.ua'},
+    'verhovel':{src:'https://cdn.karpaty.rocks/s3fs-public/photo/apartment/mini-gotel_verhovel_verhovyna_franka1_1.jpeg',alt:'Готель Верховель у Верховині — інтер’єр рецепції',source:'Karpaty.rocks'},
     '7-dniv-kamianets':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
     'sonyachnyi-provans-sataniv':{src:'https://optimahotels.com.ua/media/images/hotels/hotelphoto-c5e24c93-afd9-4e1b-9fec-2f152a5ca867.JPEG',alt:'VitaPark Сонячний Прованс — головний корпус у Сатанові',source:'Optima Hotels and Resorts'},
     'dodo-spa-zhytomyr':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/506252655.jpg?k=8e10f20fdc7193567afce81fca52a1c547863aa6e5df577693d45e6b210227e3&o=',alt:'Dodo spa & hotel — номер готелю у Житомирі',source:'Booking.com'},
