@@ -13,13 +13,13 @@ window.fetch=async (input,init)=>{
     'verhovel':{src:'https://static.karpaty.ua/uploads/house/55cc5c27c0557c2ebc003185/main_photo/big.jpg',alt:'Готель Верховель у Верховині — інтер’єр рецепції',source:'Karpaty.rocks'},
     '7-dniv-kamianets':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/0/49/4999/Otel-7-dney-Kamenec-Podolskiy-foto-4999z600.jpg',alt:'Готель 7 Днів у Кам’янці-Подільському — головний корпус',source:'Hotels24.ua'},
     'sonyachnyi-provans-sataniv':{src:'https://optimahotels.com.ua/media/images/hotels/hotelphoto-c5e24c93-afd9-4e1b-9fec-2f152a5ca867.JPEG',alt:'VitaPark Сонячний Прованс — головний корпус у Сатанові',source:'Optima Hotels and Resorts'},
-    'dodo-spa-zhytomyr':{src:'https://q-xx.bstatic.com/xdata/images/hotel/max500/506252655.jpg?k=8e10f20fdc7193567afce81fca52a1c547863aa6e5df577693d45e6b210227e3&o=',alt:'Dodo spa & hotel — номер готелю у Житомирі',source:'Booking.com'},
+    'dodo-spa-zhytomyr':{src:'https://cdn1.pokupon.ua/uploaded/new_campaign_pictures/813540/data/main720x340/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD-220190206-16654-154e08z20191101-22592-y7d6ua20210215-5251-tsauur20211214-1297188-194k1sm.jpg?1639505336',alt:'Dodo spa & hotel — готель у Житомирі',source:'Pokupon exact-property gallery'},
     'respect':{src:'https://www.respecthotel.com.ua/wp-content/uploads/2026/07/zagal-1920x800-2.webp',alt:'RESPECT Hotel & SPA у Східниці',source:'офіційний сайт'},
     'phoenix':{src:'https://phoenix-sh.com.ua/wp-content/uploads/2026/08/rooms2.webp',alt:'Phoenix Medical Resort — готельні шале та територія',source:'офіційний сайт'},
     'gora':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15075/1507560/1507560z600.jpg',alt:'SPA Hotel «Гора» — готельний комплекс, басейн і ліс',source:'Hotels24.ua'},
     'chervona-ruta-shayan':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15091/1509125/Otel-Chervona-Ruta-Shayan-snjat-1509125z600.jpg',alt:'Червона Рута — котедж, басейн і територія',source:'Hotels24.ua'},
     'rikka':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/150/15068/1506821/Otel-Rikka-Khust-Thermal-Resort-Hust-snjat-1506821z600.jpg',alt:'RIKKA Khust Thermal Resort — корпус і термальний басейн',source:'Hotels24.ua'},
-    'forest-house':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/149/14987/1498780/Gostinica-Forest-House-Migovo-foto-1498780z600.jpg',alt:'Forest House — вхідна частина комплексу',source:'Hotels24.ua'},
+    'forest-house':{src:'https://cdn1.pokupon.ua/uploaded/new_campaign_pictures/966190/data/main720x340/lito-v-karpatakh20260615-1514890-7thvr020260909-416659-pupr00.jpg?1788927673',alt:'Forest House — комплекс у Карпатах',source:'Pokupon exact-property gallery'},
     'chorna-skelya':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/141/14178/1417816/Otel-Chorna-Skelya-Vinogradov-ceny-1417816z600.jpg',alt:'Чорна скеля — готельний комплекс і басейни',source:'Hotels24.ua'},
     'solva-resort-medical-spa':{src:'https://solvahotel.com/wp-content/uploads/2025/04/frontpage-hero-slide-desktop-1-upd.jpg',alt:'Solva Resort Medical & SPA — головний корпус комплексу',source:'офіційний сайт'},
     'solva':{src:'https://solvahotel.com/wp-content/uploads/2025/04/frontpage-hero-slide-desktop-1-upd.jpg',alt:'Solva Resort Medical & SPA — головний корпус комплексу',source:'офіційний сайт'},
@@ -44,6 +44,7 @@ window.fetch=async (input,init)=>{
     'molfar':{src:'https://dorogovkaz.com/images/otel_molfar/otel_molfar_photo47.jpg',alt:'Molfar Hotel & SPA — критий SPA-простір',source:'Dorogovkaz exact-property imagery'},
     'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
     'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'}
+    'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'},
   };
   photoById['mirotel-truskavets']={src:'https://sanatorii-karpat.com/upload/catalog/200/167/truskavets_mirotel25.jpg',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
   window.__HOTEL_PHOTO_REGISTRY__=Object.assign(window.__HOTEL_PHOTO_REGISTRY__||{},photoById);
