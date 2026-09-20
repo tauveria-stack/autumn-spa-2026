@@ -47,7 +47,7 @@ window.fetch=async (input,init)=>{
     'kyivska-russ':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/7/792/79284/79284z600.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Hotels24.ua exact-property imagery'},
     'fb-spa-resort':{src:'https://app.fomich.ua/storage/2025/3/24/01JQ46SFP99HQMYE8PTGTZ3533.jpg',alt:'F&B Spa Resort — комплекс і басейн у Буковелі',source:'Fomich official property imagery'},
     'taor-karpaty':{src:'https://funtime.kiev.ua/u/i/gallery/2024/08/rezort-taor-12-66b4bb478c2a5.jpg',alt:'TAOR Karpaty Resort & Spa — комплекс серед Карпат',source:'FunTime exact-property imagery'},
-    'romantik-spa-yaremche':{src:'https://sanatorii.elitatour.com.ua/content/if_yaremche_romantik/spa-a001.jpg',alt:'Romantik Spa Hotel — критий SPA-басейн',source:'Elitatour exact-property imagery'},
+    'romantik-spa-yaremche':{src:'https://vse-ukr.com/cache/thumbnails/2018/02/18/p1akvg9sr01fgbqqqfjobai1qlsu_642x456_2_0.jpg',alt:'Romantik Spa Hotel — критий SPA-басейн',source:'Elitatour exact-property imagery'},
     'tavel-hotel-spa':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/140/14003/1400321/1400321z600.jpg',alt:'Tavel Hotel & SPA — фасад у Буковелі',source:'Hotels24.ua exact-property imagery'},
     'vedmezha-gora-yaremche':{src:'https://photos.admiral.md/ff23dc75c68c9ffa080bb5929c656412.jpg',alt:'Vedmezha Gora Hotel & Spa — комплекс у Яремче',source:'Admiral Travel exact-property imagery'},
   };
