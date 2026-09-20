@@ -1,1 +1,1 @@
-import('./app.js?v=20260920-registry-syntax-final');
+import('./app.js?v=20260920-last-two-1');
