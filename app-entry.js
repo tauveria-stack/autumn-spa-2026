@@ -1,1 +1,1 @@
-import('./app.js?v=20260920-chip-vocab7');
+import('./app.js?v=20260920-pool-semantics');
