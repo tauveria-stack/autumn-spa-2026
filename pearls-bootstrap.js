@@ -52,7 +52,7 @@ window.fetch=async (input,init)=>{
   photoById['mirotel-truskavets']={src:'https://sanatorii-karpat.com/upload/catalog/200/167/truskavets_mirotel25.jpg',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
   window.__HOTEL_PHOTO_REGISTRY__=Object.assign(window.__HOTEL_PHOTO_REGISTRY__||{},photoById);
   for(const [id,p] of Object.entries(photoById)){const h=byId.get(id);if(h)h.photo={status:'resolved',heroQuality:'accepted',...p,provenance:'stable canonical-ID mapping; attributable source verified'};}
-  if(byId.has('chervona-ruta-shayan'))byId.delete('chervona-ruta'); else if(byId.has('chervona-ruta'))byId.delete('chervona-ruta-shayan'); if(byId.has('solva-resort-medical-spa'))byId.delete('solva'); else if(byId.has('solva'))byId.delete('solva-resort-medical-spa');
+  if(byId.has('chervona-ruta-shayan'))byId.delete('chervona-ruta'); else if(byId.has('chervona-ruta'))byId.delete('chervona-ruta-shayan'); if(byId.has('solva-resort-medical-spa'))byId.delete('solva'); else if(byId.has('solva'))byId.delete('solva-resort-medical-spa'); if(byId.has('taor-karpaty'))byId.delete('taor'); else if(byId.has('taor'))byId.delete('taor-karpaty'); if(byId.has('vedmezha-gora-yaremche'))byId.delete('vedmezha-gora'); else if(byId.has('vedmezha-gora'))byId.delete('vedmezha-gora-yaremche');
   const mergedMeta=Object.assign({},base.meta,...docs.map(d=>d.meta||{}));
   return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:mergedMeta}),{status:200,headers:{'Content-Type':'application/json'}});
 };
