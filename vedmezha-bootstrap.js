@@ -8,7 +8,7 @@ window.fetch=async (input,init)=>{
     if(!hotelRes?.ok)return res;
     const doc=await hotelRes.json();
     const byId=new Map((base.hotels||[]).map(h=>[h.id,h]));
-    for(const h of (doc.hotels||[]))byId.set(h.id,h);
+    for(const h of (doc.hotels||[])){if(h.id==='vedmezha-gora-yaremche')byId.delete('vedmezha-gora');byId.set(h.id,h);}
     return new Response(JSON.stringify({...base,hotels:[...byId.values()],meta:{...(base.meta||{}),...(doc.meta||{})}}),{status:res.status,headers:{'Content-Type':'application/json'}});
   }catch{return res;}
 };
