@@ -4,4 +4,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   const spa=document.getElementById('spaFilter');if(spa)spa.checked=false;
   const footer=document.querySelector('.footer p');if(footer)footer.textContent='Рейтинг — редакційна оцінка за тишею, SPA, номером, харчуванням, репутацією, співвідношенням ціни та якості й тим, наскільки готель підходить для відпочинку наприкінці жовтня. Ціни перевіряємо саме на 24–31.10.2026, коли це доступно онлайн.';
 });
-import('./pearls-bootstrap.js?v=20260920-hero-quality-2').then(()=>import('./mirotel-bootstrap.js?v=20260919-strong-discovery-1')).then(()=>import('./app-20260914.js?v=20260919-photo-source-validation-1'));
+import('./pearls-bootstrap.js?v=20260920-hero-quality-2').then(()=>import('./goral-bootstrap.js?v=20260920-strong-discovery-1')).then(()=>import('./mirotel-bootstrap.js?v=20260919-strong-discovery-1')).then(()=>import('./app-20260914.js?v=20260919-photo-source-validation-1'));
