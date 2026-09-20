@@ -44,7 +44,7 @@ window.fetch=async (input,init)=>{
     'molfar':{src:'https://molfarshayan.com.ua/wp-content/uploads/2023/06/IMG_7487-scaled.jpg',alt:'Molfar Hotel & SPA — комплекс у Шаяні',source:'офіційний сайт Molfar Hotel & SPA'},
     'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
     'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'},
-    'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'}
+    'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'},
     'fb-spa-resort':{src:'https://app.fomich.ua/storage/2025/3/24/01JQ46SFP99HQMYE8PTGTZ3533.jpg',alt:'F&B Spa Resort — комплекс і басейн у Буковелі',source:'Fomich official property imagery'},
     'tavel-hotel-spa':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/140/14003/1400321/1400321z600.jpg',alt:'Tavel Hotel & SPA — фасад у Буковелі',source:'Hotels24.ua exact-property imagery'},
     'vedmezha-gora-yaremche':{src:'https://photos.admiral.md/ff23dc75c68c9ffa080bb5929c656412.jpg',alt:'Vedmezha Gora Hotel & Spa — комплекс у Яремче',source:'Admiral Travel exact-property imagery'},
