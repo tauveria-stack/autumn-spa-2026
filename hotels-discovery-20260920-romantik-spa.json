@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "discoveredAt": "2026-09-20",
+    "trip": "2026-10-24/2026-10-31",
+    "scenarios": ["2 adults", "2 adults + child age 10"],
+    "method": "bounded strong-candidate discovery; UNKNOWN != NO"
+  },
+  "hotels": [
+    {
+      "id": "romantik-spa-yaremche",
+      "name": "Romantik Spa Hotel",
+      "location": "Яремче, Івано-Франківська область",
+      "region": "Карпати",
+      "site": "https://romantikspahotels.ua/",
+      "discoveryStatus": "strong-candidate",
+      "meal": {
+        "class": "halfboard",
+        "label": "Сніданок + вечеря (шведський стіл)",
+        "provenance": "official site"
+      },
+      "wellness": {
+        "indoorPool": true,
+        "thermalPools": true,
+        "sauna": true,
+        "steamRooms": true,
+        "childPool": true,
+        "spaAccessIncluded": true,
+        "provenance": "official site"
+      },
+      "family": {
+        "childPlayroom": true,
+        "playground": true,
+        "nannyAvailable": true,
+        "childAge10AccommodationPrice": "UNKNOWN",
+        "provenance": "official site; free-stay promotion explicitly says children under 9, therefore no inference for age 10"
+      },
+      "setting": "Carpathian National Nature Park surroundings; nature-oriented",
+      "price": {
+        "couple7Nights": "UNKNOWN",
+        "family2Plus1Age10_7Nights": "UNKNOWN",
+        "reason": "exact-date 24–31.10.2026 tariff not verified in this bounded cycle"
+      },
+      "sources": [
+        "https://romantikspahotels.ua/en/",
+        "https://www.karpaty.info/en/uk/if/nd/jaremche/hotels/romantik/"
+      ],
+      "notes": "High-fit autumn candidate: nature setting, substantial indoor SPA, restaurant/half-board, child indoor leisure. Exact-date prices remain UNKNOWN."
+    }
+  ]
+}
