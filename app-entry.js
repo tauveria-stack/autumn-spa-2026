@@ -1,1 +1,1 @@
-import('./app.js?v=20260920-dedupe4-chips8');
+import('./app.js?v=20260920-feature-passport-2');
