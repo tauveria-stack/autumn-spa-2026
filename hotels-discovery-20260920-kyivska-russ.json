@@ -15,20 +15,20 @@
   },
   "meal_tariffs": ["breakfast","half_board","full_board"],
   "published_tariff_2026_09_01_to_2026_12_24": {
-    "room": "Standard Comfort",
-    "two_adults_per_night_uah": {"breakfast":4800,"half_board":6000,"full_board":7200},
+    "room": "Standard Comfort with mountain view",
+    "two_adults_per_night_uah": {"breakfast":5000,"half_board":6200,"full_board":7400},
     "child_6_to_12_extra_per_night_uah": {"breakfast":1000,"half_board":1550,"full_board":2100},
     "seven_night_arithmetic_uah": {
-      "2_adults": {"breakfast":33600,"half_board":42000,"full_board":50400},
-      "2_adults_plus_child_age_10": {"breakfast":40600,"half_board":52850,"full_board":65100}
+      "2_adults": {"breakfast":35000,"half_board":43400,"full_board":51800},
+      "2_adults_plus_child_age_10": {"breakfast":42000,"half_board":54250,"full_board":66500}
     },
     "availability_for_exact_dates": "UNKNOWN",
-    "note": "Published official seasonal tariff covers 24-31 Oct 2026. Seven-night totals are arithmetic from the official per-night table, not an availability confirmation or booking quote. Official site also advertises an Autumn price-drop promotion for 20 Sep-31 Oct 2026; no discount was applied because exact promotion arithmetic/eligibility was not sufficiently explicit in the retrieved page."
+    "note": "Official current tariff table covers 24-31 Oct 2026. Seven-night totals are arithmetic from the official per-night table, not an availability confirmation or booking quote. The official homepage currently advertises a -20% early-booking offer for 01 Sep-24 Dec 2026; no discount is applied here because exact eligibility/booking conditions for the target stay were not verified."
   },
   "provenance": [
-    {"url":"https://kyivskaruss.com.ua/en/","facts":"Official 2026 tariff table; indoor pool, hammam, Finnish sauna, children's room with teacher, playground; meals by tariff; restaurant; 2026 autumn promotion dates."},
-    {"url":"https://kyivskaruss.com.ua/en/news/osinnij-czinopad/","facts":"Official Autumn price-drop promotion page; promotion window includes the target stay."}
+    {"url":"https://kyivskaruss.com.ua/","facts":"Official current 2026 tariff table for Standard Comfort with mountain view: 2 adults 5000/6200/7400 UAH per night for breakfast/half-board/full-board; child 6-12 supplement 1000/1550/2100 UAH; indoor pool, hammam, Finnish sauna, children's room with teacher, meals by tariff, restaurant; -20% early-booking offer shown for 01 Sep-24 Dec 2026."},
+    {"url":"https://kyivskaruss.com.ua/en/spa-welness/","facts":"Official SPA page confirms indoor pool, Finnish sauna, hammam and SPA inclusion for hotel guests."}
   ],
-  "unknowns": ["Exact room availability for 24-31 Oct 2026", "Exact final bookable total after any applicable Autumn price-drop promotion"],
+  "unknowns": ["Exact room availability for 24-31 Oct 2026", "Exact final bookable total after any applicable -20% early-booking offer", "Exact early-booking eligibility/booking deadline for target stay"],
   "unknown_is_not_no": true
 }
