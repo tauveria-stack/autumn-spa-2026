@@ -1,1 +1,1 @@
-import('./app.js?v=20260920-chip-vocab6');
+import('./app.js?v=20260920-chip-vocab7');
