@@ -2,6 +2,10 @@ name: Photo runtime enumeration
 on:
   push:
     paths:
+      - '**.js'
+      - 'hotels*.json'
+      - 'scripts/predeploy-check.mjs'
+      - 'tests/photo-runtime-enumeration.mjs'
       - '.github/workflows/photo-runtime-enumeration.yml'
   workflow_dispatch:
 permissions:
@@ -14,6 +18,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Syntax and data integrity gate
+        run: |
+          for f in *.js; do node --check "$f"; done
+          node scripts/predeploy-check.mjs
       - name: Run canonical photo enumerator
         run: node tests/photo-runtime-enumeration.mjs | tee photo-runtime-enumeration.json
       - name: Verify every canonical photo URL is HTTP-loadable
