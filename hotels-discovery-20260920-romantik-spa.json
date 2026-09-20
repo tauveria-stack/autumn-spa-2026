@@ -2,7 +2,10 @@
   "meta": {
     "discoveredAt": "2026-09-20",
     "trip": "2026-10-24/2026-10-31",
-    "scenarios": ["2 adults", "2 adults + child age 10"],
+    "scenarios": [
+      "2 adults",
+      "2 adults + child age 10"
+    ],
     "method": "bounded strong-candidate discovery; UNKNOWN != NO"
   },
   "hotels": [
@@ -28,11 +31,31 @@
         "provenance": "official site"
       },
       "family": {
-        "childPlayroom": true,
-        "playground": true,
-        "nannyAvailable": true,
-        "childAge10AccommodationPrice": "UNKNOWN",
-        "provenance": "official site; free-stay promotion explicitly says children under 9, therefore no inference for age 10"
+        "eligible": true,
+        "score": 9.2,
+        "pricePerNight": null,
+        "total7Nights": null,
+        "priceStatus": "unknown",
+        "value": "UNKNOWN",
+        "meals": "дворазове харчування",
+        "verdict": "Сильний 2+1 кандидат за критим SPA та дитячою інфраструктурою; ціну проживання дитини 10 років не домислюємо.",
+        "pros": [
+          "дитячий басейн",
+          "дитяча ігрова кімната та майданчик",
+          "критий SPA незалежний від погоди",
+          "сніданок + вечеря (шведський стіл)"
+        ],
+        "cons": [
+          "ціна проживання дитини 10 років на точні дати UNKNOWN"
+        ],
+        "included": "SPA та напівпансіон підтверджені; family total UNKNOWN.",
+        "metadata": {
+          "childPlayroom": true,
+          "playground": true,
+          "nannyAvailable": true,
+          "childAge10AccommodationPrice": "UNKNOWN",
+          "provenance": "official site; free-stay promotion explicitly says children under 9, therefore no inference for age 10"
+        }
       },
       "setting": "Carpathian National Nature Park surroundings; nature-oriented",
       "price": {
@@ -44,7 +67,36 @@
         "https://romantikspahotels.ua/en/",
         "https://www.karpaty.info/en/uk/if/nd/jaremche/hotels/romantik/"
       ],
-      "notes": "High-fit autumn candidate: nature setting, substantial indoor SPA, restaurant/half-board, child indoor leisure. Exact-date prices remain UNKNOWN."
+      "notes": "High-fit autumn candidate: nature setting, substantial indoor SPA, restaurant/half-board, child indoor leisure. Exact-date prices remain UNKNOWN.",
+      "url": "https://romantikspahotels.ua/",
+      "checkedAt": "2026-09-20T10:30:00+03:00",
+      "indoorSpa": true,
+      "thermal": true,
+      "categories": [
+        "bestSpa",
+        "mountain",
+        "forKids"
+      ],
+      "couple": {
+        "eligible": true,
+        "score": 9.1,
+        "pricePerNight": null,
+        "total7Nights": null,
+        "priceStatus": "unknown",
+        "value": "UNKNOWN",
+        "meals": "дворазове харчування",
+        "verdict": "Сильний осінній SPA-кандидат у Яремче: криті й термальні басейни, сауни/парні та сніданок+вечеря; точна ціна 24–31.10.2026 залишається UNKNOWN.",
+        "pros": [
+          "критий басейн і термальні басейни",
+          "сауна та парні",
+          "сніданок + вечеря (шведський стіл)",
+          "природне оточення Карпатського національного парку"
+        ],
+        "cons": [
+          "точний тариф і наявність на 24–31.10.2026 не підтверджені"
+        ],
+        "included": "Підтверджені інфраструктура SPA та напівпансіон; exact-date total UNKNOWN."
+      }
     }
   ]
 }
