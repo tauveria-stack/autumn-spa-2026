@@ -37,18 +37,18 @@
         "total7Nights": null,
         "priceStatus": "unknown",
         "value": "UNKNOWN",
-        "meals": "дворазове харчування",
+        "meals": "3-разове харчування",
         "verdict": "Сильний 2+1 кандидат за критим SPA та дитячою інфраструктурою; ціну проживання дитини 10 років не домислюємо.",
         "pros": [
-          "дитячий басейн",
-          "дитяча ігрова кімната та майданчик",
+          "дитячий басейн з гіркою",
+          "дитяча кімната та майданчик",
           "критий SPA незалежний від погоди",
-          "сніданок + вечеря (шведський стіл)"
+          "3-разове харчування All inclusive"
         ],
         "cons": [
           "ціна проживання дитини 10 років на точні дати UNKNOWN"
         ],
-        "included": "SPA та напівпансіон підтверджені; family total UNKNOWN.",
+        "included": "All inclusive: сніданок, обід і вечеря; SPA-басейни та SPA-сауни включені; exact-date total для 24–31.10.2026 UNKNOWN.",
         "metadata": {
           "childPlayroom": true,
           "playground": true,
@@ -84,18 +84,21 @@
         "total7Nights": null,
         "priceStatus": "unknown",
         "value": "UNKNOWN",
-        "meals": "дворазове харчування",
+        "meals": "3-разове харчування",
         "verdict": "Сильний осінній SPA-кандидат у Яремче: криті й термальні басейни, сауни/парні та сніданок+вечеря; точна ціна 24–31.10.2026 залишається UNKNOWN.",
         "pros": [
-          "критий басейн і термальні басейни",
-          "сауна та парні",
-          "сніданок + вечеря (шведський стіл)",
-          "природне оточення Карпатського національного парку"
+          "криті та відкриті термальні басейни з гідромасажем",
+          "сауни та парні, соляна кімната",
+          "3-разове харчування All inclusive",
+          "Карпатський національний природний парк поруч"
         ],
         "cons": [
           "точний тариф і наявність на 24–31.10.2026 не підтверджені"
         ],
-        "included": "Підтверджені інфраструктура SPA та напівпансіон; exact-date total UNKNOWN."
+        "included": "All inclusive: сніданок, обід і вечеря; SPA-басейни та SPA-сауни включені; exact-date total для 24–31.10.2026 UNKNOWN."
+      },
+      "provenance": {
+        "normalized20260920": "Official Romantik site currently states All inclusive with breakfast, lunch and dinner; SPA pools/saunas included; children under 9 free, therefore no age-10 price inference."
       }
     }
   ]
