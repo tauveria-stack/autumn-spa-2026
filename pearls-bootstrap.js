@@ -28,9 +28,9 @@ window.fetch=async (input,init)=>{
     'aquapark-alligator-ternopil':{src:'https://alligator.te.ua/aligator.org.ua/userfiles/image/%D0%9F%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%D0%B4%D0%BE%202%20%D0%BC%D0%B1.jpg',alt:'Hotel Alligator у Тернополі — готельний комплекс та аквапарк',source:'офіційний сайт ТОК Алігатор'},
     'underhill-resort-spa-pidhiria':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/136/13604/1360439/1360439z1024.jpg',alt:'UNDERHILL Resort & Spa Hotel у Підгір’ї — номер готелю',source:'Karpaty.rocks / Hotels24 attributable property photo'},
     'lybid-plaza-khmelnytskyi':{src:'https://green.vsitury.com.ua/uploads/posts/2016-05/1464183148_object_tb87.jpg',alt:'Готель Либідь Плаза у Хмельницькому — денний фасад комплексу',source:'Vsitury / hotel property photo; human visual acceptance 2026-09-18'},
-    'ivory':{src:'https://ivoryresortandspa.com/wp-content/uploads/2023/06/pool-1.jpg',alt:'IVORY Resort & Spa — басейн комплексу',source:'офіційний сайт IVORY Resort & Spa'},
+    'ivory':{src:'https://vkarpatah.in.ua/wp-content/uploads/2025/10/ivory0-850x540.webp',alt:'IVORY Resort & Spa — басейн і корпус комплексу',source:'vkarpatah.in.ua exact-property imagery'},
     'rado-hotel-spa':{src:'https://radohotel.com.ua/system/images/files/000/000/294/original/IMG_8617___.jpg?1781806260=',alt:'RADO Hotel & Spa — фасад із вивіскою готелю',source:'офіційний сайт RADO Hotel & Spa; property image verified 2026-09-19'},
-    'perlyna-resort-sokyrno':{src:'https://perlyna.biz/storage/media/01JWE9VBGYDA9ZF1WZ1JX8JVDV.jpg',alt:'Perlyna Resort — комплекс у Сокирній',source:'офіційний сайт Perlyna Resort'},
+    'perlyna-resort-sokyrno':{src:'https://content.skyscnr.com/available/2669045955/2669045955_WxH.jpg',alt:'Perlyna Resort — басейн серед сосен у Сокирній',source:'Skyscanner exact-property imagery'},
     'karpaty-migovo':{src:'https://cdn.prod.website-files.com/665075b486e43029b8555c71/66a25072608b3f0e066b7412_%D0%97%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD.avif',alt:'Карпати Мигово — котеджі готельного комплексу серед карпатського лісу',source:'офіційний сайт Карпати Мигово; image asset exposed on canonical property page verified 2026-09-19'},
     'derenivska-kupil':{src:'https://img.hotels24.ua/photos/partner_hotel/hotel_main/102/10248/1024822/Otel-Derenivska-Kupil-Ujgorod-otzyvy-1024822z600.jpg',alt:'Деренівська Купіль — курортний комплекс у Нижньому Солотвині',source:'Hotels24.ua'},
     'bukovyna-chernivtsi':{src:'https://stejka.com/cache/800_600_max/bukovina1_6.jpg',alt:'Готель Буковина у Чернівцях — корпус і територія',source:'Stejka'},
@@ -45,6 +45,9 @@ window.fetch=async (input,init)=>{
     'bogolvar':{src:'https://sanatorii.elitatour.com.ua/content/zk_zakarpatje_bogolvar/3.jpg',alt:'Богольвар — курортний корпус восени',source:'Elitatour exact-property imagery'},
     'belle-royalle':{src:'https://alltops.com.ua/wp-content/uploads/2025/08/1Belle-Royalle-1.jpg',alt:'Belle Royalle — головний корпус і вхід',source:'Alltops exact-property imagery'},
     'kyivska-russ':{src:'https://media.joinup.travel/storage/hotel/31853/photos/Kyivska-Russ-Resort-Medical%26Spa--%28100%29.jpg',alt:'Kyivska Russ Resort Medical & Spa — головний корпус',source:'Join UP exact-property imagery'}
+    'fb-spa-resort':{src:'https://app.fomich.ua/storage/2025/3/24/01JQ46SFP99HQMYE8PTGTZ3533.jpg',alt:'F&B Spa Resort — комплекс і басейн у Буковелі',source:'Fomich official property imagery'},
+    'tavel-hotel-spa':{src:'https://img.hotels24.ua/photos/partner_hotel/facility/140/14003/1400321/1400321z600.jpg',alt:'Tavel Hotel & SPA — фасад у Буковелі',source:'Hotels24.ua exact-property imagery'},
+    'vedmezha-gora-yaremche':{src:'https://photos.admiral.md/ff23dc75c68c9ffa080bb5929c656412.jpg',alt:'Vedmezha Gora Hotel & Spa — комплекс у Яремче',source:'Admiral Travel exact-property imagery'},
   };
   photoById['mirotel-truskavets']={src:'https://sanatorii-karpat.com/upload/catalog/200/167/truskavets_mirotel25.jpg',alt:'Mirotel Resort & SPA у Трускавці — головний корпус',source:'Join UP exact-property imagery'};
   window.__HOTEL_PHOTO_REGISTRY__=Object.assign(window.__HOTEL_PHOTO_REGISTRY__||{},photoById);
