@@ -1,0 +1,34 @@
+{
+  "hotel": "Kyivska Russ Resort Medical & Spa",
+  "location": "Skhidnytsia, Lviv Oblast, Ukraine",
+  "trip": {"check_in":"2026-10-24","check_out":"2026-10-31","nights":7},
+  "status": "STRONG_VERIFIED_CANDIDATE",
+  "fit": {
+    "quiet_nature": true,
+    "modern_comfort": true,
+    "indoor_pool": true,
+    "hammam": true,
+    "finnish_sauna": true,
+    "restaurant": true,
+    "child_indoor_leisure": true,
+    "autumn_suitability": true
+  },
+  "meal_tariffs": ["breakfast","half_board","full_board"],
+  "published_tariff_2026_09_01_to_2026_12_24": {
+    "room": "Standard Comfort",
+    "two_adults_per_night_uah": {"breakfast":4800,"half_board":6000,"full_board":7200},
+    "child_6_to_12_extra_per_night_uah": {"breakfast":1000,"half_board":1550,"full_board":2100},
+    "seven_night_arithmetic_uah": {
+      "2_adults": {"breakfast":33600,"half_board":42000,"full_board":50400},
+      "2_adults_plus_child_age_10": {"breakfast":40600,"half_board":52850,"full_board":65100}
+    },
+    "availability_for_exact_dates": "UNKNOWN",
+    "note": "Published official seasonal tariff covers 24-31 Oct 2026. Seven-night totals are arithmetic from the official per-night table, not an availability confirmation or booking quote. Official site also advertises an Autumn price-drop promotion for 20 Sep-31 Oct 2026; no discount was applied because exact promotion arithmetic/eligibility was not sufficiently explicit in the retrieved page."
+  },
+  "provenance": [
+    {"url":"https://kyivskaruss.com.ua/en/","facts":"Official 2026 tariff table; indoor pool, hammam, Finnish sauna, children's room with teacher, playground; meals by tariff; restaurant; 2026 autumn promotion dates."},
+    {"url":"https://kyivskaruss.com.ua/en/news/osinnij-czinopad/","facts":"Official Autumn price-drop promotion page; promotion window includes the target stay."}
+  ],
+  "unknowns": ["Exact room availability for 24-31 Oct 2026", "Exact final bookable total after any applicable Autumn price-drop promotion"],
+  "unknown_is_not_no": true
+}
