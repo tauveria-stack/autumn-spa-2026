@@ -1,17 +1,18 @@
 {
   "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
   "lifecycle_state": "CHECKPOINT",
-  "current_phase": "A",
-  "current_mission": "Production hygiene and live-set integrity before further discovery",
-  "current_node": "LIVE_HEAD_RECONCILED",
+  "current_phase": "C",
+  "current_mission": "Finish the strongest verified-not-live candidate without weakening production hygiene",
+  "current_node": "RESPECT_HERO_GATE",
   "trip": {"dates":"2026-10-24/2026-10-31","scenarios":["2_adults","2_adults_plus_child_10"]},
   "semantics": {"unknown_not_no":true,"meal_closed":true,"zero_meal_selection_zero_hotels":true},
-  "latest_completed_unit": "Reconciled durable control state with current main. HEAD is 1f20537743053380eb7b7d23ad2ecdedac8aa90b (Correct Kyivska Russ 2026 published tariff grid), parent ca188be050e66023e646b097eae01e8e91bc3ff3 (Include Fomich Residence in live runtime chain). Latest Photo runtime enumeration run 35542552778 for HEAD completed SUCCESS. Previous PHOTO_REPAIR_VERHOVEL_BROKEN_URL state was stale and must not remain the current node after later production commits.",
+  "latest_completed_unit": "Reconciled durable state after later commits that superseded the prior 1f205377 checkpoint. Elena Spa Resort is now in the runtime import chain via 51158a8ac59d5b335646cff06cfd8ac5937dc5b5. Current repository HEAD 5530c36fab076613addbaeebb5cf9ef6e0314cc4 adds RESPECT Hotel & SPA as discovery_verified_not_live with 7 confirmed chips and exact-date price/availability preserved UNKNOWN. Its live promotion is correctly blocked only by an unverified exact-property hero. Photo runtime enumeration run 35607568149 for current HEAD completed SUCCESS.",
   "production": {
-    "head_sha":"1f20537743053380eb7b7d23ad2ecdedac8aa90b",
-    "head_message":"Correct Kyivska Russ 2026 published tariff grid",
-    "runtime_parent_sha":"ca188be050e66023e646b097eae01e8e91bc3ff3",
-    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35542552778,"status":"completed","conclusion":"success"}
+    "repo_head_sha":"5530c36fab076613addbaeebb5cf9ef6e0314cc4",
+    "repo_head_message":"Add verified Respect Hotel & SPA discovery candidate",
+    "latest_runtime_integration_sha":"51158a8ac59d5b335646cff06cfd8ac5937dc5b5",
+    "latest_runtime_integration":"Elena Spa Resort",
+    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success"}
   },
   "known_alias_families": {
     "solva":["solva","solva-resort-medical-spa"],
@@ -19,14 +20,26 @@
     "taor":["taor","taor-karpaty"],
     "vedmezha_gora":["vedmezha-gora","vedmezha-gora-yaremche"]
   },
-  "affected_ids":["HOTELS_MONITOR_STATE.json"],
+  "candidate_pipeline": {
+    "respect-hotel-spa-skhidnytsia": {
+      "status":"discovery_verified_not_live",
+      "chips":7,
+      "price_2_adults":"UNKNOWN",
+      "price_2_plus_child_10":"UNKNOWN",
+      "availability":"UNKNOWN",
+      "hero":"UNVERIFIED_DIRECT_IMAGE_URL",
+      "next_gate":"validate exact-property hero; then syntax/data/import smoke before live promotion"
+    }
+  },
+  "affected_ids":["HOTELS_MONITOR_STATE.json","elena-spa-resort","respect-hotel-spa-skhidnytsia"],
   "blocker": null,
   "next_ready":[
-    "inspect actual merged/runtime live set and compute exact physical-card count",
-    "machine-check alias/duplicate families against merged runtime IDs",
-    "check card chip counts <=8 and semantic alignment",
-    "only after A-C healthy scan one high-value new/updated candidate"
+    "validate a real exact-property RESPECT hero by a changed-method bounded attempt",
+    "if hero passes, create canonical RESPECT card/bootstrap with <=8 confirmed chips",
+    "run syntax/data/import smoke and integrate RESPECT into runtime chain",
+    "verify post-commit workflow and cheapest production/readback smoke",
+    "only then resume new discovery"
   ],
-  "stop_reason":"durable stale-state defect fixed; production HEAD and latest gate reconciled",
-  "updated_at":"2026-09-21T10:43:45+03:00"
+  "stop_reason":"durable checkpoint reconciled; strongest unfinished candidate is explicit and restart-safe",
+  "updated_at":"2026-09-21T17:42:00+03:00"
 }
