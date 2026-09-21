@@ -2,17 +2,17 @@
   "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
   "lifecycle_state": "CHECKPOINT",
   "current_phase": "D",
-  "current_mission": "Continue productive discovery while RESPECT hero is isolated as a human-oracle branch",
-  "current_node": "DISCOVERY_AFTER_RESPECT_HERO_ORACLE",
+  "current_mission": "Advance Belle Royalle through the candidate pipeline while RESPECT hero remains isolated as a human-oracle branch",
+  "current_node": "BELLE_ROYALLE_DISCOVERY_VERIFIED",
   "trip": {"dates":"2026-10-24/2026-10-31","scenarios":["2_adults","2_adults_plus_child_10"]},
   "semantics": {"unknown_not_no":true,"meal_closed":true,"zero_meal_selection_zero_hotels":true},
-  "latest_completed_unit": "RESPECT hero gate exhausted a second genuinely different bounded method: a third-party tour-operator gallery was verified as the exact physical property (same name/address and extensive hotel gallery), but attempting to resolve a runtime-usable direct image returned only the gallery placeholder/unsupported blank GIF rather than a stable hero asset. Per changed-method budget, do not repeat image URL hunting. RESPECT is now WAITING_HUMAN only on hero delivery; its verified facts/tariff evidence remain preserved and exact trip availability/totals remain UNKNOWN. This blocked branch does not block independent discovery.",
+  "latest_completed_unit": "Discovered and durably recorded Belle Royalle in Lisarnya as a strong new autumn SPA candidate. Official evidence confirms forest/mountain setting, thermal/mineral silicon water, SPA/health center, two restaurants and current starting room rates; current property evidence confirms indoor pool, kids club, garden and family suitability. Repository search found no existing Belle Royalle entry. Exact 24-31 Oct availability, exact totals and child-10 supplement remain UNKNOWN. Candidate has 7 verified chips and is not live until stable exact-property hero plus smoke/runtime gates pass.",
   "production": {
-    "repo_head_sha":"2085e7dfae57bc5d3d576af928615aa8830c689f",
-    "repo_head_message":"Enrich Respect candidate with official 2026 tariff evidence",
+    "repo_head_sha":"a415d051467bcf51df269eefb2ec2a5c4a1fad05",
+    "repo_head_message":"Add verified Belle Royalle discovery candidate",
     "latest_runtime_integration_sha":"51158a8ac59d5b335646cff06cfd8ac5937dc5b5",
     "latest_runtime_integration":"Elena Spa Resort",
-    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success","scope":"pre-2085e7 discovery head; no runtime code changed by 2085e7"}
+    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success","scope":"pre-discovery runtime; no runtime code changed by Belle Royalle discovery"}
   },
   "known_alias_families": {
     "solva":["solva","solva-resort-medical-spa"],
@@ -27,19 +27,26 @@
       "price_2_adults":"UNKNOWN_EXACT; PUBLISHED_2026_NIGHTLY_GRID_CAPTURED",
       "price_2_plus_child_10":"UNKNOWN_EXACT; CHILD_EXTRA_PLACE_ORDINARY_SEASON_1500_UAH_PER_NIGHT_PUBLISHED",
       "availability":"UNKNOWN",
-      "hero":"HUMAN_ORACLE_REQUIRED_AFTER_TWO_BOUNDED_CHANGED_METHOD_ATTEMPTS",
-      "hero_evidence":"official property imagery existence confirmed; separate exact-property tour-operator gallery confirmed, but no stable direct runtime image asset resolved",
-      "next_gate":"human supplies/approves a usable exact-property hero asset or a new externally provided asset path; then syntax/data/import smoke before live promotion"
+      "hero":"HUMAN_ORACLE_REQUIRED_AFTER_TWO_BOUNDED_CHANGED_METHOD_ATTEMPTS"
+    },
+    "belle-royalle-lisarnya": {
+      "status":"DISCOVERY_VERIFIED_NOT_LIVE",
+      "chips":7,
+      "price_2_adults":"UNKNOWN_EXACT; OFFICIAL_STARTING_RATES_CAPTURED",
+      "price_2_plus_child_10":"UNKNOWN_EXACT; SUITABLE_ROOM_CAPACITY_CONFIRMED; CHILD_SUPPLEMENT_UNKNOWN",
+      "availability":"UNKNOWN",
+      "hero":"EXACT_PROPERTY_IMAGERY_FOUND; STABLE_RUNTIME_ASSET_NOT_YET_VALIDATED",
+      "next_gate":"cheap exact-date evidence if available -> stable hero -> canonical card/bootstrap -> syntax/data/import smoke -> runtime integration -> deploy/readback"
     }
   },
-  "affected_ids":["HOTELS_MONITOR_STATE.json","respect-hotel-spa-skhidnytsia"],
+  "affected_ids":["HOTELS_MONITOR_STATE.json","discovery/belle-royalle-lisarnya.md","belle-royalle-lisarnya"],
   "blocker": null,
   "blocked_branches":["respect-hotel-spa-skhidnytsia: hero delivery requires HUMAN-ORACLE; do not repeat automated URL hunting"],
   "next_ready":[
-    "scan for one genuinely strong NEW/UPDATED Ukrainian autumn SPA candidate while keeping RESPECT isolated",
-    "for any candidate: dedupe -> verified facts -> 4-7 chips -> valid exact-property hero -> syntax/data/import smoke -> runtime integration -> deploy/readback",
-    "do not re-audit stable meal semantics or RESPECT hero URL sources without new evidence"
+    "advance Belle Royalle with cheapest date-specific occupancy/price check if accessible, otherwise do not stall on it",
+    "validate one stable exact-property Belle Royalle hero asset",
+    "if candidate remains strong: canonical card/bootstrap -> syntax/data/import smoke -> runtime integration -> deploy/readback"
   ],
-  "stop_reason":"productive checkpoint: RESPECT low-risk hero branch reached HUMAN-ORACLE after a second changed-method attempt; independent READY discovery remains",
-  "updated_at":"2026-09-21T18:56:00+03:00"
+  "stop_reason":"productive checkpoint: one genuinely new strong candidate was verified and persisted; independent READY promotion work remains",
+  "updated_at":"2026-09-21T18:58:00+03:00"
 }
