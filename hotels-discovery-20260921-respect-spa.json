@@ -1,0 +1,69 @@
+{
+  "run_date": "2026-09-21",
+  "trip": {
+    "check_in": "2026-10-24",
+    "check_out": "2026-10-31",
+    "nights": 7,
+    "scenarios": ["2_adults", "2_adults_1_child_age_10"]
+  },
+  "candidate": {
+    "id": "respect-hotel-spa-skhidnytsia",
+    "name": "RESPECT Hotel & SPA",
+    "location": "Східниця, Львівська область",
+    "status": "discovery_verified_not_live",
+    "dedupe": {
+      "repo_search": "no existing Respect match found before creation",
+      "physical_property": "RESPECT Hotel & SPA, 28 B. Khmelnytsky St., Skhidnytsya"
+    },
+    "fit": {
+      "quiet_nature": true,
+      "modern_or_renovated_room_signal": "partial renovation in 2024",
+      "indoor_spa": true,
+      "indoor_pool": true,
+      "saunas": true,
+      "restaurant": true,
+      "indoor_child_leisure": true,
+      "autumn_suitability": true
+    },
+    "chips": [
+      "Критий басейн",
+      "Сауни",
+      "SPA",
+      "Гори / природа",
+      "Дитяче indoor-дозвілля",
+      "Ресторан",
+      "Часткове оновлення 2024"
+    ],
+    "scenario_2_adults": {
+      "availability_2026_10_24_31": "UNKNOWN",
+      "exact_price": "UNKNOWN"
+    },
+    "scenario_2_adults_1_child_age_10": {
+      "availability_2026_10_24_31": "UNKNOWN",
+      "exact_price": "UNKNOWN",
+      "child_supplement": "UNKNOWN"
+    },
+    "hero": {
+      "status": "UNVERIFIED_DIRECT_IMAGE_URL",
+      "promotion_gate": "BLOCK_LIVE_PROMOTION_UNTIL_EXACT_PROPERTY_HERO_LOADS"
+    },
+    "provenance": [
+      {
+        "source": "official",
+        "url": "https://www.respecthotel.com.ua/en/",
+        "checked_at": "2026-09-21",
+        "supports": [
+          "Skhidnytsia location",
+          "mountain/nature setting",
+          "27 rooms",
+          "restaurant",
+          "aqua-area with swimming pool",
+          "gym and saunas",
+          "indoor and outdoor activity for children",
+          "partial renovation in 2024"
+        ]
+      }
+    ],
+    "notes": "Strong autumn family/quiet-SPA candidate. UNKNOWN is preserved for exact-date availability, exact price and child supplement. Do not promote live until exact-property hero is validated and normal syntax/data/import smoke passes."
+  }
+}
