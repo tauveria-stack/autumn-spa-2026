@@ -36,16 +36,42 @@
     ],
     "scenario_2_adults": {
       "availability_2026_10_24_31": "UNKNOWN",
-      "exact_price": "UNKNOWN"
+      "exact_price": "UNKNOWN",
+      "published_ordinary_season_2026": {
+        "period": "2026-09-01/2026-12-23",
+        "standard_twin_bb_2_guests_uah_per_night": {"weekday":4750,"weekend":5200},
+        "standard_bb_2_guests_uah_per_night": {"weekday":4950,"weekend":5400},
+        "standard_twin_hb_2_guests_uah_per_night": {"weekday":5750,"weekend":6200},
+        "standard_hb_2_guests_uah_per_night": {"weekday":5950,"weekend":6400},
+        "note": "Published tariff evidence overlaps the requested dates, but exact 7-night total remains UNKNOWN because exact availability and the site's Friday/Sunday weekday-vs-weekend boundary interpretation were not independently confirmed."
+      }
     },
     "scenario_2_adults_1_child_age_10": {
       "availability_2026_10_24_31": "UNKNOWN",
       "exact_price": "UNKNOWN",
-      "child_supplement": "UNKNOWN"
+      "child_supplement": {
+        "ordinary_season_published_uah_per_night":1500,
+        "age_band":"6-12",
+        "application_to_exact_room_and_trip":"UNKNOWN"
+      }
     },
+    "included_published": [
+      "breakfast",
+      "indoor pool",
+      "Finnish sauna",
+      "Roman steam room",
+      "mineral-water pump room",
+      "gym",
+      "children's room",
+      "library and cinema",
+      "Wi-Fi",
+      "secured parking",
+      "EV charging"
+    ],
     "hero": {
       "status": "UNVERIFIED_DIRECT_IMAGE_URL",
-      "promotion_gate": "BLOCK_LIVE_PROMOTION_UNTIL_EXACT_PROPERTY_HERO_LOADS"
+      "promotion_gate": "BLOCK_LIVE_PROMOTION_UNTIL_EXACT_PROPERTY_HERO_LOADS",
+      "attempt_2026_09_21": "Changed-method bounded search of official-domain pages and indexed image references confirmed exact-property imagery exists on official autumn/family pages, but did not expose a stable direct image URL suitable for runtime validation. Do not loop on the same method."
     },
     "provenance": [
       {
@@ -62,8 +88,30 @@
           "indoor and outdoor activity for children",
           "partial renovation in 2024"
         ]
+      },
+      {
+        "source": "official",
+        "url": "https://www.respecthotel.com.ua/ru/taryfy/",
+        "checked_at": "2026-09-21",
+        "supports": [
+          "ordinary-season period 01.09.2026-23.12.2026",
+          "published BB/HB weekday/weekend room tariff grid",
+          "child age 6-12 ordinary-season extra-place supplement 1500 UAH",
+          "published included-service list"
+        ]
+      },
+      {
+        "source": "official",
+        "url": "https://www.respecthotel.com.ua/osinni-kanikuly-v-karpatah/",
+        "checked_at": "2026-09-21",
+        "supports": [
+          "autumn family positioning",
+          "indoor warm pool",
+          "SPA/saunas",
+          "children's room and indoor family leisure"
+        ]
       }
     ],
-    "notes": "Strong autumn family/quiet-SPA candidate. UNKNOWN is preserved for exact-date availability, exact price and child supplement. Do not promote live until exact-property hero is validated and normal syntax/data/import smoke passes."
+    "notes": "Strong autumn family/quiet-SPA candidate. Published 2026 tariff evidence now materially reduces price uncertainty, but exact-date availability and exact scenario totals remain UNKNOWN. Hero remains the only live-promotion gate after a bounded changed-method attempt failed to expose a stable direct official image URL; do not repeat the same research method."
   }
 }
