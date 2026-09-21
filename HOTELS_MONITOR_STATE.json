@@ -1,18 +1,18 @@
 {
   "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
   "lifecycle_state": "CHECKPOINT",
-  "current_phase": "D",
-  "current_mission": "Advance Belle Royalle through the candidate pipeline while RESPECT hero remains isolated as a human-oracle branch",
-  "current_node": "BELLE_ROYALLE_DISCOVERY_VERIFIED",
+  "current_phase": "C",
+  "current_mission": "Validate Belle Royalle hero and prepare canonical live card while RESPECT hero remains isolated as a human-oracle branch",
+  "current_node": "BELLE_ROYALLE_HERO_FOUND_TARIFF_ENRICHED",
   "trip": {"dates":"2026-10-24/2026-10-31","scenarios":["2_adults","2_adults_plus_child_10"]},
   "semantics": {"unknown_not_no":true,"meal_closed":true,"zero_meal_selection_zero_hotels":true},
-  "latest_completed_unit": "Discovered and durably recorded Belle Royalle in Lisarnya as a strong new autumn SPA candidate. Official evidence confirms forest/mountain setting, thermal/mineral silicon water, SPA/health center, two restaurants and current starting room rates; current property evidence confirms indoor pool, kids club, garden and family suitability. Repository search found no existing Belle Royalle entry. Exact 24-31 Oct availability, exact totals and child-10 supplement remain UNKNOWN. Candidate has 7 verified chips and is not live until stable exact-property hero plus smoke/runtime gates pass.",
+  "latest_completed_unit": "Belle Royalle materially advanced: current 2026 tariff grid updated 2026-08-27 covers 01.09-28.12.2026, including target dates, and publishes BB/FB nightly rates plus BB child extra-place age 7-12 at 340 UAH/night. Exact availability remains UNKNOWN. A visually strong exact-property exterior/grounds hero candidate was found with a stable direct image URL; runtime loadability/hotlink behavior still requires site-pipeline validation before promotion.",
   "production": {
-    "repo_head_sha":"a415d051467bcf51df269eefb2ec2a5c4a1fad05",
-    "repo_head_message":"Add verified Belle Royalle discovery candidate",
+    "repo_head_sha":"4ba1c0170c5559f37d3f1af389d4701c0490fc15",
+    "repo_head_message":"Enrich Belle Royalle with 2026 tariff and child evidence",
     "latest_runtime_integration_sha":"51158a8ac59d5b335646cff06cfd8ac5937dc5b5",
     "latest_runtime_integration":"Elena Spa Resort",
-    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success","scope":"pre-discovery runtime; no runtime code changed by Belle Royalle discovery"}
+    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success","scope":"pre-discovery runtime; no runtime code changed by Belle Royalle enrichment"}
   },
   "known_alias_families": {
     "solva":["solva","solva-resort-medical-spa"],
@@ -32,21 +32,21 @@
     "belle-royalle-lisarnya": {
       "status":"DISCOVERY_VERIFIED_NOT_LIVE",
       "chips":7,
-      "price_2_adults":"UNKNOWN_EXACT; OFFICIAL_STARTING_RATES_CAPTURED",
-      "price_2_plus_child_10":"UNKNOWN_EXACT; SUITABLE_ROOM_CAPACITY_CONFIRMED; CHILD_SUPPLEMENT_UNKNOWN",
+      "price_2_adults":"UNKNOWN_EXACT; 2026 ORDINARY-SEASON BB/FB GRID COVERS TARGET DATES",
+      "price_2_plus_child_10":"UNKNOWN_EXACT; BB CHILD_EXTRA_PLACE_AGE_7_12=340_UAH_PER_NIGHT_PUBLISHED",
       "availability":"UNKNOWN",
-      "hero":"EXACT_PROPERTY_IMAGERY_FOUND; STABLE_RUNTIME_ASSET_NOT_YET_VALIDATED",
-      "next_gate":"cheap exact-date evidence if available -> stable hero -> canonical card/bootstrap -> syntax/data/import smoke -> runtime integration -> deploy/readback"
+      "hero":"EXACT_PROPERTY_EXTERIOR_GROUNDS_DIRECT_URL_FOUND; RUNTIME_LOADABILITY_NOT_YET_VALIDATED",
+      "next_gate":"validate hero runtime loadability -> canonical card/bootstrap -> syntax/data/import smoke -> runtime integration -> deploy/readback"
     }
   },
   "affected_ids":["HOTELS_MONITOR_STATE.json","discovery/belle-royalle-lisarnya.md","belle-royalle-lisarnya"],
   "blocker": null,
   "blocked_branches":["respect-hotel-spa-skhidnytsia: hero delivery requires HUMAN-ORACLE; do not repeat automated URL hunting"],
   "next_ready":[
-    "advance Belle Royalle with cheapest date-specific occupancy/price check if accessible, otherwise do not stall on it",
-    "validate one stable exact-property Belle Royalle hero asset",
-    "if candidate remains strong: canonical card/bootstrap -> syntax/data/import smoke -> runtime integration -> deploy/readback"
+    "validate Belle Royalle exterior/grounds hero URL in runtime pipeline",
+    "prepare canonical Belle Royalle card/bootstrap with 7 verified chips and UNKNOWN exact availability",
+    "run syntax/data/import smoke -> runtime integration -> deploy/readback"
   ],
-  "stop_reason":"productive checkpoint: one genuinely new strong candidate was verified and persisted; independent READY promotion work remains",
-  "updated_at":"2026-09-21T18:58:00+03:00"
+  "stop_reason":"productive checkpoint: tariff/child evidence and a stable direct hero candidate were found; READY promotion work remains",
+  "updated_at":"2026-09-21T19:00:00+03:00"
 }
