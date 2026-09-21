@@ -1,12 +1,12 @@
 {
   "automation_id": "6aa64f8b99e881919124d8ccb2f045e6",
   "lifecycle_state": "CHECKPOINT",
-  "current_phase": "C",
-  "current_mission": "Finish the strongest verified-not-live candidate without weakening production hygiene",
-  "current_node": "RESPECT_HERO_GATE",
+  "current_phase": "D",
+  "current_mission": "Continue productive discovery while RESPECT hero is isolated as a human-oracle branch",
+  "current_node": "DISCOVERY_AFTER_RESPECT_HERO_ORACLE",
   "trip": {"dates":"2026-10-24/2026-10-31","scenarios":["2_adults","2_adults_plus_child_10"]},
   "semantics": {"unknown_not_no":true,"meal_closed":true,"zero_meal_selection_zero_hotels":true},
-  "latest_completed_unit": "RESPECT candidate materially enriched from official 2026 tariff evidence: ordinary-season 01.09-23.12.2026 published BB/HB weekday/weekend rates captured, child age 6-12 ordinary-season extra-place supplement 1500 UAH/night captured, and included services captured. Exact trip availability and exact scenario totals remain UNKNOWN. A bounded changed-method official-domain/image-index attempt confirmed exact-property imagery exists but did not expose a stable direct image URL; same hero-search method must not be repeated.",
+  "latest_completed_unit": "RESPECT hero gate exhausted a second genuinely different bounded method: a third-party tour-operator gallery was verified as the exact physical property (same name/address and extensive hotel gallery), but attempting to resolve a runtime-usable direct image returned only the gallery placeholder/unsupported blank GIF rather than a stable hero asset. Per changed-method budget, do not repeat image URL hunting. RESPECT is now WAITING_HUMAN only on hero delivery; its verified facts/tariff evidence remain preserved and exact trip availability/totals remain UNKNOWN. This blocked branch does not block independent discovery.",
   "production": {
     "repo_head_sha":"2085e7dfae57bc5d3d576af928615aa8830c689f",
     "repo_head_message":"Enrich Respect candidate with official 2026 tariff evidence",
@@ -22,24 +22,24 @@
   },
   "candidate_pipeline": {
     "respect-hotel-spa-skhidnytsia": {
-      "status":"discovery_verified_not_live",
+      "status":"WAITING_HUMAN_HERO_ONLY",
       "chips":7,
       "price_2_adults":"UNKNOWN_EXACT; PUBLISHED_2026_NIGHTLY_GRID_CAPTURED",
       "price_2_plus_child_10":"UNKNOWN_EXACT; CHILD_EXTRA_PLACE_ORDINARY_SEASON_1500_UAH_PER_NIGHT_PUBLISHED",
       "availability":"UNKNOWN",
-      "hero":"UNVERIFIED_DIRECT_IMAGE_URL_AFTER_BOUNDED_CHANGED_METHOD_ATTEMPT",
-      "next_gate":"do not repeat same hero-search method; use a genuinely different image-delivery method or HUMAN-ORACLE, then syntax/data/import smoke before live promotion"
+      "hero":"HUMAN_ORACLE_REQUIRED_AFTER_TWO_BOUNDED_CHANGED_METHOD_ATTEMPTS",
+      "hero_evidence":"official property imagery existence confirmed; separate exact-property tour-operator gallery confirmed, but no stable direct runtime image asset resolved",
+      "next_gate":"human supplies/approves a usable exact-property hero asset or a new externally provided asset path; then syntax/data/import smoke before live promotion"
     }
   },
-  "affected_ids":["HOTELS_MONITOR_STATE.json","hotels-discovery-20260921-respect-spa.json","respect-hotel-spa-skhidnytsia"],
+  "affected_ids":["HOTELS_MONITOR_STATE.json","respect-hotel-spa-skhidnytsia"],
   "blocker": null,
+  "blocked_branches":["respect-hotel-spa-skhidnytsia: hero delivery requires HUMAN-ORACLE; do not repeat automated URL hunting"],
   "next_ready":[
-    "resolve RESPECT hero only by a genuinely different image-delivery method or HUMAN-ORACLE; do not repeat official-domain/index search",
-    "if hero passes, create canonical RESPECT card/bootstrap with <=8 confirmed chips",
-    "run syntax/data/import smoke and integrate RESPECT into runtime chain",
-    "verify post-commit workflow and cheapest production/readback smoke",
-    "only then resume new discovery"
+    "scan for one genuinely strong NEW/UPDATED Ukrainian autumn SPA candidate while keeping RESPECT isolated",
+    "for any candidate: dedupe -> verified facts -> 4-7 chips -> valid exact-property hero -> syntax/data/import smoke -> runtime integration -> deploy/readback",
+    "do not re-audit stable meal semantics or RESPECT hero URL sources without new evidence"
   ],
-  "stop_reason":"productive checkpoint: tariff uncertainty reduced and repeated hero-search method explicitly retired; candidate remains restart-safe",
-  "updated_at":"2026-09-21T18:47:00+03:00"
+  "stop_reason":"productive checkpoint: RESPECT low-risk hero branch reached HUMAN-ORACLE after a second changed-method attempt; independent READY discovery remains",
+  "updated_at":"2026-09-21T18:56:00+03:00"
 }
