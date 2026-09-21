@@ -6,13 +6,13 @@
   "current_node": "RESPECT_HERO_GATE",
   "trip": {"dates":"2026-10-24/2026-10-31","scenarios":["2_adults","2_adults_plus_child_10"]},
   "semantics": {"unknown_not_no":true,"meal_closed":true,"zero_meal_selection_zero_hotels":true},
-  "latest_completed_unit": "Reconciled durable state after later commits that superseded the prior 1f205377 checkpoint. Elena Spa Resort is now in the runtime import chain via 51158a8ac59d5b335646cff06cfd8ac5937dc5b5. Current repository HEAD 5530c36fab076613addbaeebb5cf9ef6e0314cc4 adds RESPECT Hotel & SPA as discovery_verified_not_live with 7 confirmed chips and exact-date price/availability preserved UNKNOWN. Its live promotion is correctly blocked only by an unverified exact-property hero. Photo runtime enumeration run 35607568149 for current HEAD completed SUCCESS.",
+  "latest_completed_unit": "RESPECT candidate materially enriched from official 2026 tariff evidence: ordinary-season 01.09-23.12.2026 published BB/HB weekday/weekend rates captured, child age 6-12 ordinary-season extra-place supplement 1500 UAH/night captured, and included services captured. Exact trip availability and exact scenario totals remain UNKNOWN. A bounded changed-method official-domain/image-index attempt confirmed exact-property imagery exists but did not expose a stable direct image URL; same hero-search method must not be repeated.",
   "production": {
-    "repo_head_sha":"5530c36fab076613addbaeebb5cf9ef6e0314cc4",
-    "repo_head_message":"Add verified Respect Hotel & SPA discovery candidate",
+    "repo_head_sha":"2085e7dfae57bc5d3d576af928615aa8830c689f",
+    "repo_head_message":"Enrich Respect candidate with official 2026 tariff evidence",
     "latest_runtime_integration_sha":"51158a8ac59d5b335646cff06cfd8ac5937dc5b5",
     "latest_runtime_integration":"Elena Spa Resort",
-    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success"}
+    "latest_gate":{"workflow":"Photo runtime enumeration","run_id":35607568149,"status":"completed","conclusion":"success","scope":"pre-2085e7 discovery head; no runtime code changed by 2085e7"}
   },
   "known_alias_families": {
     "solva":["solva","solva-resort-medical-spa"],
@@ -24,22 +24,22 @@
     "respect-hotel-spa-skhidnytsia": {
       "status":"discovery_verified_not_live",
       "chips":7,
-      "price_2_adults":"UNKNOWN",
-      "price_2_plus_child_10":"UNKNOWN",
+      "price_2_adults":"UNKNOWN_EXACT; PUBLISHED_2026_NIGHTLY_GRID_CAPTURED",
+      "price_2_plus_child_10":"UNKNOWN_EXACT; CHILD_EXTRA_PLACE_ORDINARY_SEASON_1500_UAH_PER_NIGHT_PUBLISHED",
       "availability":"UNKNOWN",
-      "hero":"UNVERIFIED_DIRECT_IMAGE_URL",
-      "next_gate":"validate exact-property hero; then syntax/data/import smoke before live promotion"
+      "hero":"UNVERIFIED_DIRECT_IMAGE_URL_AFTER_BOUNDED_CHANGED_METHOD_ATTEMPT",
+      "next_gate":"do not repeat same hero-search method; use a genuinely different image-delivery method or HUMAN-ORACLE, then syntax/data/import smoke before live promotion"
     }
   },
-  "affected_ids":["HOTELS_MONITOR_STATE.json","elena-spa-resort","respect-hotel-spa-skhidnytsia"],
+  "affected_ids":["HOTELS_MONITOR_STATE.json","hotels-discovery-20260921-respect-spa.json","respect-hotel-spa-skhidnytsia"],
   "blocker": null,
   "next_ready":[
-    "validate a real exact-property RESPECT hero by a changed-method bounded attempt",
+    "resolve RESPECT hero only by a genuinely different image-delivery method or HUMAN-ORACLE; do not repeat official-domain/index search",
     "if hero passes, create canonical RESPECT card/bootstrap with <=8 confirmed chips",
     "run syntax/data/import smoke and integrate RESPECT into runtime chain",
     "verify post-commit workflow and cheapest production/readback smoke",
     "only then resume new discovery"
   ],
-  "stop_reason":"durable checkpoint reconciled; strongest unfinished candidate is explicit and restart-safe",
-  "updated_at":"2026-09-21T17:42:00+03:00"
+  "stop_reason":"productive checkpoint: tariff uncertainty reduced and repeated hero-search method explicitly retired; candidate remains restart-safe",
+  "updated_at":"2026-09-21T18:47:00+03:00"
 }
